@@ -12,6 +12,7 @@ expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
+modulate_color = Color(1, 1, 1, 0.39215687)
 
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_8kywk")
