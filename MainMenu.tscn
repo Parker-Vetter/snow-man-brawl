@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://di77pwiydkbmm"]
+
+[node name="Control" type="Control" unique_id=1444026233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1411306672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=639347663]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1386520333]
+layout_mode = 2
+text = "Name of the games.
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=1536578978]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=898510504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2" unique_id=965223703]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.59
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=791451334]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1699673809]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=375096444]
+layout_mode = 2
+text = "Start game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1142960741]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
+layout_mode = 2
+size_flags_vertical = 3
