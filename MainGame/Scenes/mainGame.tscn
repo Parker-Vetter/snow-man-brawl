@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b4iql8idvn5sl" path="res://MainGame/Scripts/main_game.gd" id="1_2gnak"]
 [ext_resource type="Texture2D" uid="uid://bnptlavybfl6u" path="res://MainGame/Assets/background.png" id="1_bde7d"]
-[ext_resource type="PackedScene" uid="uid://beoigifsn37au" path="res://MainGame/Scenes/player2.tscn" id="2_4bhc6"]
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_dql36"]
 [ext_resource type="Script" uid="uid://dhq2qu3bnbfvx" path="res://MainGame/Scripts/enemy_spawner.gd" id="3_nwsis"]
 [ext_resource type="PackedScene" uid="uid://byo57dlvacb22" path="res://MainGame/Scenes/snowman.tscn" id="4_xuvwu"]
+[ext_resource type="PackedScene" uid="uid://bkrpxviudheek" path="res://MainGame/Scenes/player.tscn" id="6_ov1mn"]
 [ext_resource type="PackedScene" uid="uid://lk1mrp4gwtlw" path="res://MainGame/UI/game_ui.tscn" id="7_ov1mn"]
 
 [node name="MainGame" type="Node2D" unique_id=253206731]
@@ -24,8 +24,8 @@ enemies = Array[Resource]([ExtResource("4_xuvwu")])
 
 [node name="EnemySpawnTimer" type="Timer" parent="EnemySpawner" unique_id=1088430609]
 
-[node name="Player" parent="." unique_id=1210048637 instance=ExtResource("2_4bhc6")]
-position = Vector2(960, 544)
+[node name="Player" parent="." unique_id=1210048637 instance=ExtResource("6_ov1mn")]
+position = Vector2(960, 539)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1088437275]
 

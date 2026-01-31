@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var bulletOrigin: Marker2D = $BulletOrigin
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var armSprite: AnimatedSprite2D = $arm
-@onready var main: Node2D = $".."
+@onready var main: MainGame = $".."
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
@@ -101,9 +101,11 @@ func _physics_process(_delta: float):
 		music1.stream.set_sync_stream_volume(1,0)
 		music1.stream.set_sync_stream_volume(0,-64)
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies"):
-		main.switchToPeggleDrop()
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	print("hit group", area.name)
+	if area.name == "HitBox":
+		if area.get_parent().is_in_group("enemies"):
+			main.switchToPeggleDrop()
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("loot"):

@@ -14,7 +14,6 @@ var gameData: GameData
 @onready var health: float = maxHealth
 
 func _ready() -> void:
-	add_to_group("enemies")
 	if not player:
 		print("Player not found")
 		return

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dx6v36ecoksvj" path="res://MainGame/Scripts/player.gd" id="1_mta5u"]
 [ext_resource type="Texture2D" uid="uid://drhmw0seqyp60" path="res://MainGame/Assets/player-Sheet.png" id="2_mta5u"]
+[ext_resource type="AudioStream" uid="uid://do1tseo0itg7i" path="res://MainGame/Music/Snowman Attack (V1 - no snow crunching).wav" id="3_kabq0"]
+[ext_resource type="AudioStream" uid="uid://2l83osqxddss" path="res://MainGame/Music/Snowman Attack (V1 - full track).wav" id="4_sfk3o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw3ce"]
 atlas = ExtResource("2_mta5u")
@@ -122,7 +124,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1taep"]
-radius = 57.0
+radius = 52.009613
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xoc3"]
 atlas = ExtResource("2_mta5u")
@@ -174,10 +176,19 @@ animations = [{
 "speed": 5.0
 }]
 
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_14yb0"]
+stream_count = 2
+stream_0/stream = ExtResource("3_kabq0")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("4_sfk3o")
+stream_1/volume = -60.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
 radius = 174.59668
 
 [node name="Player" type="CharacterBody2D" unique_id=1210048637]
+collision_mask = 2
 script = ExtResource("1_mta5u")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1482828288]
@@ -206,7 +217,7 @@ speed_scale = 3.0
 [node name="HitBox" type="Area2D" parent="." unique_id=117249582]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=1801963861]
-polygon = PackedVector2Array(13, -96, 53, -36, 61, 73, -77, 70, -67, -34, -15, -100)
+polygon = PackedVector2Array(13, -96, 56, -44, 70, 72, -77, 70, -64, -43, -15, -100)
 
 [node name="PickupRadius" type="Area2D" parent="." unique_id=1262773060]
 collision_layer = 0
@@ -215,5 +226,11 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius" unique_id=773677693]
 shape = SubResource("CircleShape2D_t35mx")
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]
+
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1638078482]
+stream = SubResource("AudioStreamSynchronized_14yb0")
+autoplay = true

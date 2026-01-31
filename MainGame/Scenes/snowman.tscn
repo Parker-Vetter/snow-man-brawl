@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scripts/snowman.gd" id="1_71vfe"]
 [ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="1_ih1tb"]
 
-[node name="Snowman" type="CharacterBody2D" unique_id=15038228]
+[node name="Snowman" type="CharacterBody2D" unique_id=15038228 groups=["enemies"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_71vfe")
@@ -15,6 +15,13 @@ sprite_frames = ExtResource("1_ih1tb")
 autoplay = "default"
 frame_progress = 0.9642842
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=398578801]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1635999727]
+position = Vector2(0, -107)
+scale = Vector2(0.985, 0.985)
+polygon = PackedVector2Array(15, 8, 46, 20, 51, 85, 33, 108, -32, 107, -53, 81, -54, 30, -25, 8, -41, -22, -35, -48, -24, -63, -35, -92, -23, -107, 19, -108, 28, -90, 20, -68, 13, -61, 36, -44, 37, -12)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=590184770]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=398578801]
 position = Vector2(0, -107)
 polygon = PackedVector2Array(15, 8, 46, 20, 51, 85, 33, 108, -32, 107, -53, 81, -54, 30, -25, 8, -41, -22, -35, -48, -24, -63, -35, -92, -23, -107, 19, -108, 28, -90, 20, -68, 13, -61, 36, -44, 37, -12)

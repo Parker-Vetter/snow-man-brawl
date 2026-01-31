@@ -12,7 +12,7 @@ func _ready() -> void:
 	print(str(game_data.point))
 
 
-func load_game_data(new_game_data: GameData):
+func load_game_sate(new_game_data: GameData):
 	game_data = new_game_data
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
