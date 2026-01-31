@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://di77pwiydkbmm"]
 
 [ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
+[ext_resource type="Shader" uid="uid://u4wuh4c7otrq" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b76km"]
+shader = ExtResource("2_cruaa")
+shader_parameter/width = 0.8550000406125
+shader_parameter/speed = 2.7370001300075
+shader_parameter/num_of_layers = 5
 
 [node name="MainMenu" type="Control" unique_id=1444026233]
 layout_mode = 3
@@ -66,5 +73,9 @@ size_flags_vertical = 3
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1304011067]
+material = SubResource("ShaderMaterial_b76km")
+position = Vector2(981, 250)
 
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button" to="." method="_on_play_pressed"]
