@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://mmsh7fp13qnt"]
+
+[ext_resource type="Texture2D" uid="uid://cfrf3ptex8cp6" path="res://MainGame/Assets/snowman.png" id="1_4fuvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v08o"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(0, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ixk4"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(225, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axal0"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(0, 225, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dysf5"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(225, 225, 225, 225)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v08o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ixk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axal0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dysf5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
