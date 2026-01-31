@@ -37,3 +37,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2" unique_id=965223703]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.59
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=791451334]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1699673809]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=375096444]
+layout_mode = 2
+text = "Start game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1142960741]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
+layout_mode = 2
+size_flags_vertical = 3
