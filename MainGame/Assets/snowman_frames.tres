@@ -1,22 +1,38 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://mmsh7fp13qnt"]
 
-[ext_resource type="Texture2D" uid="uid://cfrf3ptex8cp6" path="res://MainGame/Assets/snowman.png" id="1_4fuvd"]
+[ext_resource type="Texture2D" uid="uid://dq287bceqo5mm" path="res://zacks sprites/snowman-Sheet.png" id="1_4fuvd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6v08o"]
 atlas = ExtResource("1_4fuvd")
-region = Rect2(0, 0, 225, 225)
+region = Rect2(0, 0, 225, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ixk4"]
 atlas = ExtResource("1_4fuvd")
-region = Rect2(225, 0, 225, 225)
+region = Rect2(225, 0, 225, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axal0"]
 atlas = ExtResource("1_4fuvd")
-region = Rect2(0, 225, 225, 225)
+region = Rect2(450, 0, 225, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dysf5"]
 atlas = ExtResource("1_4fuvd")
-region = Rect2(225, 225, 225, 225)
+region = Rect2(675, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8ub6"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(900, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ya3c"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(1125, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypdou"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(1350, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5yx"]
+atlas = ExtResource("1_4fuvd")
+region = Rect2(1575, 0, 225, 250)
 
 [resource]
 animations = [{
@@ -32,6 +48,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dysf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8ub6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ya3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypdou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5yx")
 }],
 "loop": true,
 "name": &"default",
