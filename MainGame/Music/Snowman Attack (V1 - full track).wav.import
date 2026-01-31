@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2l83osqxddss"
+path="res://.godot/imported/Snowman Attack (V1 - full track).wav-539c9cc25b738263bf9e6f072de5ae04.sample"
+
+[deps]
+
+source_file="res://MainGame/Music/Snowman Attack (V1 - full track).wav"
+dest_files=["res://.godot/imported/Snowman Attack (V1 - full track).wav-539c9cc25b738263bf9e6f072de5ae04.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

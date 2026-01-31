@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dx6v36ecoksvj" path="res://MainGame/Scripts/player.gd" id="1_mta5u"]
 [ext_resource type="Texture2D" uid="uid://drhmw0seqyp60" path="res://MainGame/Assets/player-Sheet.png" id="2_mta5u"]
+[ext_resource type="AudioStream" uid="uid://do1tseo0itg7i" path="res://MainGame/Music/Snowman Attack (V1 - no snow crunching).wav" id="3_kabq0"]
+[ext_resource type="AudioStream" uid="uid://2l83osqxddss" path="res://MainGame/Music/Snowman Attack (V1 - full track).wav" id="4_sfk3o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw3ce"]
 atlas = ExtResource("2_mta5u")
@@ -174,6 +176,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_14yb0"]
+stream_count = 2
+stream_0/stream = ExtResource("3_kabq0")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("4_sfk3o")
+stream_1/volume = -60.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1210048637]
 script = ExtResource("1_mta5u")
 
@@ -199,3 +208,7 @@ animation = &"throw"
 frame = 5
 frame_progress = 1.0
 speed_scale = 3.0
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1638078482]
+stream = SubResource("AudioStreamSynchronized_14yb0")
+autoplay = true

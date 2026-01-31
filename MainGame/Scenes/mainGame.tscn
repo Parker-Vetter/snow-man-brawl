@@ -31,7 +31,4 @@ position = Vector2(960, 544)
 
 [node name="GameUI" parent="CanvasLayer" unique_id=1377738225 instance=ExtResource("7_ov1mn")]
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1915590744]
-autoplay = true
-
 [connection signal="timeout" from="EnemySpawner/EnemySpawnTimer" to="EnemySpawner" method="_on_timer_timeout"]
