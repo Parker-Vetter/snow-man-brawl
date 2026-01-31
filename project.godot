@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Snow_Man_Brawl"
-run/main_scene="uid://di77pwiydkbmm"
+run/main_scene="uid://tqybgdj5w1vp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

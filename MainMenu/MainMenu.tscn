@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://di77pwiydkbmm"]
 
+[ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
+
 [node name="MainMenu" type="Control" unique_id=1444026233]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_otibh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1411306672]
 layout_mode = 1
@@ -63,3 +66,5 @@ size_flags_vertical = 3
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
 layout_mode = 2
 size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button" to="." method="_on_play_pressed"]

@@ -1,6 +1,7 @@
 extends Marker2D
 @onready var timer: Timer = $EnemySpawnTimer
-@onready var main = get_tree().get_root().get_node("MainGame")
+@onready var main: Node2D = $".."
+@onready var player: CharacterBody2D = $"../Player"
 
 ## The list of enemies to spawn
 @export var enemies: Array[Resource]
@@ -65,4 +66,5 @@ func spawn():
 	instance.spawnPos = getRandomPositionOffScreen()
 	instance.spinSpeed = randf_range(-300, 300)
 	instance.gameData = main.gameData
+	instance.player = player
 	main.add_child.call_deferred(instance)

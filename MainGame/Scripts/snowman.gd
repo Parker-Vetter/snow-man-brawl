@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@onready var player = get_tree().get_root().get_node("MainGame").get_node("Player")
 
 @export var maxHealth: float = 3
 @export var speed: float = 100
 
 
+var player
 var dir: float
 var spawnPos: Vector2
 var spawnRot: float

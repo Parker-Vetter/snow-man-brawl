@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	scene_manager.switch_scene(peggle_drop, "res://MainGame/Scenes/mainGame.tscn", peggle_drop.game_data)
+	var gd = peggle_drop.game_data
+	scene_manager.switch_scene(peggle_drop, "res://MainGame/Scenes/mainGame.tscn", gd)

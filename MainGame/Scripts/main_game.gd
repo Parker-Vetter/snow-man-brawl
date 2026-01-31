@@ -4,7 +4,7 @@ extends Node2D
 @onready var peggle_drop: Node2D = get_tree().get_nodes_in_group("PeggleDrop")[0]
 
 
-func load_game_data(new_game_data: GameData):
+func load_game_state(new_game_data: GameData):
 	gameData = new_game_data
 
 

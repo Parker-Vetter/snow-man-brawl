@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgjhxj1spci4q"]
 
 [ext_resource type="PackedScene" uid="uid://cd488yl4wjt0w" path="res://PeggleDrop/Pegs/peg.tscn" id="1_6ef75"]
-[ext_resource type="Script" uid="uid://bjpd8chdpgvca" path="res://PeggleDrop/peggle_drop.gd" id="1_i6osx"]
+[ext_resource type="Script" path="res://PeggleDrop/peggle_drop.gd" id="1_i6osx"]
 [ext_resource type="PackedScene" uid="uid://r7ibv76myrvg" path="res://PeggleDrop/Ball/ball.tscn" id="2_ptfyw"]
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_vwwwx"]
 [ext_resource type="Script" uid="uid://dp6ytw3x7kwni" path="res://PeggleDrop/UI/ui_fight.gd" id="4_gh36d"]

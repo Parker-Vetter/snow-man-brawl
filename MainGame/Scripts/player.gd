@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var bulletOrigin: Marker2D = $BulletOrigin
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var armSprite: AnimatedSprite2D = $arm
+@onready var main: Node2D = $".."
 
-@onready var main = get_tree().get_root().get_node("MainGame")
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
 @export var maxSpeed = 100
