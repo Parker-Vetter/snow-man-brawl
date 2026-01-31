@@ -13,8 +13,10 @@ extends CharacterBody2D
 @export var shootDelay:float = 1
 
 var shootTimer: Timer
+var pendingTarget: Node2D = null
 
 func _ready() -> void:
+	armSprite.frame_changed.connect(_on_arm_frame_changed)
 	shootTimer = Timer.new()
 	shootTimer.wait_time = shootDelay
 	shootTimer.timeout.connect(_on_shoot_timer_timeout)
@@ -38,6 +40,17 @@ func get_nearest_enemy() -> Node2D:
 	return nearest
 
 func shoot(target: Node2D):
+	pendingTarget = target
+	#play arm animation - projectile spawns on frame 3
+	armSprite.frame = 0
+	armSprite.play("throw")
+
+func _on_arm_frame_changed():
+	if armSprite.frame == 3 and pendingTarget and is_instance_valid(pendingTarget):
+		spawn_projectile(pendingTarget)
+		pendingTarget = null
+
+func spawn_projectile(target: Node2D):
 	var instance = projectile.instantiate()
 	var shootAngle = position.direction_to(target.global_position).angle()
 	instance.dir = shootAngle - PI/2
@@ -48,10 +61,6 @@ func shoot(target: Node2D):
 	instance.spawnRot = shootAngle
 	instance.spinSpeed = randf_range(-300, 300)
 	main.add_child.call_deferred(instance)
-
-	#play arm animation
-	armSprite.frame = 0
-	armSprite.play("default")
 
 func _physics_process(delta):
 	#move toward the mouse
