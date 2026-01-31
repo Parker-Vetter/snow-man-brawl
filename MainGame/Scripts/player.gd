@@ -1,16 +1,16 @@
 extends CharacterBody2D
-@onready var collision :CollisionShape2D = $CollisionShape2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var bulletOrigin: Marker2D = $BulletOrigin
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var armSprite: AnimatedSprite2D = $arm
 
-@onready var main =  get_tree().get_root().get_node("MainGame")
+@onready var main = get_tree().get_root().get_node("MainGame")
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
 @export var maxSpeed = 100
 @export var targetDistance = 150
 ## Shooting rate in shots per second
-@export var shootDelay:float = 1
+@export var shootDelay: float = 2
 
 var shootTimer: Timer
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 	add_child(shootTimer)
 	shootTimer.start()
 
-func _on_shoot_timer_timeout() -> void:
+func _on_shoot_timer_timeout():
 	var target = get_nearest_enemy()
 	if target:
 		shoot(target)
@@ -40,10 +40,10 @@ func get_nearest_enemy() -> Node2D:
 func shoot(target: Node2D):
 	var instance = projectile.instantiate()
 	var shootAngle = position.direction_to(target.global_position).angle()
-	instance.dir = shootAngle - PI/2
+	instance.dir = shootAngle - PI / 2
 	var originPos = bulletOrigin.position
 	if sprite.flip_h:
-		originPos.x = -originPos.x
+		originPos.x = - originPos.x
 	instance.spawnPos = position + originPos
 	instance.spawnRot = shootAngle
 	instance.spinSpeed = randf_range(-300, 300)
@@ -53,12 +53,12 @@ func shoot(target: Node2D):
 	armSprite.frame = 0
 	armSprite.play("default")
 
-func _physics_process(delta):
+func _physics_process(_delta: float):
 	#move toward the mouse
 	var globalMouse = get_global_mouse_position()
 	var distance = globalMouse.distance_to(position)
-	var fromDestination = max(0, distance-targetDistance)
-	var vel:Vector2 = position.direction_to(globalMouse) * fromDestination
+	var fromDestination = max(0, distance - targetDistance)
+	var vel: Vector2 = position.direction_to(globalMouse) * fromDestination
 	vel = vel.limit_length(maxSpeed)
 	velocity = vel
 	move_and_slide()

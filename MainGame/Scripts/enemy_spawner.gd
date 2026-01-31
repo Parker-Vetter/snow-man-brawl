@@ -64,4 +64,5 @@ func spawn():
 	instance.dir = rotation - PI / 2
 	instance.spawnPos = getRandomPositionOffScreen()
 	instance.spinSpeed = randf_range(-300, 300)
+	instance.gameData = main.gameData
 	main.add_child.call_deferred(instance)

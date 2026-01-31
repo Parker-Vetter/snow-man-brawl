@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byo57dlvacb22"]
 
-[ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scenes/snowman.gd" id="1_71vfe"]
+[ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scripts/snowman.gd" id="1_71vfe"]
 [ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="1_ih1tb"]
 
 [node name="Snowman" type="CharacterBody2D" unique_id=15038228]
