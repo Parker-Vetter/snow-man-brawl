@@ -1,23 +1,34 @@
 [gd_scene format=3 uid="uid://b50qatksorepn"]
 
+[ext_resource type="Script" uid="uid://b4iql8idvn5sl" path="res://MainGame/Scripts/main_game.gd" id="1_2gnak"]
 [ext_resource type="Texture2D" uid="uid://bnptlavybfl6u" path="res://MainGame/Assets/background.png" id="1_bde7d"]
-[ext_resource type="PackedScene" uid="uid://yqiowf3t0i54" path="res://MainGame/Scenes/player2.tscn" id="2_4bhc6"]
+[ext_resource type="PackedScene" uid="uid://beoigifsn37au" path="res://MainGame/Scenes/player2.tscn" id="2_4bhc6"]
+[ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_dql36"]
 [ext_resource type="Script" uid="uid://dhq2qu3bnbfvx" path="res://MainGame/Scripts/enemy_spawner.gd" id="3_nwsis"]
+[ext_resource type="PackedScene" uid="uid://byo57dlvacb22" path="res://MainGame/Scenes/snowman.tscn" id="4_xuvwu"]
+[ext_resource type="AudioStream" uid="uid://do1tseo0itg7i" path="res://MainGame/Music/Snowman Attack (V1 - no snow crunching).wav" id="7_ov1mn"]
 
 [node name="MainGame" type="Node2D" unique_id=253206731]
+script = ExtResource("1_2gnak")
+gameData = ExtResource("2_dql36")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=950277489]
 position = Vector2(962.25, 540)
 scale = Vector2(3.1299021, 2.647059)
 texture = ExtResource("1_bde7d")
 
-[node name="Player" parent="." unique_id=1210048637 instance=ExtResource("2_4bhc6")]
-position = Vector2(960, 540)
-
 [node name="EnemySpawner" type="Marker2D" parent="." unique_id=452461616]
 position = Vector2(960, 539)
 script = ExtResource("3_nwsis")
+enemies = Array[Resource]([ExtResource("4_xuvwu")])
 
-[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=1088430609]
+[node name="EnemySpawnTimer" type="Timer" parent="EnemySpawner" unique_id=1088430609]
 
-[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
+[node name="Player" parent="." unique_id=1210048637 instance=ExtResource("2_4bhc6")]
+position = Vector2(960, 544)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1915590744]
+stream = ExtResource("7_ov1mn")
+autoplay = true
+
+[connection signal="timeout" from="EnemySpawner/EnemySpawnTimer" to="EnemySpawner" method="_on_timer_timeout"]
