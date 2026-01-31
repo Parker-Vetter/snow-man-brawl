@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lk1mrp4gwtlw"]
 
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="1_ue6oa"]
+[ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="2_oaw30"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oaw30"]
 texture = ExtResource("1_ue6oa")
@@ -29,3 +30,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_d2rst")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1199864755]
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 275.0
+theme = ExtResource("2_oaw30")

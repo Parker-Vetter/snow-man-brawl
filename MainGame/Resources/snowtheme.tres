@@ -1,3 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://cgldd5i3pdinj"]
 
+[ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="1_2hd46"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kywk"]
+texture = ExtResource("1_2hd46")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_8kywk")
