@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dgjhxj1spci4q"]
 
+[ext_resource type="PackedScene" uid="uid://cd488yl4wjt0w" path="res://PeggleDrop/Pegs/peg.tscn" id="1_6ef75"]
+[ext_resource type="PackedScene" uid="uid://r7ibv76myrvg" path="res://PeggleDrop/Ball/ball.tscn" id="2_ptfyw"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(89, 675)
 
@@ -7,12 +10,8 @@ size = Vector2(89, 675)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptfyw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6ef75"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_u3yax"]
-radius = 8.0
-
 [node name="PeggleDrop" type="Node2D" unique_id=411252354]
+scale = Vector2(1.5, 1.5)
 
 [node name="OuterWalls" type="StaticBody2D" parent="." unique_id=2035622240]
 
@@ -120,1599 +119,724 @@ shape = SubResource("RectangleShape2D_ptfyw")
 [node name="Peg_Rows" type="Node2D" parent="." unique_id=1987869489]
 
 [node name="Peg_Row" type="Node2D" parent="Peg_Rows" unique_id=753736415]
+position = Vector2(0, 400)
 
 [node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row" unique_id=1806293146]
 
 [node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=1925575572]
 position = Vector2(100, 20)
 
-[node name="Peg" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=1340236978]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=35971241 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group/Peg" unique_id=362479934]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=1458581692]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=1819531951 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group/Peg2" unique_id=1954337430]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=537403245 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=1259049987]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=884443902 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group/Peg3" unique_id=925158524]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group" unique_id=231045853]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group/Peg4" unique_id=865431659]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=1636111509]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=283172799]
 position = Vector2(200, 20)
 
-[node name="Peg" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=1533553876]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=2009332090 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2/Peg" unique_id=90224360]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=500590879]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=1140524429 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2/Peg2" unique_id=1446973261]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=683634489 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=361435850]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=2011286701 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2/Peg3" unique_id=682077677]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2" unique_id=919426589]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group2/Peg4" unique_id=171162365]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=714422034]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=168334181]
 position = Vector2(300, 20)
 
-[node name="Peg" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=1281075899]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=640515319 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3/Peg" unique_id=982362943]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=510821392]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=1866466782 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3/Peg2" unique_id=131874774]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=1934359350 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=620134298]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=1309305531 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3/Peg3" unique_id=343854849]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3" unique_id=140509185]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group3/Peg4" unique_id=383139427]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=598856233]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group" unique_id=436804292]
 position = Vector2(400, 20)
 
-[node name="Peg" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=1143722331]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=1270391596 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4/Peg" unique_id=447310551]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=1138896461]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=795986664 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4/Peg2" unique_id=950775125]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=1463670228 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=281071961]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=1339402529 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4/Peg3" unique_id=1863777561]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="StaticBody2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4" unique_id=827963394]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group/Peg_Group4/Peg4" unique_id=1305373484]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row" unique_id=866405523]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row" unique_id=1133235371]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=1037242077]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=175819250]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=169560690]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=553353314 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group/Peg" unique_id=1124999384]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=443713132]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=1933422910 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group/Peg2" unique_id=913837792]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=1934830294 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=1272462646]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=629964282 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group/Peg3" unique_id=860027250]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group" unique_id=178703731]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group/Peg4" unique_id=1079050620]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=1769347515]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=1146728833]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=1800413878]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=1508743794 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2/Peg" unique_id=1947222094]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=217932936]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=1157669705 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=293165668]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=2046764156 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=521999838]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=1507745920 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=396408870]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2" unique_id=1506605505]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=355524339]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=1299715171]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=718838293]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=675645004]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=532232969 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3/Peg" unique_id=949020539]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=147893389]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=28911026 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=1057538293]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=1102667676 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=581816110]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=411260931 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=1110012631]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3" unique_id=1267993498]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=132705846]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=2132236639]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2" unique_id=1373594141]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=794146111]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=1028477604 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4/Peg" unique_id=1826434507]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=1552974620]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=1024251727 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=634484417]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=74786989 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=450498071]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=668647560 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=2075722760]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4" unique_id=2146412222]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=1104073955]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row" unique_id=1727771705]
+[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row" unique_id=1550386878]
 position = Vector2(800, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3" unique_id=370809987]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3" unique_id=1666778496]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=51367526]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=2021548238 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group/Peg" unique_id=120340258]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=2116598480]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=672158715 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group/Peg2" unique_id=1141371404]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=1639881959 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=1367848214]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=179898892 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group/Peg3" unique_id=879077033]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group" unique_id=554252394]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group/Peg4" unique_id=1215337180]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3" unique_id=393476700]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3" unique_id=63733948]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=2053452318]
+[node name="Peg" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=1464397699 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2/Peg" unique_id=531639881]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=1362808877]
+[node name="Peg2" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=1801378320 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=206219417]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=328252765 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2" unique_id=1875487599]
-position = Vector2(25, 40)
+[node name="Peg_Row2" type="Node2D" parent="Peg_Rows" unique_id=175448033]
+position = Vector2(0, 325)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=31135476]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=199535173]
 
-[node name="Peg_Row2" type="Node2D" parent="Peg_Rows" unique_id=358105680]
-position = Vector2(0, 80)
-
-[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=296776011]
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=249859122]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=1261720942]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=1190296323]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group/Peg" unique_id=499572307]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=1546038862]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=1630650746 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group/Peg2" unique_id=959527607]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=2091158819 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=1010496710]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=1684402005 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group/Peg3" unique_id=1622146198]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group" unique_id=103170373]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group/Peg4" unique_id=1590994126]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=1829345892]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=630706222]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=1630689385]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=1812492699 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2/Peg" unique_id=2127858321]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=1420589979]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=605736924 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2/Peg2" unique_id=331037277]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=823447021 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=1081322427]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=983724128 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2/Peg3" unique_id=1439063802]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2" unique_id=1968280760]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group2/Peg4" unique_id=219688473]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=227247765]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=197541074]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=1752589978]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=996196419 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3/Peg" unique_id=1931436892]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=1214318944]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=651455887 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3/Peg2" unique_id=703577305]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=712528540 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=1015732736]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=624329246 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3/Peg3" unique_id=640795151]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3" unique_id=928849948]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group3/Peg4" unique_id=618131369]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=659084253]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group" unique_id=523198631]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=828056990]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=245596478 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4/Peg" unique_id=1461277873]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=1792040784]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=1772679079 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4/Peg2" unique_id=1205574786]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=139537799 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=1918022848]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=1801854205 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4/Peg3" unique_id=355652030]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4" unique_id=711967545]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group/Peg_Group4/Peg4" unique_id=1011903199]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=385240800]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=1086673261]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=842989787]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=155118411]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=526313216]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=1099606115 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group/Peg" unique_id=2019295957]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=1228503888]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=1003055089 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group/Peg2" unique_id=1171521736]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=555202951 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=1702811916]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=1159204808 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group/Peg3" unique_id=735076976]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group" unique_id=373987871]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group/Peg4" unique_id=192454751]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=545736766]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=179754887]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=852317493]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=1999780649 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2/Peg" unique_id=2045677362]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=160793537]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=68931112 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=1645160074]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=291400913 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=2127230120]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=1441615482 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=854204746]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2" unique_id=476674210]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=1704627847]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=1884488652]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=1723262239]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=1451158284]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=637042623 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3/Peg" unique_id=216350732]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=1313194341]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=1169146283 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=1061977207]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=721028687 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=795147777]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=1933456276 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=543447493]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3" unique_id=285283629]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=855223616]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=60847572]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2" unique_id=1404582583]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=701727413]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=990208997 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4/Peg" unique_id=136351045]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=426817403]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=2091294570 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=1672915981]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=1952101743 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=2110116103]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=1163991366 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=488691143]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4" unique_id=511991468]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=1047390020]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=1720270152]
+[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row2" unique_id=2093627883]
 position = Vector2(800, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3" unique_id=425367899]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3" unique_id=778387186]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=1434445704]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=732996500 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group/Peg" unique_id=388518473]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=1321083559]
+[node name="Peg2" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=1497359044 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group/Peg2" unique_id=1456777459]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=515683410 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=185396224]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=1271402439 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group/Peg3" unique_id=1634075260]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group" unique_id=820278242]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group/Peg4" unique_id=2103487268]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3" unique_id=1671686075]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3" unique_id=767852633]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2" unique_id=569435721]
+[node name="Peg" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2" unique_id=303109657 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2/Peg" unique_id=2058082041]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2" unique_id=1569669511 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2" unique_id=1846680360]
-position = Vector2(50, 0)
+[node name="Peg_Row3" type="Node2D" parent="Peg_Rows" unique_id=1923637529]
+position = Vector2(0, 250)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=391520095]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=1532381251]
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2" unique_id=172359115]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row2/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=1326619231]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Row3" type="Node2D" parent="Peg_Rows" unique_id=340199566]
-position = Vector2(0, 160)
-
-[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=313924123]
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=1172653990]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=876909460]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group" unique_id=884397433]
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group" unique_id=1290420010 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group/Peg" unique_id=392032638]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group" unique_id=663038752]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group/Peg2" unique_id=1777017280]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group" unique_id=65423245]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group/Peg3" unique_id=596751739]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group" unique_id=394054627]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group/Peg4" unique_id=1113421907]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=1613249799]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=731364109]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=1336586194]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=1717977210 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2/Peg" unique_id=1578738876]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=1500988107]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=49322608 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2/Peg2" unique_id=1037207306]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=1748040231 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=728381857]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=1061111862 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2/Peg3" unique_id=1968555029]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2" unique_id=778879499]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group2/Peg4" unique_id=676550304]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=694197418]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=1040544322]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=1803231865]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=201709358 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3/Peg" unique_id=535812913]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=2058669832]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=1782588112 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3/Peg2" unique_id=1960313143]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=118951466 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=1252111186]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=150564320 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3/Peg3" unique_id=1457069813]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3" unique_id=519813645]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group3/Peg4" unique_id=1050268480]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=507713427]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group" unique_id=58214093]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=1888057853]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=2092913235 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4/Peg" unique_id=1143697444]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=2046557730]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=1325216933 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4/Peg2" unique_id=1638906286]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=1381968731 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=35936863]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=735204968 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4/Peg3" unique_id=41560167]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4" unique_id=1918070732]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group/Peg_Group4/Peg4" unique_id=589901663]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=620929147]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=639379840]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=392943077]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=2050486385]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=119343544]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=92816378 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group/Peg" unique_id=1267713191]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=1809676779]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=1225638935 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group/Peg2" unique_id=764520881]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=2016618003 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=1960687071]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=1448452529 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group/Peg3" unique_id=1160217775]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group" unique_id=1036390030]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group/Peg4" unique_id=341812850]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=843820662]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=1432047143]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=1498750525]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=1209890886 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2/Peg" unique_id=1141934690]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=336820562]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=1440228568 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=706356523]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=526161449 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=1932910097]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=968182422 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=854836218]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2" unique_id=457657431]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=441890670]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=339804719]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=887331076]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1828517022]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1324361492 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3/Peg" unique_id=648938478]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1117878444]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1705589338 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=729814063]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=2069892909 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1475656380]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1706785881 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=2110044614]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3" unique_id=1884730814]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=78280531]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=20495709]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2" unique_id=244308434]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=1291293405]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=1278710839 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4/Peg" unique_id=410029804]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=1019289767]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=2130839229 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=2022786573]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=803524632 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=53088477]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=317917767 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=826923679]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4" unique_id=722821639]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=711842404]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=2120740928]
+[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row3" unique_id=31727322]
 position = Vector2(800, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3" unique_id=2082740972]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3" unique_id=494287905]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=1172978142]
+[node name="Peg" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=854263239 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group/Peg" unique_id=621438741]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=152319474]
+[node name="Peg2" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=432104766 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group/Peg2" unique_id=1496756134]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=157496231 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=896020871]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=1413148511 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group/Peg3" unique_id=804729738]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg_Row4" type="Node2D" parent="Peg_Rows" unique_id=2094712136]
+position = Vector2(0, 175)
 
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group" unique_id=1830257414]
-position = Vector2(75, 40)
+[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=1213783171]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group/Peg4" unique_id=113086484]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3" unique_id=1784343819]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=181654461]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2" unique_id=481557147]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2/Peg" unique_id=1041064371]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2" unique_id=361751374]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=1257686876 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=301527495]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=1590468087 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2" unique_id=1642681314]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=1974387950 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row3/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=1004343611]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Row4" type="Node2D" parent="Peg_Rows" unique_id=270980268]
-position = Vector2(0, 240)
-
-[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=858660687]
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=263408121]
-position = Vector2(100, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group" unique_id=706099328]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group/Peg" unique_id=1382316702]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group" unique_id=583962519]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group/Peg2" unique_id=160283306]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group" unique_id=989038121]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group/Peg3" unique_id=1067878748]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group" unique_id=311376900]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group/Peg4" unique_id=1037770681]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=397202846]
-position = Vector2(200, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=813572631]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2/Peg" unique_id=1093057230]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=1350087468]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2/Peg2" unique_id=1052554289]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=1765617561]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2/Peg3" unique_id=920045805]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2" unique_id=55847749]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group2/Peg4" unique_id=502187828]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=924884741]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=1494731515]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=2101913986]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=2081364519 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3/Peg" unique_id=1053131330]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=1094867706]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=196067433 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3/Peg2" unique_id=1818434544]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=954156716 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=1375623948]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=1433611616 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3/Peg3" unique_id=999147610]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3" unique_id=285542219]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group3/Peg4" unique_id=1331439831]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=2015691576]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group" unique_id=807111310]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=1073062647]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=614262528 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4/Peg" unique_id=326652984]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=191197057]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=925833838 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4/Peg2" unique_id=503123731]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=1597907005 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=308404602]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=981540355 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4/Peg3" unique_id=830534590]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4" unique_id=1693058727]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group/Peg_Group4/Peg4" unique_id=1795933862]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=911565644]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=1665400266]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=506722346]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=956597041]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=392589066]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=1767463381 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group/Peg" unique_id=161826957]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=681919888]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=189692011 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group/Peg2" unique_id=1285266736]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=258680138 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=1242303086]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=1393588226 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group/Peg3" unique_id=1847003109]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group" unique_id=751309536]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group/Peg4" unique_id=1814344313]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=2146380750]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=836969887]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=607133334]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=609591526 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2/Peg" unique_id=88764794]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=1325035057]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=1388644934 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=1464640957]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=1489529305 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=859020420]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=418324492 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=1968529379]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2" unique_id=1970003305]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=823342745]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=1465300450]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=1058485077]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=1699398041]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=196621206 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3/Peg" unique_id=22188102]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=1333459104]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=1868205911 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=1716051652]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=1295119294 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=256494173]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=934819580 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=1443378852]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3" unique_id=1557456758]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=1638950615]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=962432502]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2" unique_id=1832150273]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=211337092]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1658410076 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4/Peg" unique_id=958765927]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1879131315]
+[node name="Peg2" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1968050042 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=1293760406]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1172600559 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=157596930]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1176930664 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=1375537310]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4" unique_id=1578161947]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=1072294328]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=283297675]
+[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row4" unique_id=561398727]
 position = Vector2(800, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3" unique_id=486143406]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3" unique_id=815173248]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=1450149510]
+[node name="Peg" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=877241411 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group/Peg" unique_id=2139415154]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=1063961241 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=1128760223]
-position = Vector2(50, 0)
+[node name="Peg_Row5" type="Node2D" parent="Peg_Rows" unique_id=844385089]
+position = Vector2(0, 100)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group/Peg2" unique_id=1257948127]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5" unique_id=2087777522]
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=1089154324]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group/Peg3" unique_id=95707608]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group" unique_id=1220012901]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group/Peg4" unique_id=295521361]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3" unique_id=1921824117]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=251062110]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2" unique_id=1881121893]
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2" unique_id=1188455155 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2/Peg" unique_id=1664890400]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2" unique_id=2130964135]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=119009866]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2" unique_id=1878949780]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row4/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=719870881]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Row5" type="Node2D" parent="Peg_Rows" unique_id=674215633]
-position = Vector2(0, 320)
-
-[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5" unique_id=1162859091]
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=1995794800]
-position = Vector2(100, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group" unique_id=604785356]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group/Peg" unique_id=1024127665]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group" unique_id=1125310546]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group/Peg2" unique_id=2083326181]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group" unique_id=1557790067]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group/Peg3" unique_id=1534274143]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group" unique_id=718611648]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group/Peg4" unique_id=252417517]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=177731413]
-position = Vector2(200, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2" unique_id=170571590]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2/Peg" unique_id=2616607]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2" unique_id=1429087282]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2/Peg2" unique_id=2037401823]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2" unique_id=1580445711]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2/Peg3" unique_id=1048064834]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2" unique_id=248899672]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group2/Peg4" unique_id=498248929]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=1277151540]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=466498228]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=2104624142]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=1220663191 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3/Peg" unique_id=1146130424]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=793510183]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=1930187456 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3/Peg2" unique_id=49480833]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=1944385995 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=501456078]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=2133315831 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3/Peg3" unique_id=878791578]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3" unique_id=678893346]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group3/Peg4" unique_id=1510274594]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=748576415]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group" unique_id=1905328491]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=2140736335]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=819239218 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4/Peg" unique_id=1613241131]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=1503879995]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=221700856 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4/Peg2" unique_id=280275483]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=1575814134 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=419400070]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=908971410 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4/Peg3" unique_id=445018797]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4" unique_id=1073630638]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group/Peg_Group4/Peg4" unique_id=1359979086]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5" unique_id=1306648137]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5" unique_id=1652329905]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1290290220]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1364822619]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1830645346]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=336215314 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group/Peg" unique_id=2089528876]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1423296109]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=246409179 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group/Peg2" unique_id=1603605862]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1384820260 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1807217773]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1929280355 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group/Peg3" unique_id=819546533]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group" unique_id=1024174961]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group/Peg4" unique_id=1063675430]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=535359425]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1688159746]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=818492039]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=499342440 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2/Peg" unique_id=308217508]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=2131565067]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=352814373 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=2019377850]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=228387639 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=1352098642]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=537021193 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=440027921]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2" unique_id=492016331]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=566938239]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1139134020]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1047395441]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=732309549]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=1574699067 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3/Peg" unique_id=1135121468]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=131912535]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=823388062 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=1088218765]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=208344246 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=1244459830]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=1665464112 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=1923914467]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3" unique_id=1833382619]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=681076172]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1579770205]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2" unique_id=1383791865]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=821667005]
+[node name="Peg" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=1407490138 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4/Peg" unique_id=979063790]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=440327328]
+[node name="Peg2" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=1405365863 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=1740118376]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=1481334124 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=1285277938]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=1600766906 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=1332124507]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg_Row6" type="Node2D" parent="Peg_Rows" unique_id=1367837931]
+position = Vector2(0, 25)
 
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4" unique_id=250433932]
-position = Vector2(75, 40)
+[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6" unique_id=874931953]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=415835252]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row5" unique_id=1137886540]
-position = Vector2(800, 0)
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3" unique_id=1826489450]
-position = Vector2(100, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group" unique_id=458778784]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group/Peg" unique_id=899823580]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group" unique_id=1206967401]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group/Peg2" unique_id=1995058998]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group" unique_id=549019293]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group/Peg3" unique_id=1728573901]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group" unique_id=887857677]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group/Peg4" unique_id=1556907852]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3" unique_id=102575676]
-position = Vector2(200, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2" unique_id=967740114]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2/Peg" unique_id=947435777]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2" unique_id=905608480]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=684782916]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2" unique_id=1936967991]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row5/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=109835559]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Row6" type="Node2D" parent="Peg_Rows" unique_id=722920016]
-position = Vector2(0, 400)
-
-[node name="Big_Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6" unique_id=651619460]
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=964757006]
-position = Vector2(100, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group" unique_id=1428645968]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group/Peg" unique_id=345137340]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group" unique_id=2060730823]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group/Peg2" unique_id=1407210023]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group" unique_id=94273863]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group/Peg3" unique_id=612469248]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group" unique_id=1439105026]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group/Peg4" unique_id=1862067552]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=1555760078]
-position = Vector2(200, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2" unique_id=559793207]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2/Peg" unique_id=302483302]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2" unique_id=1319859991]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2/Peg2" unique_id=1039942757]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2" unique_id=1110382508]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2/Peg3" unique_id=14916581]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2" unique_id=694579071]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group2/Peg4" unique_id=1586075038]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=772870107]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=423197348]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=289777248]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3/Peg" unique_id=1502629968]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=969638360]
+[node name="Peg2" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=870345071 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3/Peg2" unique_id=854238111]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=1548496584 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=1961503491]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=1311490271 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3/Peg3" unique_id=288267809]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3" unique_id=1973724869]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group3/Peg4" unique_id=329106638]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=39768656]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group" unique_id=932838812]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=1003039228]
+[node name="Peg" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=242350856 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4/Peg" unique_id=2017146783]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=248122945]
+[node name="Peg2" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=2066007665 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4/Peg2" unique_id=424265006]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=563564007 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=1072287618]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=577812840 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4/Peg3" unique_id=1911289611]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4" unique_id=1862397081]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group/Peg_Group4/Peg4" unique_id=800387125]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6" unique_id=1099128614]
+[node name="Big_Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6" unique_id=1076365570]
 position = Vector2(400, 0)
 
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=325563223]
+[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=650135032]
 position = Vector2(100, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=2040286922]
+[node name="Peg" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=292479160 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group/Peg" unique_id=1170851420]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=986675445]
+[node name="Peg2" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=986701191 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group/Peg2" unique_id=1862400588]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=340604803 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=1791322808]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=1638131731 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group/Peg3" unique_id=1253882269]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group" unique_id=1113527364]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group/Peg4" unique_id=1285247656]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=905532728]
+[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=1818406377]
 position = Vector2(200, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=1075856860]
+[node name="Peg" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=1262088223 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2/Peg" unique_id=1506370385]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=1231032222]
+[node name="Peg2" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=2102281035 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2/Peg2" unique_id=1475951668]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=954382745 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=160838203]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=178223214 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2/Peg3" unique_id=1809096629]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2" unique_id=938088122]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group2/Peg4" unique_id=718855328]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=738057211]
+[node name="Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=1380021874]
 position = Vector2(300, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=1654743274]
+[node name="Peg" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=353498942 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3/Peg" unique_id=42445155]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=932280816]
+[node name="Peg2" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=1708489022 instance=ExtResource("1_6ef75")]
 position = Vector2(50, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3/Peg2" unique_id=1123654013]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=1604125946 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=2050583268]
-position = Vector2(25, 40)
+[node name="Peg4" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=391459865 instance=ExtResource("1_6ef75")]
+position = Vector2(75, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3/Peg3" unique_id=1400379657]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3" unique_id=1516309311]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group3/Peg4" unique_id=28799962]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=2086115437]
+[node name="Peg_Group4" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2" unique_id=1048022705]
 position = Vector2(400, 20)
 
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=2096873729]
+[node name="Peg" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=168488782 instance=ExtResource("1_6ef75")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4/Peg" unique_id=331803993]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=1236968399]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4/Peg2" unique_id=605232080]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=708846585]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4/Peg3" unique_id=1950884809]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=1712539650]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4/Peg4" unique_id=391146178]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Big_Peg_Group3" type="Node2D" parent="Peg_Rows/Peg_Row6" unique_id=450846316]
-position = Vector2(800, 0)
-
-[node name="Peg_Group" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3" unique_id=679020393]
-position = Vector2(100, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group" unique_id=748513346]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group/Peg" unique_id=1583151468]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group" unique_id=501529007]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group/Peg2" unique_id=417346431]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group" unique_id=838029978]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group/Peg3" unique_id=1668991228]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg4" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group" unique_id=1753078929]
-position = Vector2(75, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group/Peg4" unique_id=1062193149]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg_Group2" type="Node2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3" unique_id=2067348294]
-position = Vector2(200, 20)
-
-[node name="Peg" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2" unique_id=839519471]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2/Peg" unique_id=1418166904]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg2" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2" unique_id=1198027509]
-position = Vector2(50, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2/Peg2" unique_id=752689172]
-shape = SubResource("CircleShape2D_6ef75")
-
-[node name="Peg3" type="Area2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2" unique_id=249327174]
-position = Vector2(25, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg_Rows/Peg_Row6/Big_Peg_Group3/Peg_Group2/Peg3" unique_id=1897563917]
-shape = SubResource("CircleShape2D_6ef75")
+[node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=500802892 instance=ExtResource("1_6ef75")]
+position = Vector2(25, 30)
 
 [node name="Ball_Spawn" type="Marker2D" parent="." unique_id=952254857]
 position = Vector2(600, -222)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=348275435]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=377924989]
-position = Vector2(600, -221)
-shape = SubResource("CircleShape2D_u3yax")
+[node name="Ball" parent="." unique_id=993768175 instance=ExtResource("2_ptfyw")]
+position = Vector2(608, -300)

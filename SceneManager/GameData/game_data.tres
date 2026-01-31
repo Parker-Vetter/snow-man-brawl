@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://doschogkwtrua"]
+
+[ext_resource type="Script" uid="uid://dwwu8q2q8fnsv" path="res://SceneManager/GameData/game_data.gd" id="1_lsqfl"]
+
+[resource]
+script = ExtResource("1_lsqfl")
