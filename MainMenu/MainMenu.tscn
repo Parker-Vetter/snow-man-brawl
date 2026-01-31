@@ -13,6 +13,8 @@ shader_parameter/num_of_layers = 5
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbqne"]
 lifetime_randomness = 0.31
 particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 1, 1)
 angle_min = -720.0
 angle_max = 711.2
 angular_velocity_min = -346.67
@@ -39,8 +41,9 @@ grow_vertical = 2
 color = Color(0.11372549, 0.16078432, 0.25882354, 1)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1304011067]
-position = Vector2(911, 259)
+position = Vector2(923, -96)
 texture = ExtResource("3_b76km")
+lifetime = 8.57
 process_material = SubResource("ParticleProcessMaterial_lbqne")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1411306672]
