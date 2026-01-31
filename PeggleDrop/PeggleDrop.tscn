@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dgjhxj1spci4q"]
 
 [ext_resource type="PackedScene" uid="uid://cd488yl4wjt0w" path="res://PeggleDrop/Pegs/peg.tscn" id="1_6ef75"]
+[ext_resource type="Script" uid="uid://bjpd8chdpgvca" path="res://PeggleDrop/peggle_drop.gd" id="1_i6osx"]
 [ext_resource type="PackedScene" uid="uid://r7ibv76myrvg" path="res://PeggleDrop/Ball/ball.tscn" id="2_ptfyw"]
+[ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_vwwwx"]
+[ext_resource type="Script" uid="uid://dp6ytw3x7kwni" path="res://PeggleDrop/UI/ui_fight.gd" id="4_gh36d"]
+[ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(89, 675)
@@ -10,8 +14,10 @@ size = Vector2(89, 675)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptfyw"]
 
-[node name="PeggleDrop" type="Node2D" unique_id=411252354]
+[node name="PeggleDrop" type="Node2D" unique_id=411252354 groups=["PeggleDrop"]]
 scale = Vector2(1.5, 1.5)
+script = ExtResource("1_i6osx")
+game_data = ExtResource("2_vwwwx")
 
 [node name="OuterWalls" type="StaticBody2D" parent="." unique_id=2035622240]
 
@@ -23,7 +29,7 @@ shape = SubResource("RectangleShape2D_u3yax")
 position = Vector2(1118, 330)
 shape = SubResource("RectangleShape2D_u3yax")
 
-[node name="World Boundry" type="StaticBody2D" parent="." unique_id=1877262440]
+[node name="World Boundry" type="Area2D" parent="." unique_id=1080530509]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundry" unique_id=1754742297]
 position = Vector2(562, 730)
@@ -835,8 +841,106 @@ position = Vector2(400, 20)
 [node name="Peg3" parent="Peg_Rows/Peg_Row6/Big_Peg_Group2/Peg_Group4" unique_id=500802892 instance=ExtResource("1_6ef75")]
 position = Vector2(25, 30)
 
-[node name="Ball_Spawn" type="Marker2D" parent="." unique_id=952254857]
-position = Vector2(600, -222)
+[node name="BallHolder" type="Node2D" parent="." unique_id=252804642]
 
-[node name="Ball" parent="." unique_id=993768175 instance=ExtResource("2_ptfyw")]
-position = Vector2(608, -300)
+[node name="Ball" parent="BallHolder" unique_id=993768175 instance=ExtResource("2_ptfyw")]
+position = Vector2(664.66675, -241.33334)
+scale = Vector2(1.5, 1.5)
+
+[node name="BallSpawner" type="Node" parent="." unique_id=1072738928]
+
+[node name="Ball_Spawn3" type="Marker2D" parent="BallSpawner" unique_id=2017370954]
+position = Vector2(575, -333)
+scale = Vector2(1.5, 1.5)
+
+[node name="Ball_Spawn2" type="Marker2D" parent="BallSpawner" unique_id=48880232]
+position = Vector2(1175, -333)
+scale = Vector2(1.5, 1.5)
+
+[node name="Ball_Spawn" type="Marker2D" parent="BallSpawner" unique_id=952254857]
+position = Vector2(875, -333)
+scale = Vector2(1.5, 1.5)
+
+[node name="Multiplyers" type="Node2D" parent="." unique_id=320003808]
+
+[node name="Multilpyer" parent="Multiplyers" unique_id=1507808476 instance=ExtResource("6_mapa8")]
+position = Vector2(97.333336, 581.3334)
+scale = Vector2(1.0584652, 0.9394852)
+
+[node name="Multilpyer2" parent="Multiplyers" unique_id=119261709 instance=ExtResource("6_mapa8")]
+position = Vector2(170.66669, 582)
+
+[node name="Multilpyer3" parent="Multiplyers" unique_id=883472220 instance=ExtResource("6_mapa8")]
+position = Vector2(250.66666, 583.3333)
+
+[node name="Multilpyer4" parent="Multiplyers" unique_id=1123101891 instance=ExtResource("6_mapa8")]
+position = Vector2(331.99997, 581.99994)
+
+[node name="Multilpyer5" parent="Multiplyers" unique_id=207708291 instance=ExtResource("6_mapa8")]
+position = Vector2(413.33334, 581.3334)
+
+[node name="Multilpyer6" parent="Multiplyers" unique_id=1677119827 instance=ExtResource("6_mapa8")]
+position = Vector2(498.6667, 582.6667)
+scale = Vector2(1.0584652, 0.9394852)
+
+[node name="Multilpyer7" parent="Multiplyers" unique_id=977430394 instance=ExtResource("6_mapa8")]
+position = Vector2(571.99994, 583.3333)
+
+[node name="Multilpyer8" parent="Multiplyers" unique_id=100155679 instance=ExtResource("6_mapa8")]
+position = Vector2(651.99994, 584.6666)
+
+[node name="Multilpyer9" parent="Multiplyers" unique_id=1091426169 instance=ExtResource("6_mapa8")]
+position = Vector2(733.33325, 583.33325)
+
+[node name="Multilpyer10" parent="Multiplyers" unique_id=743870232 instance=ExtResource("6_mapa8")]
+position = Vector2(814.6666, 582.6667)
+
+[node name="Multilpyer11" parent="Multiplyers" unique_id=1356335637 instance=ExtResource("6_mapa8")]
+position = Vector2(900, 583.99994)
+
+[node name="Multilpyer12" parent="Multiplyers" unique_id=32753967 instance=ExtResource("6_mapa8")]
+position = Vector2(981.3334, 583.3334)
+
+[node name="Multilpyer13" parent="Multiplyers" unique_id=1252727567 instance=ExtResource("6_mapa8")]
+position = Vector2(1054.0001, 584)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606689751]
+
+[node name="MainUI" type="Control" parent="CanvasLayer" unique_id=1830231904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Panel" parent="CanvasLayer/MainUI" unique_id=1730189651]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84000003
+anchor_top = -0.001
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = 0.19995117
+offset_top = 0.08000004
+offset_right = 0.9199219
+offset_bottom = 5.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Fight" type="Button" parent="CanvasLayer/MainUI/Control" unique_id=332640463]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.072000004
+anchor_top = 0.82600003
+anchor_right = 0.91800004
+anchor_bottom = 0.97800004
+offset_left = -0.032001495
+offset_top = -0.036010742
+offset_right = 0.09197998
+offset_bottom = -0.10803223
+theme_override_font_sizes/font_size = 50
+text = "Fight"
+script = ExtResource("4_gh36d")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/MainUI/Control/Fight" to="CanvasLayer/MainUI/Control/Fight" method="_on_pressed"]

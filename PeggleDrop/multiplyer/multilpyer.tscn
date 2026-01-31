@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b2bocywdcjqub"]
+
+[ext_resource type="Script" uid="uid://dfq72oh67hwq7" path="res://PeggleDrop/multiplyer/multiplyer.gd" id="1_nprrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh36d"]
+size = Vector2(43.33333, 161.33334)
+
+[node name="Multilpyer" type="Area2D" unique_id=1507808476]
+scale = Vector2(1.0584652, 0.93948513)
+script = ExtResource("1_nprrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421368833]
+position = Vector2(1.6666641, 0.66674805)
+shape = SubResource("RectangleShape2D_gh36d")
+
+[node name="Label" type="Label" parent="." unique_id=1539330877]
+offset_left = -18.265438
+offset_top = -9.934519
+offset_right = 21.734562
+offset_bottom = 13.065481
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
