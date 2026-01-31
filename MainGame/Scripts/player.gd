@@ -87,3 +87,13 @@ func _physics_process(_delta: float):
 	else:
 		sprite.play("idle")
 		sprite.speed_scale = 1.0
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		main.switchToPeggleDrop()
+
+func _on_pickup_radius_area_entered(area: Area2D) -> void:
+	if area.is_in_group("loot"):
+		if area.has_method("collect"):
+			area.collect(main.gameData)
