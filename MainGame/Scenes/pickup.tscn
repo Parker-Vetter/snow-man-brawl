@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c8r8xit8ip1jd"]
+
+[ext_resource type="Script" uid="uid://ccajtuehxuerd" path="res://MainGame/Scripts/pickup.gd" id="1_k2ada"]
+[ext_resource type="Resource" uid="uid://dmgmjn3ut414j" path="res://Resources/carrot.tres" id="2_rb21g"]
+[ext_resource type="Texture2D" uid="uid://bhtnlv6jiyhvy" path="res://zacks sprites/carrot.png" id="3_d1246"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns4mr"]
+radius = 30.066593
+
+[node name="Pickup" type="Area2D" unique_id=2043910658 groups=["pickup"]]
+collision_layer = 8
+script = ExtResource("1_k2ada")
+data = ExtResource("2_rb21g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445437701]
+texture = ExtResource("3_d1246")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96335803]
+shape = SubResource("CircleShape2D_ns4mr")

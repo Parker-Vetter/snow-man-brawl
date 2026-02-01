@@ -176,6 +176,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
+radius = 147.03061
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_14yb0"]
 stream_count = 2
@@ -183,9 +185,6 @@ stream_0/stream = ExtResource("3_kabq0")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("4_sfk3o")
 stream_1/volume = -60.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
-radius = 174.59668
 
 [node name="Player" type="CharacterBody2D" unique_id=1210048637]
 collision_mask = 2
@@ -226,11 +225,10 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius" unique_id=773677693]
 shape = SubResource("CircleShape2D_t35mx")
 
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
-[connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]
-
-
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1638078482]
 stream = SubResource("AudioStreamSynchronized_14yb0")
 autoplay = true
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

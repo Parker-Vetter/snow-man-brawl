@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" format=3 uid="uid://d11g2i2t70f5q"]
+
+[ext_resource type="Script" uid="uid://bbpd1xeh0hn4d" path="res://MainGame/Scripts/pickupData.gd" id="1_0r0eh"]
+[ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="2_pdw85"]
+
+[resource]
+script = ExtResource("1_0r0eh")
+sprite = ExtResource("2_pdw85")
+id = &"snow"
+metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"

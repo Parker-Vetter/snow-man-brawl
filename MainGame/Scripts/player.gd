@@ -108,6 +108,6 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			main.switchToPeggleDrop()
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
-	if area.is_in_group("loot"):
-		if area.has_method("collect"):
-			area.collect(main.gameData)
+	if area.is_in_group("pickup"):
+		if area.has_method("pickup"):
+			area.pickup(main.gameData)

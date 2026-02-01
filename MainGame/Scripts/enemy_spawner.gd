@@ -58,7 +58,6 @@ func getRandomPositionOffScreen(margin: float = 100) -> Vector2:
 	return pos
 
 
-
 func spawn():
 	var e = enemies.pick_random()
 	var instance = e.instantiate()
@@ -67,4 +66,5 @@ func spawn():
 	instance.spinSpeed = randf_range(-300, 300)
 	instance.gameData = main.gameData
 	instance.player = player
+	instance.main = main
 	main.add_child.call_deferred(instance)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" format=3 uid="uid://bkig0oboemrtr"]
+
+[ext_resource type="Script" uid="uid://bbpd1xeh0hn4d" path="res://MainGame/Scripts/pickupData.gd" id="1_riolo"]
+[ext_resource type="Texture2D" uid="uid://bdh7xngq5l0dx" path="res://zacks sprites/charcol.png" id="2_51ew6"]
+
+[resource]
+script = ExtResource("1_riolo")
+sprite = ExtResource("2_51ew6")
+id = &"charcoal"
+metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"
