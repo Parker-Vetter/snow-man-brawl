@@ -33,6 +33,13 @@ ProgressBar/colors/font_outline_color = Color(0, 0, 0, 0)
 ProgressBar/styles/background = SubResource("StyleBoxTexture_sut4l")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_e00sl")
 
+[sub_resource type="LabelSettings" id="LabelSettings_sut4l"]
+font = ExtResource("8_sut4l")
+font_size = 89
+font_color = Color(0.9999204, 0.45534766, 0.40057117, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
 [node name="MainGame" type="Node2D" unique_id=253206731]
 script = ExtResource("1_2gnak")
 gameData = ExtResource("2_dql36")
@@ -117,6 +124,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_sut4l")
 theme_override_font_sizes/font_size = 100
 text = "Cold Meter"
+label_settings = SubResource("LabelSettings_sut4l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
