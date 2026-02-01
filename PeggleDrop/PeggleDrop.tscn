@@ -939,7 +939,7 @@ position = Vector2(71, 80)
 scale = Vector2(1.3541666, 1.3541666)
 sprite_frames = SubResource("SpriteFrames_y7ifg")
 autoplay = "default"
-frame_progress = 0.4272402
+frame_progress = 0.86537
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainUI/Control" unique_id=1749986874]
 layout_mode = 0
