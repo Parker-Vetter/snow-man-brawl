@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	if cost > game_data.gold:
-		pass
+		return
 	
 	self.call(function_call)
 	game_data.gold -= cost
@@ -25,5 +25,5 @@ func _on_button_pressed() -> void:
 	level_label.text = str("LV: ", level)
 
 func increase_multiplyer():
-	var index = randi_range(0, game_data.pachinko_multipliers.size())
+	var index = randi_range(0, game_data.pachinko_multipliers.size() - 1)
 	game_data.pachinko_multipliers[index] *= 2
