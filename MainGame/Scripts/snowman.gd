@@ -45,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
-	#splat.play()
+	splat.play()
 	if health <= 0:
 		var drops = number_of_drops * (main.gameData.level if scaleDropsByLevel else 1)
 		for i in range(number_of_drops):

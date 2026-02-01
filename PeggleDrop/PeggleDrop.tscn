@@ -157,6 +157,14 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="Animation" id="Animation_w1oa5"]
+resource_name = "coin"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vbll"]
+_data = {
+&"coin": SubResource("Animation_w1oa5")
+}
+
 [node name="PeggleDrop" type="Node2D" unique_id=411252354 groups=["PeggleDrop"]]
 script = ExtResource("1_i6osx")
 game_data = ExtResource("2_vwwwx")
@@ -1445,6 +1453,10 @@ stream = ExtResource("16_soheg")
 [node name="Button" type="AudioStreamPlayer" parent="." unique_id=134424738]
 unique_name_in_owner = true
 stream = ExtResource("35_g5ori")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1531420062]
+libraries/ = SubResource("AnimationLibrary_4vbll")
+autoplay = &"coin"
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
