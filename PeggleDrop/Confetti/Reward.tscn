@@ -8,6 +8,13 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Curve" id="Curve_kuvm3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.77956986, 1), 0.0, 0.0, 0, 0, Vector2(0.9731183, 0.38255036), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5siql"]
+curve = SubResource("Curve_kuvm3")
+
 [sub_resource type="Gradient" id="Gradient_3mo0e"]
 offsets = PackedFloat32Array(0.3496732, 0.3627451, 0.63071895, 0.64379084)
 colors = PackedColorArray(1, 0.68235296, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.078431375, 0, 1, 1)
@@ -46,6 +53,7 @@ scale_min = 0.25
 scale_max = 0.55
 scale_curve = SubResource("CurveTexture_kuvm3")
 color_ramp = SubResource("GradientTexture1D_5qogq")
+alpha_curve = SubResource("CurveTexture_5siql")
 hue_variation_min = -0.15000002
 hue_variation_max = 0.99999994
 anim_speed_min = 1.5
