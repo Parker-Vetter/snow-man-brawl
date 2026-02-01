@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dthlu0ht7gccm" path="res://PeggleDrop/UI/Box4TextFocus_Good.png" id="2_ww71s"]
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="3_i3ya7"]
 [ext_resource type="Texture2D" uid="uid://b77qnybc6pqve" path="res://PeggleDrop/UI/Box4TextPressed_Good.png" id="4_ifik7"]
+[ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="5_ww71s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5a1w"]
 texture = ExtResource("1_50bw6")
@@ -30,3 +31,6 @@ Button/styles/disabled = SubResource("StyleBoxTexture_v5a1w")
 Button/styles/hover = SubResource("StyleBoxTexture_16844")
 Button/styles/normal = SubResource("StyleBoxTexture_3mfeu")
 Button/styles/pressed = SubResource("StyleBoxTexture_e6yng")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 17
+Label/fonts/font = ExtResource("5_ww71s")

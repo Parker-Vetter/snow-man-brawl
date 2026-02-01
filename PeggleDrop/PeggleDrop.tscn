@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
 [ext_resource type="Texture2D" uid="uid://d0g8u5colu1gc" path="res://zacks sprites/upgrades/snowball_spd.png" id="17_4v74s"]
+[ext_resource type="Theme" uid="uid://ciah220jcbjjf" path="res://MainGame/Resources/ShopButtons.tres" id="17_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
 [ext_resource type="Texture2D" uid="uid://h8p8hbwb8w1o" path="res://zacks sprites/upgrades/snowman_spawn_rate.png" id="19_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bye7la8iirxni" path="res://zacks sprites/masks/snowman_skimask_single.png" id="20_r64bu"]
@@ -905,6 +906,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Increase Multiplier
 Cost: "
 horizontal_alignment = 1
@@ -918,6 +920,7 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -939,6 +942,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5urtc")
 [node name="IncreaseThrowSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1410322552]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Throw Rate"
@@ -954,6 +958,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Throw Rate
 Cost: "
 horizontal_alignment = 1
@@ -967,6 +972,7 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -988,6 +994,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_nyusr")
 [node name="IncreaseDamage" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754702]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowball Damage"
@@ -1003,6 +1010,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Damage
 Cost: "
 horizontal_alignment = 1
@@ -1016,6 +1024,7 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1037,6 +1046,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_g5ori")
 [node name="IncreaseSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754703]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowball Speed"
@@ -1086,6 +1096,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_w1oa5")
 [node name="PlayerSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754704]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Player Move Speed"
@@ -1135,6 +1146,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_4vbll")
 [node name="SnowmanSpawnRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754705]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowman Spawn Rate"
@@ -1184,6 +1196,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_i4ga3")
 [node name="AutoBackpack" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754706]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Auto Backpack"
@@ -1233,6 +1246,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ubeq8")
 [node name="AutoBackpackFireRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754707]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Auto Backpack Fire Rate"
@@ -1282,6 +1296,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_4v74s")
 [node name="ColdResistance" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=498474023]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Cold Resistance"
