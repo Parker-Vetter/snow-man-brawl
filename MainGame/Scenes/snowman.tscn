@@ -39,6 +39,7 @@ speed = 50.0
 drop_table = Array[ExtResource("2_evv83")]([SubResource("Resource_km6eq"), SubResource("Resource_wjyxn"), SubResource("Resource_ny0q6"), SubResource("Resource_gd6m7")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1937764219]
+texture_filter = 1
 position = Vector2(0, -107)
 sprite_frames = ExtResource("1_ih1tb")
 autoplay = "default"

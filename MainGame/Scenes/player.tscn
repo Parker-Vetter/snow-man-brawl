@@ -191,6 +191,7 @@ collision_mask = 2
 script = ExtResource("1_mta5u")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1482828288]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5xoc3")
 animation = &"run"
 autoplay = "idle"
@@ -226,7 +227,7 @@ position = Vector2(89, -150)
 [node name="Timer" type="Timer" parent="BulletOrigin4" unique_id=1136146332]
 
 [node name="arm" type="AnimatedSprite2D" parent="." unique_id=1829775417]
-position = Vector2(4.65, 4.86)
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_f3uyv")
 animation = &"throw"
 frame = 5
