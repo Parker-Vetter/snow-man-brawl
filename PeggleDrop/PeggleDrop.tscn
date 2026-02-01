@@ -1157,6 +1157,10 @@ autoplay = true
 unique_name_in_owner = true
 stream = ExtResource("14_6snom")
 
+[node name="Rewardsound" type="AudioStreamPlayer" parent="." unique_id=1643874680]
+unique_name_in_owner = true
+stream = ExtResource("14_6snom")
+
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MainUI/Control/Fight" to="CanvasLayer/MainUI/Control/Fight" method="_on_pressed"]
