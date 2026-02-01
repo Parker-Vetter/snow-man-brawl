@@ -4,10 +4,7 @@
 
 [resource]
 script = ExtResource("1_lsqfl")
-<<<<<<< HEAD
-=======
 game_length = 15.0
->>>>>>> polish_Plinko
 collected_objects = Dictionary[String, Variant]({
 "carrot": 5,
 "coal": 0,
