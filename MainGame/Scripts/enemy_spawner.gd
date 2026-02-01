@@ -2,6 +2,8 @@ extends Marker2D
 @onready var timer: Timer = $EnemySpawnTimer
 @onready var main: Node2D = $".."
 @onready var player: CharacterBody2D = $"../Player"
+@onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
+@onready var main_game: MainGame = $".."
 
 ## The list of enemies to spawn
 @export var enemies: Array[Resource]
@@ -13,6 +15,7 @@ extends Marker2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawnDelay = 1.0/ main_game.gameData.snowman_spawn_rate
 	timer.wait_time = spawnDelay
 	timer.start()
 	for _i in initialSpawnCount:

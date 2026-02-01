@@ -3,6 +3,10 @@ class_name Player
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var bulletOrigin: Marker2D = $BulletOrigin
+@onready var bullet_origin_1: Marker2D = $BulletOrigin1
+@onready var bullet_origin_2: Marker2D = $BulletOrigin2
+@onready var bullet_origin_3: Marker2D = $BulletOrigin3
+@onready var bullet_origin_4: Marker2D = $BulletOrigin4
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var armSprite: AnimatedSprite2D = $arm
 @onready var main: MainGame = $".."
@@ -11,22 +15,43 @@ class_name Player
 
 #When object enters scene, make a variable pointed to the AudiostreamNode
 @onready var music1: Node = $Music
-
-@export var maxSpeed = 100
 @export var targetDistance = 150
-## Shooting rate in shots per second
-@export var shootDelay: float = 2
+
+
+var maxSpeed: float = 100
+var shootDelay: float = 2
 
 var shootTimer: Timer
 var pendingTarget: Node2D = null
+var pendingAutoTargets: Array[Node2D] = []
 
 func _ready() -> void:
+	var gameData: GameData = main.gameData
+	maxSpeed = gameData.player_move_speed
 	armSprite.frame_changed.connect(_on_arm_frame_changed)
 	shootTimer = Timer.new()
+	shootDelay = 1 / gameData.throw_rate
 	shootTimer.wait_time = shootDelay
 	shootTimer.timeout.connect(_on_shoot_timer_timeout)
 	add_child(shootTimer)
 	shootTimer.start()
+
+	if gameData.unlock_auto_backpack > 0:
+		var timer = bullet_origin_1.get_node("Timer")
+		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
+		timer.start()
+	if gameData.unlock_auto_backpack > 1:
+		var timer = bullet_origin_2.get_node("Timer")
+		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
+		timer.start()
+	if gameData.unlock_auto_backpack > 2:
+		var timer = bullet_origin_3.get_node("Timer")
+		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
+		timer.start()
+	if gameData.unlock_auto_backpack > 3:
+		var timer = bullet_origin_4.get_node("Timer")
+		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
+		timer.start()
 
 func _on_shoot_timer_timeout():
 	var target = get_nearest_enemy()
@@ -55,7 +80,7 @@ func _on_arm_frame_changed():
 		spawn_projectile(pendingTarget)
 		pendingTarget = null
 
-func spawn_projectile(target: Node2D):
+func spawn_projectile(target: Node2D, origin = bulletOrigin):
 	var instance = projectile.instantiate()
 	var shootAngle = position.direction_to(target.global_position).angle()
 	instance.dir = shootAngle - PI / 2
@@ -65,6 +90,7 @@ func spawn_projectile(target: Node2D):
 	instance.spawnPos = position + originPos
 	instance.spawnRot = shootAngle
 	instance.spinSpeed = randf_range(-300, 300)
+	instance.gameData = main.gameData
 	main.add_child.call_deferred(instance)
 
 func _physics_process(_delta: float):
@@ -113,3 +139,38 @@ func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pickup"):
 		if area.has_method("pickup"):
 			area.pickup(self)
+
+func find_nearest_untargeted_enemy() -> Node2D:
+	# Clean up invalid targets
+	for i in range(pendingAutoTargets.size() - 1, -1, -1):
+		if not is_instance_valid(pendingAutoTargets[i]):
+			pendingAutoTargets.remove_at(i)
+	# Find the nearest enemy that is not in the pendingAutoTargets array
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	var nearest: Node2D = null
+	var nearest_dist = INF
+	for enemy in enemies:
+		if not enemy in pendingAutoTargets:
+			var dist = position.distance_to(enemy.position)
+			if dist < nearest_dist:
+				nearest_dist = dist
+				nearest = enemy
+	return nearest
+
+func _on_timer_timeout_BO1() -> void:
+	var target = find_nearest_untargeted_enemy()
+	if target:
+		spawn_projectile(target, bullet_origin_1)
+		pendingAutoTargets.append(target)
+
+func _on_timer_timeout_BO2() -> void:
+	var target = find_nearest_untargeted_enemy()
+	if target:
+		spawn_projectile(target, bullet_origin_2)
+		pendingAutoTargets.append(target)
+
+func _on_timer_timeout_BO3() -> void:
+	var target = find_nearest_untargeted_enemy()
+	if target:
+		spawn_projectile(target, bullet_origin_3)
+		pendingAutoTargets.append(target)
