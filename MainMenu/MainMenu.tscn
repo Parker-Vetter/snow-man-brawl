@@ -424,14 +424,15 @@ uri = "https://zackgoulet.us/"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "-However PArker wants credit"
+text = "-strongrabit"
 
 [node name="LinkButton4" type="LinkButton" parent="Credits/PanelContainer/VBoxContainer" unique_id=259104079]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_colors/font_focus_color = Color(0.6926584, 0.66697776, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "LINK HERE"
+text = "Itch.io"
+uri = "https://strongrabit.itch.io/"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Credits/PanelContainer/VBoxContainer" unique_id=607059925]
 layout_mode = 2
