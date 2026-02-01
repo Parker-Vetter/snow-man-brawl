@@ -117,6 +117,7 @@ func spawn_projectile(target: Node2D, origin: Marker2D = null):
 	instance.spawnRot = shootAngle
 	instance.spinSpeed = randf_range(-300, 300)
 	instance.gameData = main.gameData
+	main.gameData.snow_balls_thrown += 1
 	main.add_child.call_deferred(instance)
 
 func _physics_process(_delta: float):
@@ -161,7 +162,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
 	if area.name == "HitBox":
 		if area.get_parent().is_in_group("enemies"):
-			main.switchToPeggleDrop()
+			main.pause_and_death_menu()
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pickup"):

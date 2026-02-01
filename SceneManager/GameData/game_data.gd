@@ -6,6 +6,9 @@ extends Resource
 
 
 @export var level = 1;
+@export var kills = 0;
+@export var snow_balls_thrown = 0;
+@export var lifetime_pickup = 0;
 @export var resources_needed_to_progress = 10;
 @export var resources_collected_this_level = 0;
 @export var ready_for_level_transition = false;
