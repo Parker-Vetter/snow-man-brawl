@@ -7,10 +7,10 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var ball_holder: Node2D = $BallHolder
 
-@onready var snow: int = game_data.lifetime_collected_objects.get("snow") if game_data.lifetime_collected_objects.has("snow") else 0
-@onready var carrot: int = game_data.lifetime_collected_objects.get("carrot") if game_data.lifetime_collected_objects.has("carrot") else 0
-@onready var coal: int = game_data.lifetime_collected_objects.get("coal") if game_data.lifetime_collected_objects.has("coal") else 0
-@onready var stick: int = game_data.lifetime_collected_objects.get("stick") if game_data.lifetime_collected_objects.has("stick") else 0
+@onready var snow: int = game_data.get_lifetime_collected_object_count("snow")
+@onready var carrot: int = game_data.get_lifetime_collected_object_count("carrot")
+@onready var coal: int = game_data.get_lifetime_collected_object_count("coal")
+@onready var stick: int = game_data.get_lifetime_collected_object_count("stick")
 
 var ball = preload("res://PeggleDrop/Ball/ball.tscn")
 

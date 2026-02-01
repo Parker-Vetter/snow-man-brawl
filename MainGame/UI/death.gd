@@ -24,11 +24,10 @@ func _on_retry_pressed() -> void:
 
 
 func _on_visibility_changed() -> void:
-	
-	set_label(game_data.collected_objects.get("snow"), snow_total)
-	set_label(game_data.collected_objects.get("carrot"), carrot_total)
-	set_label(game_data.collected_objects.get("stick"), stick_total)
-	set_label(game_data.collected_objects.get("coal"), coal_total)
+	set_label(game_data.get_collected_object_count("snow"), snow_total)
+	set_label(game_data.get_collected_object_count("carrot"), carrot_total)
+	set_label(game_data.get_collected_object_count("stick"), stick_total)
+	set_label(game_data.get_collected_object_count("coal"), coal_total)
 	set_label(game_data.kills, kills)
 	set_label(game_data.snow_balls_thrown, snow_balls_thrown)
 	set_label(game_data.level, level_label)

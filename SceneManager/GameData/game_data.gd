@@ -57,8 +57,13 @@ func getUpgradePercentage() -> float:
 
 	return float(actual_upgrades) / float(possible_upgrades)
 
-@export var collected_objects: Dictionary[String, Variant] = {}
 @export var lifetime_collected_objects: Dictionary[String, Variant] = {}
+@export var collected_objects: Dictionary[String, Variant] = {}
+func get_collected_object_count(id: StringName) -> int:
+	return collected_objects.get(id) if collected_objects.has(id) else 0
+func get_lifetime_collected_object_count(id: StringName) -> int:
+	return lifetime_collected_objects.get(id) if lifetime_collected_objects.has(id) else 0
+	
 
 ## Multipliers for each slot in the pachinco machine
 @export var pachinko_multiplier: Array[int] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
