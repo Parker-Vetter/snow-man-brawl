@@ -1154,6 +1154,7 @@ texture = ExtResource("11_tr0iw")
 autoplay = true
 
 [node name="Pegsound" type="AudioStreamPlayer" parent="." unique_id=1219647984]
+unique_name_in_owner = true
 stream = ExtResource("14_6snom")
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
