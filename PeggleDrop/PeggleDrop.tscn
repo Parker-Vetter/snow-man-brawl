@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://djrlek0v8pini" path="res://PeggleDrop/UI/Box4TextDisabled_Good.png" id="14_ybabm"]
 [ext_resource type="Texture2D" uid="uid://bmrb18l2wtmny" path="res://zacks sprites/upgrades/throw_rate.png" id="15_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://dthlu0ht7gccm" path="res://PeggleDrop/UI/Box4TextFocus_Good.png" id="15_ybabm"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
 [ext_resource type="Texture2D" uid="uid://d0g8u5colu1gc" path="res://zacks sprites/upgrades/snowball_spd.png" id="17_4v74s"]
@@ -91,8 +92,18 @@ texture = ExtResource("13_4v74s")
 texture_margin_left = 20.0
 texture_margin_right = 20.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybabm"]
+texture = ExtResource("15_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r64bu"]
 texture = ExtResource("14_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgt64"]
+texture = ExtResource("15_ybabm")
 texture_margin_left = 20.0
 texture_margin_right = 20.0
 
@@ -873,7 +884,9 @@ custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ltn3o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gbixe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ybabm")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_r64bu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pgt64")
 icon_alignment = 1
 vertical_icon_alignment = 2
 expand_icon = true
