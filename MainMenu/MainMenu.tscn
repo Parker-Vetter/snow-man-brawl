@@ -146,4 +146,27 @@ size_flags_vertical = 3
 stream = ExtResource("4_lbqne")
 autoplay = true
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=2135594894]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer3" unique_id=489143068]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_3p42x")
+
+[node name="Label" type="Label" parent="VBoxContainer3/PanelContainer" unique_id=148607963]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Credits:
+
+
+Dr. Nicholas Brinza"
+
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_play_pressed"]
