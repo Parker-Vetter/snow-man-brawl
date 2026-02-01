@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cd488yl4wjt0w"]
 
 [ext_resource type="Script" uid="uid://b16i87gwoim1a" path="res://PeggleDrop/Pegs/peg.gd" id="1_4hbkj"]
-[ext_resource type="Texture2D" uid="uid://cd6nalwnngbbe" path="res://zacks sprites/log_cut.png" id="1_p3i3i"]
+[ext_resource type="Texture2D" uid="uid://cqwx3etramv3r" path="res://zacks sprites/peg.png" id="2_eau7h"]
 [ext_resource type="Texture2D" uid="uid://u0rp7qq6wc56" path="res://zacks sprites/white_circle.png" id="3_eau7h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkvq6"]
@@ -48,10 +48,10 @@ tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.15, 0.3),
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.35, 0.35)]
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -86,7 +86,7 @@ modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.9882353, 0.9882353, 0.9882353, 1)
 position = Vector2(-5.9604645e-07, 0.4999999)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_p3i3i")
+texture = ExtResource("2_eau7h")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=622312229]
 collision_layer = 7
