@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_hgw83")
 sprite = ExtResource("2_4fipc")
+value = 2
 id = &"stick"
 metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"

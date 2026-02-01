@@ -3,9 +3,9 @@ extends RigidBody2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-var value: float = 1
+var value: int = 1
 
-func get_value() -> float:
+func get_value() -> int:
 	return value
 
 func _ready() -> void:

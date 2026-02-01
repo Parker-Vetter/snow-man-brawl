@@ -58,6 +58,4 @@ func pickup(player: Player):
 		player.setMask(data)
 	else:
 		player.main.gameData.add_pickup(data.id)
-	player.main.gameData.add_pickup(data.id)
-	player.main.gameData.lifetime_pickup += 1
 	queue_free()

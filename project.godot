@@ -15,6 +15,10 @@ run/main_scene="uid://tqybgdj5w1vp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dgksxh1ugpsgr"
 
+[autoload]
+
+FloatyNumbers="*uid://bcofsyimqfo5w"
+
 [display]
 
 window/size/viewport_width=1920

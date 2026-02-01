@@ -23,6 +23,7 @@ func add_pickup(id: StringName, amount: int = 1) -> void:
 	collected_objects[id] += amount
 	lifetime_collected_objects[id] += amount
 	resources_collected_this_level += amount
+	lifetime_pickup =+ amount
 	if resources_collected_this_level >= level * 10:
 		ready_for_level_transition = true
 
@@ -102,7 +103,7 @@ var player_move_speed: float:
 		return player_move_speed_upgrades[player_move_speed_upgrade_level]
 
 ## Snowment per second spawn rate
-@export var snowman_spawn_rate_upgrades: Array[float] = [1.0, 1.25, 1.5, 1.75, 2.0]
+@export var snowman_spawn_rate_upgrades: Array[float] = [0.2, 0.5, 1.0, 1.5, 2.0]
 @export var snowman_spawn_rate_upgrade_costs: Array[int] = [1, 10, 100, 1500]
 @export var snowman_spawn_rate_upgrade_level: int = 0;
 var snowman_spawn_rate: float:

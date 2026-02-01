@@ -48,7 +48,7 @@ func take_damage(damage: int) -> void:
 	splat.play()
 	if health <= 0:
 		var drops = number_of_drops * (main.gameData.level if scaleDropsByLevel else 1)
-		for i in range(number_of_drops):
+		for i in range(drops):
 			var drop = drop_table[_internal_drop_table.pick_random()]
 			var pickup = pickupScene.instantiate()
 			pickup.data = drop.data

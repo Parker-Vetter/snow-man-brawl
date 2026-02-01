@@ -14,10 +14,10 @@ extends Node2D
 
 var ball = preload("res://PeggleDrop/Ball/ball.tscn")
 
-@onready var snow_sprite: Texture2D = load("res://zacks sprites/ice chunk.png")
-@onready var carrot_sprite: Texture2D = load("res://zacks sprites/carrot.png")
-@onready var coal_sprite: Texture2D = load("res://zacks sprites/charcol.png")
-@onready var stick_sprite: Texture2D = load("res://zacks sprites/stick.png")
+const CARROT = preload("uid://dmgmjn3ut414j")
+const CHARCOAL = preload("uid://bkig0oboemrtr")
+const SNOW = preload("uid://d11g2i2t70f5q")
+const STICK = preload("uid://dbqk4k3mtkryu")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -28,22 +28,23 @@ func _on_timer_timeout() -> void:
 	var spawner_location = random_spawn_point()
 	
 	if snow > 0:
-		ball_holder.add_child(spawn_new_ball(snow_sprite, spawner_location))
+		ball_holder.add_child(spawn_new_ball(SNOW, spawner_location))
 		snow -= 1
 	elif carrot > 0:
-		ball_holder.add_child(spawn_new_ball(carrot_sprite, spawner_location))
+		ball_holder.add_child(spawn_new_ball(CARROT, spawner_location))
 		carrot -= 1
 	elif coal > 0:
-		ball_holder.add_child(spawn_new_ball(coal_sprite, spawner_location))
+		ball_holder.add_child(spawn_new_ball(CHARCOAL, spawner_location))
 		coal -= 1
 	elif stick > 0:
-		ball_holder.add_child(spawn_new_ball(stick_sprite, spawner_location))
+		ball_holder.add_child(spawn_new_ball(STICK, spawner_location))
 		stick -= 1
 	
 
-func spawn_new_ball(sprite: Texture2D, spawner_location: Vector2) -> Ball:
+func spawn_new_ball(data:PickupData, spawner_location: Vector2) -> Ball:
 	var new_ball: Ball = ball.instantiate()
-	new_ball.set_texture(sprite)
+	new_ball.set_texture(data.sprite)
+	new_ball.value = data.value
 	new_ball.global_position = spawner_location
 	return new_ball
 

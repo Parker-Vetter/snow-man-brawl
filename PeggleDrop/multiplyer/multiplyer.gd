@@ -42,6 +42,7 @@ func _on_body_entered(body: Node2D) -> void:
 			animation_player.play("size")
 		if not reward_sound.playing:
 			reward_sound.play()
+		FloatyNumbers.displayNumber(body.value, gpu_particles_2d.global_position)
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
