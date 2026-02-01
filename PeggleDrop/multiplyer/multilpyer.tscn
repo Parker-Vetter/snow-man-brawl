@@ -5,8 +5,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh36d"]
 size = Vector2(43.33333, 161.33334)
 
-[node name="Multilpyer" type="Area2D" unique_id=1507808476]
+[node name="Multiplyer" type="Area2D" unique_id=1507808476]
 scale = Vector2(1.0584652, 0.93948513)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_nprrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421368833]

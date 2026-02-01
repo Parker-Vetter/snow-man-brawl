@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://cd488yl4wjt0w"]
 
+[ext_resource type="Texture2D" uid="uid://cd6nalwnngbbe" path="res://zacks sprites/log_cut.png" id="1_p3i3i"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkvq6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ef75"]
 
 [node name="Peg" type="StaticBody2D" unique_id=35971241]
+collision_layer = 3
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_gkvq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=11275954]
 shape = SubResource("CircleShape2D_6ef75")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1797126323]
+position = Vector2(-5.9604645e-07, 0.4999999)
+scale = Vector2(0.34375003, 0.328125)
+texture = ExtResource("1_p3i3i")
