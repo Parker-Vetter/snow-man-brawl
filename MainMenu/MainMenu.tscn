@@ -92,6 +92,7 @@ size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=375096444]
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
 text = "Start game"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1142960741]
