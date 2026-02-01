@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
+[ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="13_1sqa4"]
 [ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
@@ -67,8 +68,7 @@ texture = ExtResource("9_jkpds")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sqa4"]
-bg_color = Color(0.30588236, 0.8117647, 0, 0.80784315)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sqa4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8hvx"]
 texture = ExtResource("11_5ypyn")
@@ -768,7 +768,7 @@ offset_left = 0.13899899
 offset_top = -0.37600136
 offset_right = -0.072021484
 offset_bottom = -0.41600037
-theme_override_styles/panel = SubResource("StyleBoxFlat_1sqa4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1sqa4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainUI/Control/Panel" unique_id=420191764]
 layout_mode = 1
@@ -785,8 +785,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_t8hvx")
 
-[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=1557123810]
+[node name="Panel2" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=448867676]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel2" unique_id=1557123810]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 140.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
 text = "Gold: "
@@ -814,6 +824,10 @@ size_flags_vertical = 3
 [node name="IncreaseMultiplier" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=534159630]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("13_1sqa4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.37705222, 0.3812889, 0.3470177, 1)
+theme_override_colors/font_hover_color = Color(0.16392049, 0.18823579, 0.95042735, 1)
 script = ExtResource("11_i8mh4")
 function_call = "increase_multiplyer"
 name_string = "Increase Multiplier"
