@@ -103,25 +103,27 @@ script = ExtResource("1_71vfe")
 speed = 50.0
 drop_table = Array[ExtResource("2_evv83")]([SubResource("Resource_km6eq"), SubResource("Resource_wjyxn"), SubResource("Resource_ny0q6"), SubResource("Resource_gd6m7")])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1937764219]
+[node name="StandardSprite" type="AnimatedSprite2D" parent="." unique_id=1937764219]
 texture_filter = 1
 position = Vector2(0, -107)
 sprite_frames = ExtResource("1_ih1tb")
 autoplay = "default"
 frame_progress = 0.9642842
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1635999727]
+[node name="SkiMaskSprite" type="AnimatedSprite2D" parent="." unique_id=1851706585]
+visible = false
+texture_filter = 1
 position = Vector2(0, -107)
+sprite_frames = SubResource("SpriteFrames_kdqmn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1635999727]
+position = Vector2(1, -96)
 scale = Vector2(0.985, 0.985)
 polygon = PackedVector2Array(15, 8, 46, 20, 51, 85, 33, 108, -32, 107, -53, 81, -54, 30, -25, 8, -41, -22, -35, -48, -24, -63, -35, -92, -23, -107, 19, -108, 28, -90, 20, -68, 13, -61, 36, -44, 37, -12)
 
 [node name="HitBox" type="Area2D" parent="." unique_id=590184770]
+position = Vector2(0, 11)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=398578801]
 position = Vector2(0, -107)
-polygon = PackedVector2Array(15, 8, 46, 20, 51, 85, 33, 108, -32, 107, -53, 81, -54, 30, -25, 8, -41, -22, -35, -48, -24, -63, -35, -92, -23, -107, 19, -108, 28, -90, 20, -68, 13, -61, 36, -44, 37, -12)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1851706585]
-texture_filter = 1
-position = Vector2(0, -107)
-sprite_frames = SubResource("SpriteFrames_kdqmn")
+polygon = PackedVector2Array(15, 8, 46, 20, 58, 51, 51, 85, 33, 108, 3, 115, -32, 107, -53, 81, -59, 54, -54, 30, -25, 8, -42, -21, -37, -47, -28, -64, -37, -91, -24, -113, -3, -119, 18, -112, 28, -90, 26, -70, 13, -61, 36, -44, 37, -11)

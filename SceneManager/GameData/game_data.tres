@@ -4,11 +4,9 @@
 
 [resource]
 script = ExtResource("1_lsqfl")
-game_length = 10.0
 collected_objects = Dictionary[String, Variant]({
 "carrot": 0,
 "coal": 0,
 "snow": 0,
 "stick": 0
 })
-throw_rate = 1

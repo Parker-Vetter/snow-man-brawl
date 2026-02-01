@@ -234,7 +234,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
-radius = 147.03061
+radius = 176.00284
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_14yb0"]
 stream_count = 2
