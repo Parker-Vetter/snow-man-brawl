@@ -7,8 +7,13 @@ extends Node2D
 
 func load_game_state(new_game_data: GameData):
 	gameData = new_game_data
+	gameData.start_level()
 
 
 func switchToPeggleDrop():
 	scene_manager.switch_scene(self, "res://PeggleDrop/PeggleDrop.tscn", gameData)
 	pass
+
+func nextLevel():
+	gameData.next_level()
+	scene_manager.switch_scene(self, "res://MainGame/Scenes/mainGame.tscn", gameData)

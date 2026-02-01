@@ -6,8 +6,11 @@
 [ext_resource type="Script" uid="uid://dhq2qu3bnbfvx" path="res://MainGame/Scripts/enemy_spawner.gd" id="3_nwsis"]
 [ext_resource type="PackedScene" uid="uid://byo57dlvacb22" path="res://MainGame/Scenes/snowman.tscn" id="4_xuvwu"]
 [ext_resource type="PackedScene" uid="uid://bkrpxviudheek" path="res://MainGame/Scenes/player.tscn" id="6_ov1mn"]
-[ext_resource type="Script" uid="uid://bm0e3vy8h7w7" path="res://MainGame/UI/progress.gd" id="7_ov1mn"]
+[ext_resource type="Script" path="res://MainGame/UI/progress.gd" id="7_ov1mn"]
 [ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="8_sut4l"]
+[ext_resource type="Texture2D" uid="uid://rct4gllcrk77" path="res://MainGame/Assets/panel-transparent-center-009.png" id="9_bfb77"]
+[ext_resource type="Script" uid="uid://tqm8icltlbtv" path="res://MainGame/Scenes/level_progress.gd" id="10_e00sl"]
+[ext_resource type="Texture2D" uid="uid://ddeh3jcmmcurh" path="res://MainGame/Assets/panel-001.png" id="11_e00sl"]
 
 [sub_resource type="Gradient" id="Gradient_dql36"]
 colors = PackedColorArray(0.35998482, 0.8036953, 0.94689673, 1, 0.36078432, 0.8039216, 0.94509804, 1)
@@ -35,10 +38,48 @@ ProgressBar/styles/fill = SubResource("StyleBoxTexture_e00sl")
 
 [sub_resource type="LabelSettings" id="LabelSettings_sut4l"]
 font = ExtResource("8_sut4l")
-font_size = 89
+font_size = 52
 font_color = Color(0.9999204, 0.45534766, 0.40057117, 1)
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_p0f38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0sind"]
+resource_name = "pulse"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.37, 0.75),
+"transitions": PackedFloat32Array(1, 1, -0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.19, 1.19), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jl2u"]
+_data = {
+&"RESET": SubResource("Animation_p0f38"),
+&"pulse": SubResource("Animation_0sind")
+}
 
 [node name="MainGame" type="Node2D" unique_id=253206731]
 script = ExtResource("1_2gnak")
@@ -63,9 +104,12 @@ position = Vector2(960, 539)
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=977657682]
 layout_mode = 3
-anchors_preset = 15
+anchor_left = -0.018000001
+anchor_top = -0.010000001
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 34.56
+offset_top = 10.800001
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -75,12 +119,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033
 anchor_top = 0.037
-anchor_right = 0.29200003
-anchor_bottom = 0.23700002
+anchor_right = 0.25800002
+anchor_bottom = 0.120000005
 offset_left = 0.6399994
 offset_top = 0.040000916
-offset_right = 0.35992432
-offset_bottom = 0.039978027
+offset_right = -0.3600464
+offset_bottom = 0.3999939
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Panel" unique_id=404405502]
 layout_mode = 1
@@ -117,6 +161,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.16799927
+offset_top = -4.014
+offset_right = 0.16799927
+offset_bottom = 25.014015
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9438594, 0, 0.15086222, 1)
@@ -127,6 +175,128 @@ text = "Cold Meter"
 label_settings = SubResource("LabelSettings_sut4l")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control" unique_id=1227581803]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -438.5
+offset_top = -57.90503
+offset_right = 438.5
+offset_bottom = -7.9101563
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_bfb77")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/NinePatchRect" unique_id=896114383]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 9.995239
+offset_right = -10.0
+offset_bottom = -9.995239
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_p0f38")
+show_percentage = false
+script = ExtResource("10_e00sl")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/NinePatchRect" unique_id=1757035351]
+layout_mode = 1
+offset_left = 4.5
+offset_top = -43.099976
+offset_right = 256.5
+offset_bottom = 14.900024
+pivot_offset = Vector2(107, 14)
+theme_override_colors/font_color = Color(0.9438594, 0, 0.15086222, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_sut4l")
+theme_override_font_sizes/font_size = 43
+text = "Level Progress"
+label_settings = SubResource("LabelSettings_sut4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/Control/NinePatchRect" unique_id=925291464]
+layout_mode = 1
+offset_left = 699.5
+offset_top = -41.099976
+offset_right = 874.5
+offset_bottom = 16.900024
+pivot_offset = Vector2(252, 29)
+theme_override_colors/font_color = Color(0.9438594, 0, 0.15086222, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_sut4l")
+theme_override_font_sizes/font_size = 43
+text = "Level 100"
+label_settings = SubResource("LabelSettings_sut4l")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LevelReadyButton" type="NinePatchRect" parent="CanvasLayer/Control/NinePatchRect" unique_id=250741383]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_e00sl")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="ButtonHoldProgress" type="ProgressBar" parent="CanvasLayer/Control/NinePatchRect/LevelReadyButton" unique_id=1468914782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = -0.0949707
+offset_right = 0.5
+offset_bottom = -0.08984375
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_p0f38")
+fill_mode = 3
+show_percentage = false
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/NinePatchRect/LevelReadyButton" unique_id=46929802]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = -0.080000006
+anchor_right = 0.64400005
+anchor_bottom = 1.08
+offset_left = -15.712006
+offset_top = 9.904619
+offset_right = 15.711975
+offset_bottom = 9.910564
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(107, 14)
+theme_override_colors/font_color = Color(0.9438594, 0, 0.15086222, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_sut4l")
+theme_override_font_sizes/font_size = 43
+text = "Hold Mouse Button"
+label_settings = SubResource("LabelSettings_sut4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/NinePatchRect/LevelReadyButton/Label3" unique_id=1384432871]
+libraries/ = SubResource("AnimationLibrary_7jl2u")
+autoplay = &"pulse"
 
 [node name="TimeLeft" type="Timer" parent="." unique_id=1370640309]
 

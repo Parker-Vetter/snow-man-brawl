@@ -7,15 +7,21 @@ var multiplyer: int = 1
 @export var index: int
 @export var gameData: GameData
 
+var currentMult = multiplyer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:
 	if not gameData:
-		return ;
+		return
 	multiplyer = gameData.pachinko_multipliers[index]
 	label.text = str(multiplyer) + "X"
+	if currentMult != multiplyer:
+		currentMult = multiplyer
+		#playAnimation for index
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
