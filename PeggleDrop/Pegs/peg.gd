@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var animation_tree: AnimationPlayer = $AnimationPlayer
-
+@onready var peg_sound: AudioStreamPlayer = %Pegsound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,3 +19,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		if not animation_tree.is_playing():
 			animation_tree.play("bounce")
+		if !peg_sound.playing:
+			peg_sound.play()
+			

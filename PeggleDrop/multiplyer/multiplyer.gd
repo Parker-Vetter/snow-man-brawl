@@ -5,9 +5,12 @@ var multiplyer: int = 1
 @onready var label: Label = $Label
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var reward_sound: AudioStreamPlayer = %Rewardsound
+
 
 @export var index: int
 @export var gameData: GameData
+
 
 var currentMult = multiplyer
 
@@ -37,7 +40,8 @@ func _on_body_entered(body: Node2D) -> void:
 			gpu_particles_2d.emitting = true
 		if not animation_player.is_playing():
 			animation_player.play("size")
-		
+		if not reward_sound.playing:
+			reward_sound.play()
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

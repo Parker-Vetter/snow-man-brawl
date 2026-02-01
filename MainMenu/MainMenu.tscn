@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_b76km"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="3_nxm3p"]
 [ext_resource type="Texture2D" uid="uid://qet0q4yoy4by" path="res://zacks sprites/title_blue.png" id="4_g1826"]
-[ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
 [ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="5_3p42x"]
 [ext_resource type="Texture2D" uid="uid://c56y5vxw6vo16" path="res://zacks sprites/title_text.png" id="5_npjie"]
 [ext_resource type="Texture2D" uid="uid://difrmva7ayk5q" path="res://zacks sprites/title_snowmen.png" id="6_7t2hb"]
 [ext_resource type="Texture2D" uid="uid://bfjigoc7jc3gj" path="res://zacks sprites/title_guy.png" id="7_gej64"]
+[ext_resource type="AudioStream" uid="uid://d18eggvb2qv12" path="res://MainMenu/Title Screen theme.wav" id="11_nxm3p"]
 
 [sub_resource type="Animation" id="Animation_nxm3p"]
 length = 0.001
@@ -343,7 +343,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Plinko(earlyDraft)" type="AudioStreamPlayer" parent="." unique_id=722486214]
-stream = ExtResource("4_lbqne")
+stream = ExtResource("11_nxm3p")
 autoplay = true
 
 [node name="Credits" type="VBoxContainer" parent="." unique_id=2135594894]

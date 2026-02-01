@@ -4,6 +4,7 @@ extends Node
 @onready var ball_spawner: Node = $BallSpawner
 @onready var upgrades_panel: Control = $CanvasLayer/UpgradesPanel
 
+
 #const GAME_DATA_PATH := "res://SceneManager/GameData/game_data.tres"
 @export var game_data: GameData
 
