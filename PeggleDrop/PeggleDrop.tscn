@@ -914,11 +914,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel2" unique_id=1557123810]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 48.0
-offset_right = 140.0
-offset_bottom = 103.0
+offset_right = 2.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

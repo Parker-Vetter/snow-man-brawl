@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dx6v36ecoksvj" path="res://MainGame/Scripts/player.gd" id="1_mta5u"]
 [ext_resource type="Texture2D" uid="uid://drhmw0seqyp60" path="res://MainGame/Assets/player-Sheet.png" id="2_mta5u"]
-[ext_resource type="Texture2D" uid="uid://dosvrq2iqensl" path="res://godot_mask.png" id="5_gbkh0"]
-[ext_resource type="Texture2D" uid="uid://dvthya88r48s" path="res://zacks sprites/masks/snowman_skimask.png" id="6_6dxmd"]
+[ext_resource type="Texture2D" uid="uid://4ktaaroi6pxx" path="res://zacks sprites/masks/godotmask_player.png" id="3_gbkh0"]
+[ext_resource type="Texture2D" uid="uid://cbcpo3g5yxcs6" path="res://zacks sprites/masks/skimask_player.png" id="4_6dxmd"]
 [ext_resource type="AudioStream" uid="uid://bj85dpgjq06bh" path="res://MainGame/Effects/impact.mp3" id="7_jj37f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw3ce"]
@@ -237,6 +237,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
 radius = 176.00284
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kw36"]
+atlas = ExtResource("4_6dxmd")
+region = Rect2(0, 0, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2chul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kw36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1210048637]
 collision_mask = 2
 script = ExtResource("1_mta5u")
@@ -311,16 +326,17 @@ shape = SubResource("CircleShape2D_t35mx")
 
 [node name="godot_mask" type="Sprite2D" parent="Masks" unique_id=705814937]
 visible = false
-position = Vector2(-4.000003, -71.00001)
-scale = Vector2(0.6875, 0.68749994)
-texture = ExtResource("5_gbkh0")
-
-[node name="ski_mask" type="Sprite2D" parent="Masks" unique_id=1103373884]
-visible = false
-position = Vector2(-2, -61)
-texture = ExtResource("6_6dxmd")
+texture_filter = 1
+position = Vector2(2.000001, -75)
+scale = Vector2(1.384375, 1.384375)
+texture = ExtResource("3_gbkh0")
 region_enabled = true
-region_rect = Rect2(744, 8, 80, 80)
+region_rect = Rect2(64, 0, 96, 80)
+
+[node name="ski_mask" type="AnimatedSprite2D" parent="Masks" unique_id=1667834082]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2chul")
+autoplay = "default"
 
 [node name="Impact" type="AudioStreamPlayer" parent="." unique_id=1749451526]
 stream = ExtResource("7_jj37f")

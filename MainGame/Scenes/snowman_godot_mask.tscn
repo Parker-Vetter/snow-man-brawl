@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://bmmmaippun6sc" path="res://MainGame/Scripts/drop_table_entry.gd" id="2_lck5g"]
 [ext_resource type="Resource" uid="uid://ddarl48f8f4ob" path="res://Resources/godot_mask.tres" id="3_lck5g"]
 [ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="4_gax2n"]
-[ext_resource type="Texture2D" uid="uid://dvthya88r48s" path="res://zacks sprites/masks/snowman_skimask.png" id="5_u2mei"]
-[ext_resource type="Texture2D" uid="uid://dosvrq2iqensl" path="res://godot_mask.png" id="6_ft7nw"]
+[ext_resource type="Texture2D" uid="uid://c1crf7hrfrjk7" path="res://zacks sprites/masks/godotmask_snowman.png" id="5_lck5g"]
 [ext_resource type="AudioStream" uid="uid://ctue4op1kwntv" path="res://MainGame/Effects/splat.mp3" id="7_ft7nw"]
 
 [sub_resource type="Resource" id="Resource_eqmxu"]
@@ -13,64 +12,64 @@ script = ExtResource("2_lck5g")
 data = ExtResource("3_lck5g")
 metadata/_custom_type_script = "uid://bmmmaippun6sc"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v856i"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft7nw"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(0, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ed2yh"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gax2n"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(225, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6bnow"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2mei"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(450, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_km6eq"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ke2e"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(675, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjyxn"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6a15"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(900, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ny0q6"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja8sq"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(1125, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd6m7"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c42rl"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(1350, 0, 225, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcylk"]
-atlas = ExtResource("5_u2mei")
+[sub_resource type="AtlasTexture" id="AtlasTexture_irsf2"]
+atlas = ExtResource("5_lck5g")
 region = Rect2(1575, 0, 225, 250)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kdqmn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u554k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v856i")
+"texture": SubResource("AtlasTexture_ft7nw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ed2yh")
+"texture": SubResource("AtlasTexture_gax2n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6bnow")
+"texture": SubResource("AtlasTexture_u2mei")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_km6eq")
+"texture": SubResource("AtlasTexture_7ke2e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wjyxn")
+"texture": SubResource("AtlasTexture_j6a15")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ny0q6")
+"texture": SubResource("AtlasTexture_ja8sq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gd6m7")
+"texture": SubResource("AtlasTexture_c42rl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lcylk")
+"texture": SubResource("AtlasTexture_irsf2")
 }],
 "loop": true,
 "name": &"default",
@@ -92,15 +91,11 @@ sprite_frames = ExtResource("4_gax2n")
 autoplay = "default"
 frame_progress = 0.9642842
 
-[node name="SkiMaskSprite" type="AnimatedSprite2D" parent="." unique_id=1851706585]
-visible = false
+[node name="GodotMask" type="AnimatedSprite2D" parent="." unique_id=1923042245]
 texture_filter = 1
 position = Vector2(0, -107)
-sprite_frames = SubResource("SpriteFrames_kdqmn")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1702955660]
-position = Vector2(-5, -195)
-texture = ExtResource("6_ft7nw")
+sprite_frames = SubResource("SpriteFrames_u554k")
+autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1635999727]
 position = Vector2(1, -96)
