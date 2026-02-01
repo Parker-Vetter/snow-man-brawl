@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccajtuehxuerd" path="res://MainGame/Scripts/pickup.gd" id="1_k2ada"]
 [ext_resource type="Resource" uid="uid://dmgmjn3ut414j" path="res://Resources/carrot.tres" id="2_rb21g"]
 [ext_resource type="Texture2D" uid="uid://bhtnlv6jiyhvy" path="res://zacks sprites/carrot.png" id="3_d1246"]
+[ext_resource type="AudioStream" uid="uid://nydqdr0vgc2d" path="res://MainGame/Effects/21.ogg" id="4_d1246"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns4mr"]
 radius = 30.066593
@@ -17,3 +18,6 @@ texture = ExtResource("3_d1246")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96335803]
 shape = SubResource("CircleShape2D_ns4mr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=85770939]
+stream = ExtResource("4_d1246")

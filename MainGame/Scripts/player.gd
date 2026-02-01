@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var bulletOrigin: Marker2D = $BulletOrigin
 @onready var sprite: AnimatedSprite2D = $Sprite2D
@@ -91,15 +93,15 @@ func _physics_process(_delta: float):
 		sprite.play("idle")
 		sprite.speed_scale = 1.0
 	# Every frame, check velocity of Player. If moving, make one stream loud other quiett. If still, reverse.
-	if velocity == Vector2(0,0):
+	if velocity == Vector2(0, 0):
 		#moving = false
-		music1.stream.set_sync_stream_volume(0,0)
-		music1.stream.set_sync_stream_volume(1,-64)
+		music1.stream.set_sync_stream_volume(0, 0)
+		music1.stream.set_sync_stream_volume(1, -64)
 		
-	if velocity > Vector2(0,0):
+	if velocity > Vector2(0, 0):
 		#moving = true
-		music1.stream.set_sync_stream_volume(1,0)
-		music1.stream.set_sync_stream_volume(0,-64)
+		music1.stream.set_sync_stream_volume(1, 0)
+		music1.stream.set_sync_stream_volume(0, -64)
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
@@ -110,4 +112,4 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pickup"):
 		if area.has_method("pickup"):
-			area.pickup(main.gameData)
+			area.pickup(self)

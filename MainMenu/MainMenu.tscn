@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://di77pwiydkbmm"]
 
 [ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
-[ext_resource type="Shader" uid="uid://u4wuh4c7otrq" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
+[ext_resource type="Shader" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
 [ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_b76km"]
+[ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b76km"]
 shader = ExtResource("2_cruaa")
@@ -101,5 +102,9 @@ size_flags_vertical = 3
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Plinko(earlyDraft)" type="AudioStreamPlayer" parent="." unique_id=722486214]
+stream = ExtResource("4_lbqne")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button" to="." method="_on_play_pressed"]
