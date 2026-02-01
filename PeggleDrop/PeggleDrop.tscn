@@ -9,7 +9,8 @@
 [ext_resource type="Script" uid="uid://dp6ytw3x7kwni" path="res://PeggleDrop/UI/ui_fight.gd" id="4_gh36d"]
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
-[ext_resource type="Script" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(138, 1120)
@@ -756,13 +757,19 @@ script = ExtResource("8_6ap7j")
 metadata/_edit_use_anchors_ = true
 
 [node name="UpgradesButton" type="Button" parent="CanvasLayer" unique_id=305705465]
-offset_left = 158.0
-offset_top = 17.0
-offset_right = 303.0
-offset_bottom = 55.0
+anchors_preset = -1
+anchor_left = 0.082
+anchor_top = 0.016
+anchor_right = 0.158
+anchor_bottom = 0.052
+offset_left = 0.55999756
+offset_top = -0.2800007
+offset_right = -0.36001587
+offset_bottom = -1.1599998
 text = "Upgrades"
 
 [node name="UpgradesPanel" type="Control" parent="CanvasLayer" unique_id=878501999]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -810,14 +817,21 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.374
 anchor_bottom = 0.40600002
-offset_left = 732.0
-offset_top = 427.0
-offset_right = 166.91998
-offset_bottom = 106.51999
+offset_left = 189.0
+offset_top = 728.0
+offset_right = -376.08002
+offset_bottom = 407.52
 text = "Increase Multiplier"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=499570857]
 position = Vector2(960, 544)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003005771]
+self_modulate = Color(0.69803923, 0.69803923, 0.69803923, 1)
+z_index = -10
+position = Vector2(804, 548)
+scale = Vector2(1.25625, 1.5222223)
+texture = ExtResource("11_tr0iw")
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]

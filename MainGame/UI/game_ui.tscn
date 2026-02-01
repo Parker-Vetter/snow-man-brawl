@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://lk1mrp4gwtlw"]
+[gd_scene format=3 uid="uid://bf8h3dbxw2w47"]
 
 [ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="1_ohpph"]
 
@@ -9,25 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Timerholder" type="PanelContainer" parent="." unique_id=1199864755]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -103.0
-offset_top = -149.0
-offset_right = 103.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("1_ohpph")
-
-[node name="TimeRemaining" type="Label" parent="Timerholder" unique_id=1167308340]
-layout_mode = 2
-theme_override_font_sizes/font_size = 39
-text = "# here for time remain"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2037837285]
 layout_mode = 1
