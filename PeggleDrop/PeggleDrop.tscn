@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
 [ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Texture2D" uid="uid://cbwaqhvttn342" path="res://PeggleDrop/UI/Plaid.png" id="9_jkpds"]
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
@@ -59,6 +60,11 @@ size = Vector2(63.99999, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y353"]
 size = Vector2(63.99999, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ypyn"]
+texture = ExtResource("9_jkpds")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4y353"]
 texture = ExtResource("12_6snom")
@@ -724,6 +730,7 @@ offset_top = 0.08000004
 offset_right = 0.9199219
 offset_bottom = 5.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ypyn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fight" type="Button" parent="CanvasLayer/MainUI/Control" unique_id=332640463]
