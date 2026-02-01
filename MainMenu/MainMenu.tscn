@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
 [ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="5_3p42x"]
 [ext_resource type="Texture2D" uid="uid://c56y5vxw6vo16" path="res://zacks sprites/title_text.png" id="5_npjie"]
-[ext_resource type="Texture2D" uid="uid://difrmva7ayk5q" path="res://zacks sprites/title_snowman.png" id="6_7t2hb"]
+[ext_resource type="Texture2D" uid="uid://difrmva7ayk5q" path="res://zacks sprites/title_snowmen.png" id="6_7t2hb"]
 [ext_resource type="Texture2D" uid="uid://bfjigoc7jc3gj" path="res://zacks sprites/title_guy.png" id="7_gej64"]
 
 [sub_resource type="Animation" id="Animation_nxm3p"]

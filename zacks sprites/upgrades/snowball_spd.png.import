@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://difrmva7ayk5q"
-path="res://.godot/imported/title_snowman.png-b15545012962712f4c80ebc4ed6febe9.ctex"
+uid="uid://d0g8u5colu1gc"
+path="res://.godot/imported/snowball_spd.png-08ddd975840215d79be3afc57fcca315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://zacks sprites/title_snowman.png"
-dest_files=["res://.godot/imported/title_snowman.png-b15545012962712f4c80ebc4ed6febe9.ctex"]
+source_file="res://zacks sprites/upgrades/snowball_spd.png"
+dest_files=["res://.godot/imported/snowball_spd.png-08ddd975840215d79be3afc57fcca315.ctex"]
 
 [params]
 
