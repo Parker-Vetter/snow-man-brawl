@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dthlu0ht7gccm" path="res://PeggleDrop/UI/Box4TextFocus_Good.png" id="15_ybabm"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
+[ext_resource type="Texture2D" uid="uid://bef5febt0bmm2" path="res://PeggleDrop/UI/coin.png" id="16_w1oa5"]
 [ext_resource type="Texture2D" uid="uid://d0g8u5colu1gc" path="res://zacks sprites/upgrades/snowball_spd.png" id="17_4v74s"]
 [ext_resource type="Theme" uid="uid://ciah220jcbjjf" path="res://MainGame/Resources/ShopButtons.tres" id="17_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
@@ -881,6 +882,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pgt64")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel" unique_id=1932958152]
+position = Vector2(67, 70.5)
+scale = Vector2(1.375, 1.40625)
+texture = ExtResource("16_w1oa5")
+hframes = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainUI/Control" unique_id=1749986874]
 layout_mode = 0
