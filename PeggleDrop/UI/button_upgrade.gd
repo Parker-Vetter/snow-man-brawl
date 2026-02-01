@@ -8,6 +8,7 @@ extends Button
 @onready var game_data: GameData = peggle_drop.game_data
 @onready var name_label: Label = $Name
 @onready var level_label: Label = $Level
+@onready var button_sound:AudioStreamPlayer =%Button
 
 var upgrade_costs: Array[int];
 
@@ -32,6 +33,7 @@ func _on_button_pressed() -> void:
 	game_data.gold -= cost
 	self.call(function_call)
 	update_ui()
+	button_sound.play()
 	
 func disable_if_needed():
 	if level >= upgrade_costs.size() - 1 or cost > game_data.gold:

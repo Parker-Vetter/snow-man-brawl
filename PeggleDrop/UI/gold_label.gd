@@ -1,6 +1,6 @@
 extends Label
 
-@onready var peggle_drop: PeggleDrop = $"../../../../.."
+@onready var peggle_drop: PeggleDrop = $"../../../../../../.."
 
 
 # Called when the node enters the scene tree for the first time.

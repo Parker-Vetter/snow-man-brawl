@@ -10,12 +10,32 @@
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
 [ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Texture2D" uid="uid://cbwaqhvttn342" path="res://PeggleDrop/UI/Plaid.png" id="9_jkpds"]
+[ext_resource type="Texture2D" uid="uid://dy671a552pkyn" path="res://PeggleDrop/UI/FBox4Text_Good.png" id="10_5urtc"]
+[ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="10_nyusr"]
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
+[ext_resource type="Texture2D" uid="uid://bvpeuflu7f4i6" path="res://PeggleDrop/UI/FBox4TextPressed_Good.png" id="11_nyusr"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
+[ext_resource type="Texture2D" uid="uid://dphohpupj2t0k" path="res://PeggleDrop/UI/FBox4TextHover_Good.png" id="12_g5ori"]
+[ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="12_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://b77qnybc6pqve" path="res://PeggleDrop/UI/Box4TextPressed_Good.png" id="13_4v74s"]
+[ext_resource type="Texture2D" uid="uid://dw7c7u2qr47yh" path="res://zacks sprites/upgrades/backpack.png" id="14_3d5s5"]
 [ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
+[ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://djrlek0v8pini" path="res://PeggleDrop/UI/Box4TextDisabled_Good.png" id="14_ybabm"]
+[ext_resource type="Texture2D" uid="uid://bmrb18l2wtmny" path="res://zacks sprites/upgrades/throw_rate.png" id="15_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://dthlu0ht7gccm" path="res://PeggleDrop/UI/Box4TextFocus_Good.png" id="15_ybabm"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
+[ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
+[ext_resource type="Texture2D" uid="uid://bef5febt0bmm2" path="res://PeggleDrop/UI/coin.png" id="16_w1oa5"]
+[ext_resource type="Texture2D" uid="uid://d0g8u5colu1gc" path="res://zacks sprites/upgrades/snowball_spd.png" id="17_4v74s"]
+[ext_resource type="Theme" uid="uid://ciah220jcbjjf" path="res://MainGame/Resources/ShopButtons.tres" id="17_gbixe"]
+[ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
+[ext_resource type="Texture2D" uid="uid://h8p8hbwb8w1o" path="res://zacks sprites/upgrades/snowman_spawn_rate.png" id="19_gbixe"]
+[ext_resource type="Texture2D" uid="uid://bye7la8iirxni" path="res://zacks sprites/masks/snowman_skimask_single.png" id="20_r64bu"]
+[ext_resource type="AudioStream" uid="uid://bogbaacsc71vf" path="res://PeggleDrop/UI/Button Press.ogg" id="35_g5ori"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(138, 1120)
@@ -60,12 +80,90 @@ size = Vector2(63.99999, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y353"]
 size = Vector2(63.99999, 23)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ypyn"]
+texture = ExtResource("9_jkpds")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1kvh"]
+texture = ExtResource("10_5urtc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7ifg"]
+texture = ExtResource("11_nyusr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw20y"]
+texture = ExtResource("12_g5ori")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sqa4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgt64"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltn3o"]
+texture = ExtResource("12_ltn3o")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbixe"]
+texture = ExtResource("13_4v74s")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybabm"]
+texture = ExtResource("15_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r64bu"]
+texture = ExtResource("14_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgt64"]
+texture = ExtResource("15_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5urtc"]
+texture = ExtResource("14_ltn3o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyusr"]
+texture = ExtResource("15_ltn3o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5ori"]
+texture = ExtResource("16_ubeq8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1oa5"]
+texture = ExtResource("17_4v74s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4vbll"]
+texture = ExtResource("18_ybabm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4ga3"]
+texture = ExtResource("19_gbixe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ubeq8"]
+texture = ExtResource("14_3d5s5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4v74s"]
+texture = ExtResource("14_3d5s5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6jgu"]
+texture = ExtResource("20_r64bu")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4y353"]
 texture = ExtResource("12_6snom")
 texture_margin_left = 3.0
 texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
+
+[sub_resource type="Animation" id="Animation_w1oa5"]
+resource_name = "coin"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vbll"]
+_data = {
+&"coin": SubResource("Animation_w1oa5")
+}
 
 [node name="PeggleDrop" type="Node2D" unique_id=411252354 groups=["PeggleDrop"]]
 script = ExtResource("1_i6osx")
@@ -724,6 +822,7 @@ offset_top = 0.08000004
 offset_right = 0.9199219
 offset_bottom = 5.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ypyn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fight" type="Button" parent="CanvasLayer/MainUI/Control" unique_id=332640463]
@@ -737,7 +836,11 @@ offset_left = -0.032001495
 offset_top = -0.036010742
 offset_right = 0.09197998
 offset_bottom = -0.10803223
+theme_override_fonts/font = ExtResource("10_nyusr")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_o1kvh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y7ifg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bw20y")
 text = "Fight"
 script = ExtResource("4_gh36d")
 metadata/_edit_use_anchors_ = true
@@ -753,14 +856,29 @@ offset_left = 0.13899899
 offset_top = -0.37600136
 offset_right = -0.072021484
 offset_bottom = -0.41600037
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1sqa4")
 
-[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel" unique_id=1557123810]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainUI/Control/Panel" unique_id=420191764]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=448867676]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel2" unique_id=1557123810]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 140.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
 text = "Gold: "
 horizontal_alignment = 1
@@ -768,20 +886,44 @@ vertical_alignment = 1
 script = ExtResource("8_6ap7j")
 metadata/_edit_use_anchors_ = true
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=903418200]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pgt64")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel" unique_id=1932958152]
+position = Vector2(67, 70.5)
+scale = Vector2(1.375, 1.40625)
+texture = ExtResource("16_w1oa5")
+hframes = 5
+
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainUI/Control" unique_id=1749986874]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 177.0
 offset_right = 296.0
-offset_bottom = 889.0
+offset_bottom = 898.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainUI/Control/ScrollContainer" unique_id=1435883040]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1773839881]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="IncreaseMultiplier" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=534159630]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ltn3o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gbixe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ybabm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r64bu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pgt64")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
 script = ExtResource("11_i8mh4")
 function_call = "increase_multiplyer"
 name_string = "Increase Multiplier"
@@ -797,6 +939,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Increase Multiplier
 Cost: "
 horizontal_alignment = 1
@@ -810,13 +953,29 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseMultiplier" unique_id=1881204957]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5urtc")
+
 [node name="IncreaseThrowSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1410322552]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Throw Rate"
@@ -832,6 +991,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Throw Rate
 Cost: "
 horizontal_alignment = 1
@@ -845,13 +1005,29 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseThrowSpeed" unique_id=113991450]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nyusr")
+
 [node name="IncreaseDamage" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754702]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowball Damage"
@@ -867,6 +1043,7 @@ offset_left = -0.12000275
 offset_right = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "Damage
 Cost: "
 horizontal_alignment = 1
@@ -880,13 +1057,29 @@ anchor_right = 0.2
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("17_gbixe")
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseDamage" unique_id=749668918]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_g5ori")
+
 [node name="IncreaseSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754703]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowball Speed"
@@ -919,9 +1112,24 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseSpeed" unique_id=1033713579]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_w1oa5")
+
 [node name="PlayerSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754704]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Player Move Speed"
@@ -954,9 +1162,24 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/PlayerSpeed" unique_id=1671516854]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4vbll")
+
 [node name="SnowmanSpawnRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754705]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Snowman Spawn Rate"
@@ -989,9 +1212,24 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/SnowmanSpawnRate" unique_id=356301385]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i4ga3")
+
 [node name="AutoBackpack" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754706]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Auto Backpack"
@@ -1024,9 +1262,24 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpack" unique_id=674455971]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ubeq8")
+
 [node name="AutoBackpackFireRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754707]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Auto Backpack Fire Rate"
@@ -1059,9 +1312,24 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpackFireRate" unique_id=1862018368]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4v74s")
+
 [node name="ColdResistance" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=498474023]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
+theme = ExtResource("17_gbixe")
 script = ExtResource("11_i8mh4")
 function_call = "increase_basic_level"
 name_string = "Cold Resistance"
@@ -1093,6 +1361,24 @@ grow_vertical = 2
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/ColdResistance" unique_id=1494046483]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h6jgu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1139948070]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="UpgradesButton" type="Button" parent="CanvasLayer" unique_id=305705465]
 visible = false
@@ -1163,6 +1449,14 @@ stream = ExtResource("14_6snom")
 [node name="Rewardsound" type="AudioStreamPlayer" parent="." unique_id=1643874680]
 unique_name_in_owner = true
 stream = ExtResource("16_soheg")
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=134424738]
+unique_name_in_owner = true
+stream = ExtResource("35_g5ori")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1531420062]
+libraries/ = SubResource("AnimationLibrary_4vbll")
+autoplay = &"coin"
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
