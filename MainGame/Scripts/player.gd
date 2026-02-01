@@ -107,6 +107,7 @@ func spawn_projectile(target: Node2D, origin: Marker2D = null):
 	if origin == null:
 		origin = bulletOrigin
 	var instance = projectile.instantiate()
+	instance.main = main
 	var shootAngle = position.direction_to(target.global_position).angle()
 	instance.dir = shootAngle - PI / 2
 	var originPos = origin.position

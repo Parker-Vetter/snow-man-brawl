@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scripts/snowman.gd" id="1_bnixn"]
 [ext_resource type="Script" uid="uid://bmmmaippun6sc" path="res://MainGame/Scripts/drop_table_entry.gd" id="2_0n1fg"]
 [ext_resource type="Resource" uid="uid://byx4sltc2ddcj" path="res://Resources/ski_mask.tres" id="3_4j0po"]
+[ext_resource type="AudioStream" uid="uid://ctue4op1kwntv" path="res://MainGame/Effects/splat.mp3" id="6_rvbdb"]
 [ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="7_uh4vn"]
 [ext_resource type="Texture2D" uid="uid://dvthya88r48s" path="res://zacks sprites/masks/snowman_skimask.png" id="8_re8tw"]
 
@@ -107,3 +108,6 @@ position = Vector2(0, 11)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=398578801]
 position = Vector2(0, -107)
 polygon = PackedVector2Array(15, 8, 46, 20, 58, 51, 51, 85, 33, 108, 3, 115, -32, 107, -53, 81, -59, 54, -54, 30, -25, 8, -42, -21, -37, -47, -28, -64, -37, -91, -24, -113, -3, -119, 18, -112, 28, -90, 26, -70, 13, -61, 36, -44, 37, -11)
+
+[node name="Splat" type="AudioStreamPlayer" parent="." unique_id=2054200261]
+stream = ExtResource("6_rvbdb")

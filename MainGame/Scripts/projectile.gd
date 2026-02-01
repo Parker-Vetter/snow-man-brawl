@@ -6,6 +6,8 @@ var spawnRot: float
 var spinSpeed: float
 var damage: float
 var gameData: GameData
+var main: MainGame
+@onready var impact = load("res://MainGame/Scenes/Impact.tscn")
 
 func _ready() -> void:
 	global_position = spawnPos
@@ -23,6 +25,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
+		var instance = impact.instantiate()
+		instance.global_position = global_position
+		instance.rotation = rotation
+		main.add_child.call_deferred(instance)
+		
 		if body.has_method("take_damage"):
 			body.take_damage(gameData.snowball_damage)
 		queue_free()
