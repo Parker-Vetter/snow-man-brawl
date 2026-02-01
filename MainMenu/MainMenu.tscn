@@ -129,8 +129,36 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 theme = ExtResource("5_3p42x")
 theme_override_font_sizes/font_size = 50
-text = "Credits
+text = "
+
 "
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/HBoxContainer2/Button" unique_id=1237854295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0, 0.84705883, 1)
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Label" parent="VBoxContainer2/VBoxContainer/HBoxContainer2/Button" unique_id=2013535139]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0, 0.84705883, 1)
+theme_override_font_sizes/font_size = 50
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1162641222]
 layout_mode = 2
@@ -146,7 +174,8 @@ size_flags_vertical = 3
 stream = ExtResource("4_lbqne")
 autoplay = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=2135594894]
+[node name="Credits" type="VBoxContainer" parent="." unique_id=2135594894]
+visible = false
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -156,12 +185,12 @@ offset_left = -400.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer3" unique_id=489143068]
+[node name="PanelContainer" type="PanelContainer" parent="Credits" unique_id=489143068]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_3p42x")
 
-[node name="Label" type="Label" parent="VBoxContainer3/PanelContainer" unique_id=148607963]
+[node name="Label" type="Label" parent="Credits/PanelContainer" unique_id=148607963]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Credits:
@@ -170,3 +199,4 @@ text = "Credits:
 Dr. Nicholas Brinza"
 
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
