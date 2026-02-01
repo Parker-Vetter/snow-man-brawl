@@ -14,11 +14,13 @@
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
-[ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="13_1sqa4"]
+[ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="12_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://b77qnybc6pqve" path="res://PeggleDrop/UI/Box4TextPressed_Good.png" id="13_4v74s"]
 [ext_resource type="Texture2D" uid="uid://dw7c7u2qr47yh" path="res://zacks sprites/upgrades/backpack.png" id="14_3d5s5"]
 [ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
 [ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
+[ext_resource type="Texture2D" uid="uid://djrlek0v8pini" path="res://PeggleDrop/UI/Box4TextDisabled_Good.png" id="14_ybabm"]
 [ext_resource type="Texture2D" uid="uid://bmrb18l2wtmny" path="res://zacks sprites/upgrades/throw_rate.png" id="15_ltn3o"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
@@ -78,6 +80,21 @@ axis_stretch_vertical = 1
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sqa4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgt64"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltn3o"]
+texture = ExtResource("12_ltn3o")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbixe"]
+texture = ExtResource("13_4v74s")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r64bu"]
+texture = ExtResource("14_ybabm")
+texture_margin_left = 20.0
+texture_margin_right = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5urtc"]
 texture = ExtResource("14_ltn3o")
@@ -854,10 +871,12 @@ size_flags_vertical = 3
 [node name="IncreaseMultiplier" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=534159630]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
-theme = ExtResource("13_1sqa4")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.37705222, 0.3812889, 0.3470177, 1)
-theme_override_colors/font_hover_color = Color(0.16392049, 0.18823579, 0.95042735, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ltn3o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gbixe")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r64bu")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
 script = ExtResource("11_i8mh4")
 function_call = "increase_multiplyer"
 name_string = "Increase Multiplier"
