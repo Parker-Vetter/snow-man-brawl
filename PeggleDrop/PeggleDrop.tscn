@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="12_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://b77qnybc6pqve" path="res://PeggleDrop/UI/Box4TextPressed_Good.png" id="13_4v74s"]
 [ext_resource type="Texture2D" uid="uid://dw7c7u2qr47yh" path="res://zacks sprites/upgrades/backpack.png" id="14_3d5s5"]
-[ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
 [ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://djrlek0v8pini" path="res://PeggleDrop/UI/Box4TextDisabled_Good.png" id="14_ybabm"]
@@ -35,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
 [ext_resource type="Texture2D" uid="uid://h8p8hbwb8w1o" path="res://zacks sprites/upgrades/snowman_spawn_rate.png" id="19_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bye7la8iirxni" path="res://zacks sprites/masks/snowman_skimask_single.png" id="20_r64bu"]
+[ext_resource type="AudioStream" uid="uid://cet4qrlauc3ao" path="res://MainGame/Music/Pachinko theme.ogg" id="33_w1oa5"]
 [ext_resource type="AudioStream" uid="uid://bogbaacsc71vf" path="res://PeggleDrop/UI/Button Press.ogg" id="35_g5ori"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
@@ -1483,7 +1483,7 @@ scale = Vector2(1.25625, 1.5222223)
 texture = ExtResource("11_tr0iw")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1034229512]
-stream = ExtResource("14_4y353")
+stream = ExtResource("33_w1oa5")
 autoplay = true
 
 [node name="Pegsound" type="AudioStreamPlayer" parent="." unique_id=1587249354]
