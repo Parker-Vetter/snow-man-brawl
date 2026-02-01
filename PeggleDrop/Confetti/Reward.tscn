@@ -8,6 +8,13 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Gradient" id="Gradient_3mo0e"]
+offsets = PackedFloat32Array(0.3496732, 0.3627451, 0.63071895, 0.64379084)
+colors = PackedColorArray(1, 0.68235296, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.078431375, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5qogq"]
+gradient = SubResource("Gradient_3mo0e")
+
 [sub_resource type="Curve" id="Curve_3mo0e"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.21505377, 0.84787476), -0.32363912, -0.32363912, 0, 0, Vector2(0.6182796, 0.9463088), 3.994629, 3.994629, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
@@ -38,6 +45,7 @@ damping_curve = SubResource("CurveTexture_5qogq")
 scale_min = 0.25
 scale_max = 0.55
 scale_curve = SubResource("CurveTexture_kuvm3")
+color_ramp = SubResource("GradientTexture1D_5qogq")
 anim_speed_min = 1.5
 anim_speed_max = 6.0
 anim_offset_max = 1.0
