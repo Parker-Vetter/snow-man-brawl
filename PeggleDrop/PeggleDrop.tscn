@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://bjpd8chdpgvca" path="res://PeggleDrop/peggle_drop.gd" id="1_i6osx"]
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_vwwwx"]
 [ext_resource type="Script" uid="uid://djnr7t5f76hfg" path="res://PeggleDrop/WorldBoundry/world_boundry.gd" id="3_3wlo8"]
+[ext_resource type="Texture2D" uid="uid://bsgage55frsc8" path="res://zacks sprites/log_wall.png" id="3_5s4uv"]
 [ext_resource type="Script" uid="uid://wratqn1m21t4" path="res://PeggleDrop/BallSpawner/ball_spawner.gd" id="4_3wlo8"]
 [ext_resource type="Script" uid="uid://dp6ytw3x7kwni" path="res://PeggleDrop/UI/ui_fight.gd" id="4_gh36d"]
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
-[ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Script" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(138, 1120)
@@ -64,9 +65,19 @@ collision_layer = 3
 position = Vector2(59, 560)
 shape = SubResource("RectangleShape2D_u3yax")
 
+[node name="Sprite2D" type="Sprite2D" parent="OuterWalls/Polygon2D" unique_id=225196651]
+position = Vector2(-15.5, -17.500023)
+scale = Vector2(0.845, 0.9025001)
+texture = ExtResource("3_5s4uv")
+
 [node name="Polygon2D3" type="CollisionShape2D" parent="OuterWalls" unique_id=1658726629]
 position = Vector2(1536, 560)
 shape = SubResource("RectangleShape2D_mapa8")
+
+[node name="Sprite2D" type="Sprite2D" parent="OuterWalls/Polygon2D3" unique_id=2100508456]
+position = Vector2(20, -16.000023)
+scale = Vector2(0.845, 0.9025001)
+texture = ExtResource("3_5s4uv")
 
 [node name="World Boundry" type="Area2D" parent="." unique_id=1080530509]
 collision_layer = 7
@@ -629,42 +640,52 @@ points = PackedVector2Array(0, 0, 792, 0)
 
 [node name="Multiplyers" type="Node2D" parent="." unique_id=320003808]
 
-[node name="Multilpyer" parent="Multiplyers" unique_id=1507808476 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer0" parent="Multiplyers" unique_id=1507808476 instance=ExtResource("6_mapa8")]
 position = Vector2(160, 988)
 scale = Vector2(1.3370811, 0.9222079)
 
-[node name="Multilpyer2" parent="Multiplyers" unique_id=119261709 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer1" parent="Multiplyers" unique_id=119261709 instance=ExtResource("6_mapa8")]
 position = Vector2(280, 988.99994)
 rotation = 0.00020082138
 scale = Vector2(1.200797, 0.79650044)
+index = 1
 
-[node name="Multilpyer3" parent="Multiplyers" unique_id=883472220 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer2" parent="Multiplyers" unique_id=883472220 instance=ExtResource("6_mapa8")]
 position = Vector2(416, 993.00006)
+index = 2
 
-[node name="Multilpyer4" parent="Multiplyers" unique_id=1123101891 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer3" parent="Multiplyers" unique_id=1123101891 instance=ExtResource("6_mapa8")]
 position = Vector2(544, 993)
+index = 3
 
-[node name="Multilpyer6" parent="Multiplyers" unique_id=1677119827 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer4" parent="Multiplyers" unique_id=1677119827 instance=ExtResource("6_mapa8")]
 position = Vector2(672.00006, 993)
 scale = Vector2(1.0584652, 0.9394852)
+index = 4
 
-[node name="Multilpyer9" parent="Multiplyers" unique_id=1091426169 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer5" parent="Multiplyers" unique_id=1091426169 instance=ExtResource("6_mapa8")]
 position = Vector2(800, 988)
+index = 5
 
-[node name="Multilpyer10" parent="Multiplyers" unique_id=743870232 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer6" parent="Multiplyers" unique_id=743870232 instance=ExtResource("6_mapa8")]
 position = Vector2(928, 992)
+index = 6
 
-[node name="Multilpyer11" parent="Multiplyers" unique_id=1356335637 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer7" parent="Multiplyers" unique_id=1356335637 instance=ExtResource("6_mapa8")]
 position = Vector2(1056, 988.00006)
+index = 7
 
-[node name="Multilpyer12" parent="Multiplyers" unique_id=32753967 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer8" parent="Multiplyers" unique_id=32753967 instance=ExtResource("6_mapa8")]
 position = Vector2(1184, 992)
+index = 8
 
-[node name="Multilpyer13" parent="Multiplyers" unique_id=1252727567 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer9" parent="Multiplyers" unique_id=1252727567 instance=ExtResource("6_mapa8")]
 position = Vector2(1312, 988.00006)
+index = 9
 
-[node name="Multilpyer14" parent="Multiplyers" unique_id=815292903 instance=ExtResource("6_mapa8")]
+[node name="Multilpyer10" parent="Multiplyers" unique_id=815292903 instance=ExtResource("6_mapa8")]
 position = Vector2(1440, 993)
+index = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606689751]
 
@@ -734,9 +755,72 @@ vertical_alignment = 1
 script = ExtResource("8_6ap7j")
 metadata/_edit_use_anchors_ = true
 
+[node name="UpgradesButton" type="Button" parent="CanvasLayer" unique_id=305705465]
+offset_left = 158.0
+offset_top = 17.0
+offset_right = 303.0
+offset_bottom = 55.0
+text = "Upgrades"
+
+[node name="UpgradesPanel" type="Control" parent="CanvasLayer" unique_id=878501999]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UpgradesPanel" unique_id=845907073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0009865053, 0.0009865053, 0.0009865053, 0.67058825)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UpgradesPanel" unique_id=547050754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/UpgradesPanel" unique_id=598789544]
+anchors_preset = 0
+offset_right = 206.0
+offset_bottom = 169.0
+
+[node name="CloseUpgradesButton" type="Button" parent="CanvasLayer/UpgradesPanel/Control" unique_id=794947982]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.757
+anchor_top = 0.083000004
+anchor_right = 1.4610001
+anchor_bottom = 0.33100003
+offset_left = 0.057998657
+offset_top = -0.027000427
+offset_right = 0.033996582
+offset_bottom = 0.060993195
+text = "Close"
+
+[node name="Button" type="Button" parent="CanvasLayer/UpgradesPanel" unique_id=42800487]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.374
+anchor_bottom = 0.40600002
+offset_left = 732.0
+offset_top = 427.0
+offset_right = 166.91998
+offset_bottom = 106.51999
+text = "Increase Multiplier"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=499570857]
 position = Vector2(960, 544)
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MainUI/Control/Fight" to="CanvasLayer/MainUI/Control/Fight" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UpgradesButton" to="." method="_on_upgrades_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UpgradesPanel/Control/CloseUpgradesButton" to="." method="_on_close_upgrades_button_pressed"]

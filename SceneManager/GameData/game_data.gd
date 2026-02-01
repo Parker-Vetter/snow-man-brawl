@@ -15,3 +15,6 @@ func add_pickup(id: StringName, amount: int = 1) -> void:
 	collected_objects[id] += amount
 #@export var collected_objects: Dictionary = {} # { StringName: int }
 @export var collected_objects: Dictionary[String, Variant] = {}
+
+
+@export var pachinko_multipliers: Array[int] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

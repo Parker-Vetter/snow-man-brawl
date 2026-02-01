@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di77pwiydkbmm"]
 
 [ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
+[ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_430ii"]
 [ext_resource type="Shader" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
 [ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_b76km"]
 [ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
@@ -28,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_otibh")
+game_data = ExtResource("2_430ii")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=136100119]
 material = SubResource("ShaderMaterial_b76km")
