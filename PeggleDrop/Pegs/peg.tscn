@@ -1,20 +1,106 @@
 [gd_scene format=3 uid="uid://cd488yl4wjt0w"]
 
+[ext_resource type="Script" uid="uid://b16i87gwoim1a" path="res://PeggleDrop/Pegs/peg.gd" id="1_4hbkj"]
 [ext_resource type="Texture2D" uid="uid://cd6nalwnngbbe" path="res://zacks sprites/log_cut.png" id="1_p3i3i"]
+[ext_resource type="Texture2D" uid="uid://u0rp7qq6wc56" path="res://zacks sprites/white_circle.png" id="3_eau7h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkvq6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ef75"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hbkj"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_4hbkj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_eau7h"]
+resource_name = "bounce"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.35, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, -0.5, 0.027204655),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ooxcw"]
+_data = {
+&"RESET": SubResource("Animation_4hbkj"),
+&"bounce": SubResource("Animation_eau7h")
+}
+
 [node name="Peg" type="StaticBody2D" unique_id=35971241]
 collision_layer = 3
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_gkvq6")
+script = ExtResource("1_4hbkj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=11275954]
 shape = SubResource("CircleShape2D_6ef75")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1797126323]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+self_modulate = Color(0.9882353, 0.9882353, 0.9882353, 1)
 position = Vector2(-5.9604645e-07, 0.4999999)
-scale = Vector2(0.34375003, 0.328125)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_p3i3i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=622312229]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=323295755]
+shape = SubResource("CircleShape2D_4hbkj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1542697225]
+libraries/ = SubResource("AnimationLibrary_ooxcw")
+autoplay = &"bounce"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=57992]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_eau7h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

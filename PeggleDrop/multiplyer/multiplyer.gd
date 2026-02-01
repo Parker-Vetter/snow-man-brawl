@@ -3,6 +3,8 @@ extends Area2D
 
 var multiplyer: int = 1
 @onready var label: Label = $Label
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var index: int
 @export var gameData: GameData
@@ -31,6 +33,11 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		body.value *= multiplyer
+		if gpu_particles_2d.finished:
+			gpu_particles_2d.emitting = true
+		if not animation_player.is_playing():
+			animation_player.play("size")
+		
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

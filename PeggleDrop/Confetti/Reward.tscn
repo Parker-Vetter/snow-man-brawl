@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://2v2j6rippk32"]
 
 [ext_resource type="Texture2D" uid="uid://dklbx46cekd8s" path="res://PeggleDrop/Confetti/ParticleSprite3.png" id="1_3mo0e"]
-[ext_resource type="Script" uid="uid://b2rrrjfcmjbyj" path="res://PeggleDrop/Confetti/reward.gd" id="1_5qogq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qogq"]
 particles_animation = true
@@ -62,7 +61,6 @@ anim_speed_max = 6.0
 anim_offset_max = 1.0
 
 [node name="Reward" type="Node2D" unique_id=1692883000]
-script = ExtResource("1_5qogq")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=75313489]
 material = SubResource("CanvasItemMaterial_5qogq")

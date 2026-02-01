@@ -1,9 +1,130 @@
 [gd_scene format=3 uid="uid://b2bocywdcjqub"]
 
 [ext_resource type="Script" uid="uid://dfq72oh67hwq7" path="res://PeggleDrop/multiplyer/multiplyer.gd" id="1_nprrn"]
+[ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="2_cumtv"]
+[ext_resource type="Texture2D" uid="uid://dklbx46cekd8s" path="res://PeggleDrop/Confetti/ParticleSprite3.png" id="2_r4j8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh36d"]
 size = Vector2(43.33333, 161.33334)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qogq"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_kuvm3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.77956986, 1), 0.0, 0.0, 0, 0, Vector2(0.9731183, 0.38255036), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5siql"]
+curve = SubResource("Curve_kuvm3")
+
+[sub_resource type="Gradient" id="Gradient_3mo0e"]
+offsets = PackedFloat32Array(0.3496732, 0.3627451, 0.63071895, 0.64379084)
+colors = PackedColorArray(1, 0.68235296, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.078431375, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5qogq"]
+gradient = SubResource("Gradient_3mo0e")
+
+[sub_resource type="Curve" id="Curve_3mo0e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.21505377, 0.84787476), -0.32363912, -0.32363912, 0, 0, Vector2(0.6182796, 0.9463088), 3.994629, 3.994629, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5qogq"]
+curve = SubResource("Curve_3mo0e")
+
+[sub_resource type="Curve" id="Curve_5qogq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.76344085, 0.9910515), 0.0, 0.0, 0, 0, Vector2(1, 0.48993295), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kuvm3"]
+curve = SubResource("Curve_5qogq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kuvm3"]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+initial_velocity_min = 130.0
+initial_velocity_max = 160.0
+angular_velocity_min = -180.00002
+angular_velocity_max = 179.99998
+gravity = Vector3(0, 75, 0)
+linear_accel_min = 9.999997
+linear_accel_max = 29.999996
+damping_min = 74.0
+damping_max = 78.0
+damping_curve = SubResource("CurveTexture_5qogq")
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_kuvm3")
+color_ramp = SubResource("GradientTexture1D_5qogq")
+alpha_curve = SubResource("CurveTexture_5siql")
+hue_variation_min = -0.15000002
+hue_variation_max = 0.99999994
+anim_speed_min = 1.5
+anim_speed_max = 6.0
+anim_offset_max = 1.0
+
+[sub_resource type="Animation" id="Animation_r4j8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwybl"]
+
+[sub_resource type="Animation" id="Animation_cumtv"]
+resource_name = "size"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998, 1),
+"transitions": PackedFloat32Array(2, 2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Label:label_settings")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("LabelSettings_bwybl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bwybl"]
+_data = {
+&"RESET": SubResource("Animation_r4j8h"),
+&"size": SubResource("Animation_cumtv")
+}
 
 [node name="Multiplyer" type="Area2D" unique_id=1507808476]
 scale = Vector2(1.0584652, 0.93948513)
@@ -16,10 +137,30 @@ position = Vector2(1.6666641, 0.66674805)
 shape = SubResource("RectangleShape2D_gh36d")
 
 [node name="Label" type="Label" parent="." unique_id=1539330877]
-offset_left = -18.265438
-offset_top = -9.934519
-offset_right = 21.734562
-offset_bottom = 13.065481
+offset_left = -35.901043
+offset_top = -44.70534
+offset_right = 37.098957
+offset_bottom = 45.29466
+pivot_offset = Vector2(34.957836, 44.70708)
+theme_override_fonts/font = ExtResource("2_cumtv")
+theme_override_font_sizes/font_size = 45
+text = "1x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=75313489]
+material = SubResource("CanvasItemMaterial_5qogq")
+rotation = -0.6981317
+emitting = false
+amount = 21
+texture = ExtResource("2_r4j8h")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.87
+process_material = SubResource("ParticleProcessMaterial_kuvm3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1573599132]
+libraries/ = SubResource("AnimationLibrary_bwybl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
