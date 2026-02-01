@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
+[ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
@@ -1151,6 +1152,7 @@ scale = Vector2(1.25625, 1.5222223)
 texture = ExtResource("11_tr0iw")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1034229512]
+stream = ExtResource("14_4y353")
 autoplay = true
 
 [node name="Pegsound" type="AudioStreamPlayer" parent="." unique_id=1587249354]
