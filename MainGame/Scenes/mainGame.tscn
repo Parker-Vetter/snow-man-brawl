@@ -19,6 +19,22 @@
 [ext_resource type="Texture2D" uid="uid://bhtnlv6jiyhvy" path="res://zacks sprites/carrot.png" id="12_p0f38"]
 [ext_resource type="Texture2D" uid="uid://rfdi85clvi6p" path="res://zacks sprites/stick.png" id="14_cu3gy"]
 [ext_resource type="Texture2D" uid="uid://bdh7xngq5l0dx" path="res://zacks sprites/charcol.png" id="15_eny6a"]
+[ext_resource type="Script" uid="uid://cqy42pissypj4" path="res://MainGame/Scenes/audio_mixer.gd" id="15_di1eq"]
+[ext_resource type="AudioStream" uid="uid://ch2vsgtqd6alc" path="res://MainGame/Music/Snowman Attack - level 01.ogg" id="16_t7rrf"]
+[ext_resource type="AudioStream" uid="uid://bs2j606ybino1" path="res://MainGame/Music/Snowman Attack - level 02.ogg" id="17_7l720"]
+[ext_resource type="AudioStream" uid="uid://d0emjsadts2xg" path="res://MainGame/Music/Snowman Attack - level 03.ogg" id="18_8c3xl"]
+[ext_resource type="AudioStream" uid="uid://bvdidv4q42it" path="res://MainGame/Music/Snowman Attack - level 04.ogg" id="19_h3nli"]
+[ext_resource type="AudioStream" uid="uid://yuyjat81rqrk" path="res://MainGame/Music/Snowman Attack - level 05.ogg" id="20_css33"]
+[ext_resource type="AudioStream" uid="uid://d021doks850w" path="res://MainGame/Music/Snowman Attack - level 06.ogg" id="21_ggwwf"]
+[ext_resource type="AudioStream" uid="uid://c6wr3fdhwpkrw" path="res://MainGame/Music/Snowman Attack - level 07.ogg" id="22_6rtdu"]
+[ext_resource type="AudioStream" uid="uid://184evaxblurw" path="res://MainGame/Music/Snowman Attack - level 08.ogg" id="23_1unwk"]
+[ext_resource type="AudioStream" uid="uid://hox7fqywt6y6" path="res://MainGame/Music/Snowman Attack - level 09.ogg" id="24_qvk4k"]
+[ext_resource type="AudioStream" uid="uid://b8m2udhpk30gx" path="res://MainGame/Music/Snowman Attack - level 10.ogg" id="25_y2c26"]
+[ext_resource type="AudioStream" uid="uid://cb4pqygpyjmsq" path="res://MainGame/Music/Snowman Attack - level 11.ogg" id="26_3kjj0"]
+[ext_resource type="AudioStream" uid="uid://dlc732ea00pat" path="res://MainGame/Music/Snowman Attack - level 12.ogg" id="27_wnbli"]
+[ext_resource type="AudioStream" uid="uid://cdfehkss7tk4n" path="res://MainGame/Music/Snowman Attack - level 13.ogg" id="28_oxqfs"]
+[ext_resource type="AudioStream" uid="uid://blydbkq261sf1" path="res://MainGame/Music/Snowman Attack - level 14.ogg" id="29_w2dh8"]
+[ext_resource type="AudioStream" uid="uid://caou8663e3rpc" path="res://MainGame/Music/Snowman Attack - level 15.ogg" id="30_q4f4e"]
 
 [sub_resource type="Resource" id="Resource_0sind"]
 script = ExtResource("5_p0f38")
@@ -791,6 +807,10 @@ text = "Return to
 Frozen Hell"
 
 [node name="TimeLeft" type="Timer" parent="." unique_id=1370640309]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1629080629]
+script = ExtResource("15_di1eq")
+music_tracks = Array[AudioStream]([ExtResource("16_t7rrf"), ExtResource("17_7l720"), ExtResource("18_8c3xl"), ExtResource("19_h3nli"), ExtResource("20_css33"), ExtResource("21_ggwwf"), ExtResource("22_6rtdu"), ExtResource("23_1unwk"), ExtResource("24_qvk4k"), ExtResource("25_y2c26"), ExtResource("26_3kjj0"), ExtResource("27_wnbli"), ExtResource("28_oxqfs"), ExtResource("29_w2dh8"), ExtResource("30_q4f4e")])
 
 [connection signal="timeout" from="EnemySpawner/EnemySpawnTimer" to="EnemySpawner" method="_on_timer_timeout"]
 [connection signal="visibility_changed" from="CanvasLayer/MainUI/Death" to="CanvasLayer/MainUI/Death" method="_on_visibility_changed"]

@@ -8,6 +8,7 @@ extends Node2D
 
 func load_game_state(new_game_data: GameData):
 	gameData = new_game_data
+	gameData.collected_objects = {}
 	gameData.start_level()
 
 func pause_and_death_menu():

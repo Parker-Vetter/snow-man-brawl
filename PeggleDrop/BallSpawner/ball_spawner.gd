@@ -7,10 +7,10 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var ball_holder: Node2D = $BallHolder
 
-@onready var snow: int = game_data.collected_objects.get("snow")
-@onready var carrot: int = game_data.collected_objects.get("carrot")
-@onready var coal: int = game_data.collected_objects.get("coal")
-@onready var stick: int = game_data.collected_objects.get("stick")
+@onready var snow: int = game_data.lifetime_collected_objects.get("snow") if game_data.lifetime_collected_objects.has("snow") else 0
+@onready var carrot: int = game_data.lifetime_collected_objects.get("carrot") if game_data.lifetime_collected_objects.has("carrot") else 0
+@onready var coal: int = game_data.lifetime_collected_objects.get("coal") if game_data.lifetime_collected_objects.has("coal") else 0
+@onready var stick: int = game_data.lifetime_collected_objects.get("stick") if game_data.lifetime_collected_objects.has("stick") else 0
 
 var ball = preload("res://PeggleDrop/Ball/ball.tscn")
 
@@ -21,7 +21,7 @@ var ball = preload("res://PeggleDrop/Ball/ball.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if timer.is_stopped() and not game_data.collected_objects.is_empty():
+	if timer.is_stopped() and not game_data.lifetime_collected_objects.is_empty():
 		timer.start(0.05)
 
 func _on_timer_timeout() -> void:

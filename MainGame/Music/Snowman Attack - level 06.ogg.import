@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d021doks850w"
+path="res://.godot/imported/Snowman Attack - level 06.ogg-55c22bb2f4ad71f3c768bdf7332048ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://MainGame/Music/Snowman Attack - level 06.ogg"
+dest_files=["res://.godot/imported/Snowman Attack - level 06.ogg-55c22bb2f4ad71f3c768bdf7332048ad.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

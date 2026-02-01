@@ -17,8 +17,6 @@ class_name Player
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
-#When object enters scene, make a variable pointed to the AudiostreamNode
-@onready var music1: Node = $Music
 @export var targetDistance = 150
 
 
@@ -147,16 +145,6 @@ func _physics_process(_delta: float):
 	else:
 		sprite.play("idle")
 		sprite.speed_scale = 1.0
-	# Every frame, check velocity of Player. If moving, make one stream loud other quiett. If still, reverse.
-	if velocity == Vector2(0, 0):
-		#moving = false
-		music1.stream.set_sync_stream_volume(0, 0)
-		music1.stream.set_sync_stream_volume(1, -64)
-		
-	if velocity > Vector2(0, 0):
-		#moving = true
-		music1.stream.set_sync_stream_volume(1, 0)
-		music1.stream.set_sync_stream_volume(0, -64)
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
