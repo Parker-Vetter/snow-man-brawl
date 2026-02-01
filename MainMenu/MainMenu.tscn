@@ -417,13 +417,14 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_colors/font_focus_color = Color(0.6926584, 0.66697776, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "LINK HERE"
+text = "Personal Site"
+uri = "https://zackgoulet.us/"
 
 [node name="Label6" type="Label" parent="Credits/PanelContainer/VBoxContainer" unique_id=1832236711]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "-However Zack wants credit"
+text = "-However PArker wants credit"
 
 [node name="LinkButton4" type="LinkButton" parent="Credits/PanelContainer/VBoxContainer" unique_id=259104079]
 layout_mode = 2
