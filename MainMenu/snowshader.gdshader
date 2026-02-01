@@ -23,5 +23,6 @@ void fragment() {
 		float edge = 0.005 + 0.05 * min(0.5 * abs(fi - 5.0 - dof), 1.0);
 		acc += vec3(smoothstep(edge, -edge, d) * (r.x / (1.0 + 0.02 * fi * 0.5)));
 	}
-	COLOR = vec4(vec3(acc), 1.0);
+	float alpha = max(acc.r, max(acc.g, acc.b)) - 0.1;
+	COLOR = vec4(vec3(acc), alpha);
 }
