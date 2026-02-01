@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://bmm0e8bxqgy2r"]
+
+[ext_resource type="Script" uid="uid://dcgrnr3tcpeod" path="res://PeggleDrop/UI/upgrade.gd" id="1_2vmd1"]
+
+[resource]
+script = ExtResource("1_2vmd1")
+cost = 50
