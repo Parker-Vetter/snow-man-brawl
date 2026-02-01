@@ -11,3 +11,4 @@ collected_objects = Dictionary[String, Variant]({
 "snow": 0,
 "stick": 0
 })
+throw_rate = 1
