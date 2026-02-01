@@ -2,6 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="1_2hd46"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hd46"]
+bg_color = Color(0.54051787, 0.8244142, 0.7817023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kywk"]
+bg_color = Color(0.41960785, 0.6, 0.6117647, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.38039216, 0.5411765, 0.8, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kywk"]
 texture = ExtResource("1_2hd46")
 texture_margin_left = 5.0
@@ -15,4 +26,15 @@ expand_margin_bottom = 5.0
 modulate_color = Color(1, 1, 1, 0.39215687)
 
 [resource]
+Button/colors/font_color = Color(0.13410965, 0, 0.8458293, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.16392049, 0.18823579, 0.95042735, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.019607844, 0.75686276, 0.75686276, 1)
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_2hd46")
+Button/styles/normal = SubResource("StyleBoxFlat_8kywk")
+Button/styles/pressed = null
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_8kywk")
