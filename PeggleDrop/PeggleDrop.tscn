@@ -809,12 +809,35 @@ text = "Increase Multiplier
 Cost: "
 
 [node name="Button2" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=1797566377]
+custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
-text = "Increase throw speed"
+
+[node name="Label" type="Label" parent="CanvasLayer/MainUI/Control/VBoxContainer/Button2" unique_id=2136764579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -24.5
+offset_right = 83.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Increase throw speed
+Cost:"
 
 [node name="Button3" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=1814319293]
+custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
-text = "Increase X"
+
+[node name="Label" type="Label" parent="CanvasLayer/MainUI/Control/VBoxContainer/Button3" unique_id=1784527828]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Increase X
+Cost:"
 
 [node name="CloseUpgradesButton" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=794947982]
 visible = false
