@@ -8,6 +8,13 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Curve" id="Curve_3mo0e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.21505377, 0.84787476), -0.32363912, -0.32363912, 0, 0, Vector2(0.6182796, 0.9463088), 3.994629, 3.994629, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5qogq"]
+curve = SubResource("Curve_3mo0e")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kuvm3"]
 particle_flag_disable_z = true
 direction = Vector3(1, -1, 0)
@@ -16,6 +23,11 @@ initial_velocity_max = 160.0
 angular_velocity_min = -180.00002
 angular_velocity_max = 179.99998
 gravity = Vector3(0, 75, 0)
+linear_accel_min = 9.999997
+linear_accel_max = 29.999996
+damping_min = 74.0
+damping_max = 78.0
+damping_curve = SubResource("CurveTexture_5qogq")
 anim_speed_min = 1.5
 anim_speed_max = 6.0
 anim_offset_max = 1.0
@@ -26,6 +38,6 @@ anim_offset_max = 1.0
 material = SubResource("CanvasItemMaterial_5qogq")
 amount = 21
 texture = ExtResource("1_3mo0e")
-lifetime = 4.0
+lifetime = 2.0
 explosiveness = 0.87
 process_material = SubResource("ParticleProcessMaterial_kuvm3")
