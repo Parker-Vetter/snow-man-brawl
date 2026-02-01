@@ -38,30 +38,35 @@ script = ExtResource("1_otibh")
 game_data = ExtResource("2_430ii")
 
 [node name="bg" type="TextureRect" parent="." unique_id=984574830]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_nxm3p")
 
 [node name="blue bar" type="TextureRect" parent="." unique_id=1908364614]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("4_g1826")
 
 [node name="title text" type="TextureRect" parent="." unique_id=1157749655]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("5_npjie")
 
 [node name="snowman" type="TextureRect" parent="." unique_id=972186875]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1916.4445
 offset_bottom = 1078.0
 texture = ExtResource("6_7t2hb")
 
 [node name="guy" type="TextureRect" parent="." unique_id=1280203682]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -98,8 +103,9 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1386520333]
+visible = false
 layout_mode = 2
-text = "Name of the games.
+text = "Never Surrender
 "
 horizontal_alignment = 1
 
@@ -118,7 +124,7 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2" unique_id=965223703]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.59
+size_flags_stretch_ratio = 20.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=60590688]
 layout_mode = 2

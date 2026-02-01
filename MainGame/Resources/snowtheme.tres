@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cgldd5i3pdinj"]
 
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="1_2hd46"]
+[ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="2_8kywk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hd46"]
 bg_color = Color(0.54051787, 0.8244142, 0.7817023, 1)
@@ -26,6 +27,7 @@ expand_margin_bottom = 5.0
 modulate_color = Color(1, 1, 1, 0.39215687)
 
 [resource]
+default_font = ExtResource("2_8kywk")
 Button/colors/font_color = Color(0.13410965, 0, 0.8458293, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
