@@ -3,8 +3,8 @@ extends Control
 @export var game_data:GameData;
 
 func startGame():
-	#scene_manager.switch_scene(self, "res://MainGame/Scenes/mainGame.tscn")
-	scene_manager.switch_scene(self, "res://PeggleDrop/PeggleDrop.tscn", game_data)
+	scene_manager.switch_scene(self, "res://MainGame/Scenes/mainGame.tscn", game_data)
+	#scene_manager.switch_scene(self, "res://PeggleDrop/PeggleDrop.tscn", game_data)
 	pass
 
 

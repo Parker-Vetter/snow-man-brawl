@@ -205,6 +205,26 @@ shape = SubResource("CircleShape2D_1taep")
 [node name="BulletOrigin" type="Marker2D" parent="." unique_id=1236531661]
 position = Vector2(50.63, -53.4)
 
+[node name="BulletOrigin1" type="Marker2D" parent="." unique_id=1761240846]
+position = Vector2(-81, -155)
+
+[node name="Timer" type="Timer" parent="BulletOrigin1" unique_id=1136146329]
+
+[node name="BulletOrigin2" type="Marker2D" parent="." unique_id=801419402]
+position = Vector2(85, -93)
+
+[node name="Timer" type="Timer" parent="BulletOrigin2" unique_id=1136146330]
+
+[node name="BulletOrigin3" type="Marker2D" parent="." unique_id=793500776]
+position = Vector2(-85, -100)
+
+[node name="Timer" type="Timer" parent="BulletOrigin3" unique_id=1136146331]
+
+[node name="BulletOrigin4" type="Marker2D" parent="." unique_id=777652650]
+position = Vector2(89, -150)
+
+[node name="Timer" type="Timer" parent="BulletOrigin4" unique_id=1136146332]
+
 [node name="arm" type="AnimatedSprite2D" parent="." unique_id=1829775417]
 position = Vector2(4.65, 4.86)
 sprite_frames = SubResource("SpriteFrames_f3uyv")
@@ -229,6 +249,10 @@ shape = SubResource("CircleShape2D_t35mx")
 stream = SubResource("AudioStreamSynchronized_14yb0")
 autoplay = true
 
+[connection signal="timeout" from="BulletOrigin1/Timer" to="." method="_on_timer_timeout_BO1"]
+[connection signal="timeout" from="BulletOrigin2/Timer" to="." method="_on_timer_timeout_BO2"]
+[connection signal="timeout" from="BulletOrigin3/Timer" to="." method="_on_timer_timeout_BO3"]
+[connection signal="timeout" from="BulletOrigin4/Timer" to="." method="_on_timer_timeout_BO4"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]
