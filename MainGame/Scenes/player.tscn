@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://2l83osqxddss" path="res://MainGame/Music/Snowman Attack (V1 - full track).wav" id="4_sfk3o"]
 [ext_resource type="Texture2D" uid="uid://dosvrq2iqensl" path="res://godot_mask.png" id="5_gbkh0"]
 [ext_resource type="Texture2D" uid="uid://dvthya88r48s" path="res://zacks sprites/masks/snowman_skimask.png" id="6_6dxmd"]
+[ext_resource type="AudioStream" uid="uid://bj85dpgjq06bh" path="res://MainGame/Effects/impact.mp3" id="7_jj37f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw3ce"]
 atlas = ExtResource("2_mta5u")
@@ -333,6 +334,9 @@ position = Vector2(-2, -61)
 texture = ExtResource("6_6dxmd")
 region_enabled = true
 region_rect = Rect2(744, 8, 80, 80)
+
+[node name="Impact" type="AudioStreamPlayer" parent="." unique_id=1749451526]
+stream = ExtResource("7_jj37f")
 
 [connection signal="timeout" from="BulletOrigin1/Timer" to="." method="_on_timer_timeout_BO1"]
 [connection signal="timeout" from="BulletOrigin2/Timer" to="." method="_on_timer_timeout_BO2"]

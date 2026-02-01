@@ -13,6 +13,7 @@ class_name Player
 @onready var bulletOriginL: Marker2D = $"BulletOrigin L"
 @onready var main: MainGame = $".."
 @onready var masks: Marker2D = $Masks
+@onready var throw_sound: AudioStreamPlayer = $Impact
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
@@ -80,7 +81,7 @@ func shoot(target: Node2D):
 	var enemy_is_right = target.global_position.x >= global_position.x
 	var player_facing_right = not sprite.flip_h
 	var enemy_in_front = enemy_is_right == player_facing_right
-
+	throw_sound.play()
 	if enemy_in_front:
 		# Enemy in front - use right arm
 		pendingArmIsLeft = false
