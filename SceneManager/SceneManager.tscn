@@ -3,8 +3,14 @@
 [ext_resource type="Script" uid="uid://v28k0xtgkx31" path="res://SceneManager/scene_manager.gd" id="1_mqdah"]
 [ext_resource type="PackedScene" uid="uid://di77pwiydkbmm" path="res://MainMenu/MainMenu.tscn" id="2_x7qrj"]
 
+[sub_resource type="Environment" id="Environment_x7qrj"]
+glow_enabled = true
+
 [node name="SceneManager" type="Node" unique_id=1059134408 groups=["SceneManager"]]
 script = ExtResource("1_mqdah")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=591503699]
+environment = SubResource("Environment_x7qrj")
 
 [node name="SwitchNode" type="Node" parent="." unique_id=1965784587]
 

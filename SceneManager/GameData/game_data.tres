@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_lsqfl")
-game_length = 10.0
+game_length = 15.0
 collected_objects = Dictionary[String, Variant]({
-"carrot": 0,
+"carrot": 5,
 "coal": 0,
-"snow": 0,
+"snow": 5,
 "stick": 0
 })
