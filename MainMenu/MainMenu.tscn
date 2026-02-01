@@ -398,7 +398,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_colors/font_focus_color = Color(0.6926584, 0.66697776, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Itch.io"
-uri = "https://open.spotify.com/playlist/0sKEeebrakR9NNDApwX9ug?si=Eet6emu0Tx2h5yxi9giv6w&pi=qLTQy8PKSfyiF"
+uri = "https://archimagus.itch.io/"
 
 [node name="Label4" type="Label" parent="Credits/PanelContainer/VBoxContainer" unique_id=1548719822]
 layout_mode = 2
