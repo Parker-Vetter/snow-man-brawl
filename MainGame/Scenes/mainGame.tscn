@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_dql36"]
 [ext_resource type="Script" uid="uid://dhq2qu3bnbfvx" path="res://MainGame/Scripts/enemy_spawner.gd" id="3_nwsis"]
 [ext_resource type="PackedScene" uid="uid://byo57dlvacb22" path="res://MainGame/Scenes/snowman.tscn" id="4_xuvwu"]
-[ext_resource type="Script" path="res://MainGame/Scripts/spawn_table_entry.gd" id="5_p0f38"]
+[ext_resource type="Script" uid="uid://baakmb74lwbsf" path="res://MainGame/Scripts/spawn_table_entry.gd" id="5_p0f38"]
 [ext_resource type="PackedScene" uid="uid://bkrpxviudheek" path="res://MainGame/Scenes/player.tscn" id="6_ov1mn"]
 [ext_resource type="PackedScene" uid="uid://miglpa3kug1k" path="res://MainGame/Scenes/snowman_godot_mask.tscn" id="7_7jl2u"]
 [ext_resource type="Script" uid="uid://bm0e3vy8h7w7" path="res://MainGame/UI/progress.gd" id="7_ov1mn"]
@@ -809,6 +809,7 @@ Frozen Hell"
 [node name="TimeLeft" type="Timer" parent="." unique_id=1370640309]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1629080629]
+process_mode = 3
 script = ExtResource("15_di1eq")
 music_tracks = Array[AudioStream]([ExtResource("16_t7rrf"), ExtResource("17_7l720"), ExtResource("18_8c3xl"), ExtResource("19_h3nli"), ExtResource("20_css33"), ExtResource("21_ggwwf"), ExtResource("22_6rtdu"), ExtResource("23_1unwk"), ExtResource("24_qvk4k"), ExtResource("25_y2c26"), ExtResource("26_3kjj0"), ExtResource("27_wnbli"), ExtResource("28_oxqfs"), ExtResource("29_w2dh8"), ExtResource("30_q4f4e")])
 
