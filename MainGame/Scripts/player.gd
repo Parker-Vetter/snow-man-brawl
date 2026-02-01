@@ -8,7 +8,9 @@ class_name Player
 @onready var bullet_origin_3: Marker2D = $BulletOrigin3
 @onready var bullet_origin_4: Marker2D = $BulletOrigin4
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-@onready var armSprite: AnimatedSprite2D = $arm
+@onready var armSprite: AnimatedSprite2D = $"arm R"
+@onready var armSpriteL: AnimatedSprite2D = $"arm L"
+@onready var bulletOriginL: Marker2D = $"BulletOrigin L"
 @onready var main: MainGame = $".."
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
@@ -23,12 +25,14 @@ var shootDelay: float = 2
 
 var shootTimer: Timer
 var pendingTarget: Node2D = null
+var pendingArmIsLeft: bool = false
 var pendingAutoTargets: Array[Node2D] = []
 
 func _ready() -> void:
 	var gameData: GameData = main.gameData
 	maxSpeed = gameData.player_move_speed
 	armSprite.frame_changed.connect(_on_arm_frame_changed)
+	armSpriteL.frame_changed.connect(_on_arm_L_frame_changed)
 	shootTimer = Timer.new()
 	shootDelay = 1 / gameData.throw_rate
 	shootTimer.wait_time = shootDelay
@@ -71,20 +75,39 @@ func get_nearest_enemy() -> Node2D:
 
 func shoot(target: Node2D):
 	pendingTarget = target
-	#play arm animation - projectile spawns on frame 3
-	armSprite.frame = 0
-	armSprite.play("throw")
+	# Choose arm based on whether enemy is in front or behind player
+	var enemy_is_right = target.global_position.x >= global_position.x
+	var player_facing_right = not sprite.flip_h
+	var enemy_in_front = enemy_is_right == player_facing_right
+
+	if enemy_in_front:
+		# Enemy in front - use right arm
+		pendingArmIsLeft = false
+		armSprite.frame = 0
+		armSprite.play("throw")
+	else:
+		# Enemy behind - use left arm
+		pendingArmIsLeft = true
+		armSpriteL.frame = 0
+		armSpriteL.play("throw")
 
 func _on_arm_frame_changed():
-	if armSprite.frame == 3 and pendingTarget and is_instance_valid(pendingTarget):
+	if armSprite.frame == 3 and pendingTarget and is_instance_valid(pendingTarget) and not pendingArmIsLeft:
 		spawn_projectile(pendingTarget)
 		pendingTarget = null
 
-func spawn_projectile(target: Node2D, origin = bulletOrigin):
+func _on_arm_L_frame_changed():
+	if armSpriteL.frame == 3 and pendingTarget and is_instance_valid(pendingTarget) and pendingArmIsLeft:
+		spawn_projectile(pendingTarget, bulletOriginL)
+		pendingTarget = null
+
+func spawn_projectile(target: Node2D, origin: Marker2D = null):
+	if origin == null:
+		origin = bulletOrigin
 	var instance = projectile.instantiate()
 	var shootAngle = position.direction_to(target.global_position).angle()
 	instance.dir = shootAngle - PI / 2
-	var originPos = bulletOrigin.position
+	var originPos = origin.position
 	if sprite.flip_h:
 		originPos.x = - originPos.x
 	instance.spawnPos = position + originPos
@@ -107,9 +130,11 @@ func _physics_process(_delta: float):
 	if velocity.x > 0:
 		sprite.flip_h = false
 		armSprite.flip_h = false
+		armSpriteL.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		armSprite.flip_h = true
+		armSpriteL.flip_h = true
 
 	#play run or idle animation
 	if velocity.length() > 0:

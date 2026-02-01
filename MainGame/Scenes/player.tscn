@@ -176,6 +176,63 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofkbi"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(1125, 675, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbkh0"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(0, 900, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dxmd"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(225, 900, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj37f"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(450, 900, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o4xu"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(675, 900, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub5t4"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(900, 900, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erkdm"]
+atlas = ExtResource("2_mta5u")
+region = Rect2(1125, 900, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3ag3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofkbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbkh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dxmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj37f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o4xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub5t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erkdm")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_t35mx"]
 radius = 147.03061
 
@@ -206,6 +263,9 @@ shape = SubResource("CircleShape2D_1taep")
 [node name="BulletOrigin" type="Marker2D" parent="." unique_id=1236531661]
 position = Vector2(50.63, -53.4)
 
+[node name="BulletOrigin L" type="Marker2D" parent="." unique_id=897675069]
+position = Vector2(-43.63, -79.45)
+
 [node name="BulletOrigin1" type="Marker2D" parent="." unique_id=1761240846]
 position = Vector2(-81, -155)
 
@@ -226,12 +286,19 @@ position = Vector2(89, -150)
 
 [node name="Timer" type="Timer" parent="BulletOrigin4" unique_id=1136146332]
 
-[node name="arm" type="AnimatedSprite2D" parent="." unique_id=1829775417]
+[node name="arm R" type="AnimatedSprite2D" parent="." unique_id=1829775417]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_f3uyv")
 animation = &"throw"
 frame = 5
 frame_progress = 1.0
+speed_scale = 3.0
+
+[node name="arm L" type="AnimatedSprite2D" parent="." unique_id=1052501948]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_d3ag3")
+animation = &"throw"
+frame = 6
 speed_scale = 3.0
 
 [node name="HitBox" type="Area2D" parent="." unique_id=117249582]
