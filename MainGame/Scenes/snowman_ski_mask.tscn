@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cgvwjss0tpwve"]
+
+[ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scripts/snowman.gd" id="1_bnixn"]
+[ext_resource type="Script" uid="uid://bmmmaippun6sc" path="res://MainGame/Scripts/drop_table_entry.gd" id="2_0n1fg"]
+[ext_resource type="Resource" uid="uid://byx4sltc2ddcj" path="res://Resources/ski_mask.tres" id="3_4j0po"]
+[ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="7_uh4vn"]
+[ext_resource type="Texture2D" uid="uid://dvthya88r48s" path="res://zacks sprites/masks/snowman_skimask.png" id="8_re8tw"]
+
+[sub_resource type="Resource" id="Resource_eqmxu"]
+resource_name = "ski_mask"
+script = ExtResource("2_0n1fg")
+data = ExtResource("3_4j0po")
+metadata/_custom_type_script = "uid://bmmmaippun6sc"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v856i"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(0, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed2yh"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(225, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bnow"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(450, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km6eq"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(675, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjyxn"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(900, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny0q6"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(1125, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd6m7"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(1350, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcylk"]
+atlas = ExtResource("8_re8tw")
+region = Rect2(1575, 0, 225, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdqmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v856i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed2yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bnow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km6eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjyxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny0q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd6m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcylk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Snowman" type="CharacterBody2D" unique_id=15038228 groups=["enemies"]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_bnixn")
+speed = 50.0
+drop_table = Array[ExtResource("2_0n1fg")]([SubResource("Resource_eqmxu")])
+scaleDropsByLevel = false
+
+[node name="StandardSprite" type="AnimatedSprite2D" parent="." unique_id=1937764219]
+texture_filter = 1
+position = Vector2(0, -107)
+sprite_frames = ExtResource("7_uh4vn")
+autoplay = "default"
+frame_progress = 0.9642842
+
+[node name="SkiMaskSprite" type="AnimatedSprite2D" parent="." unique_id=1851706585]
+texture_filter = 1
+position = Vector2(0, -107)
+sprite_frames = SubResource("SpriteFrames_kdqmn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1635999727]
+position = Vector2(1, -96)
+scale = Vector2(0.985, 0.985)
+polygon = PackedVector2Array(15, 8, 46, 20, 51, 85, 33, 108, -32, 107, -53, 81, -54, 30, -25, 8, -41, -22, -35, -48, -24, -63, -35, -92, -23, -107, 19, -108, 28, -90, 20, -68, 13, -61, 36, -44, 37, -12)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=590184770]
+position = Vector2(0, 11)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=398578801]
+position = Vector2(0, -107)
+polygon = PackedVector2Array(15, 8, 46, 20, 58, 51, 51, 85, 33, 108, 3, 115, -32, 107, -53, 81, -59, 54, -54, 30, -25, 8, -42, -21, -37, -47, -28, -64, -37, -91, -24, -113, -3, -119, 18, -112, 28, -90, 26, -70, 13, -61, 36, -44, 37, -11)

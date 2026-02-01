@@ -54,5 +54,8 @@ func pickup(player: Player):
 	tween.tween_property(sprite, "scale", Vector2.ZERO, 0.5).set_delay(0.25)
 	
 	await tween.finished
-	player.main.gameData.add_pickup(data.id)
+	if (data.id.contains("mask")):
+		player.setMask(data)
+	else:
+		player.main.gameData.add_pickup(data.id)
 	queue_free()

@@ -12,6 +12,7 @@ class_name Player
 @onready var armSpriteL: AnimatedSprite2D = $"arm L"
 @onready var bulletOriginL: Marker2D = $"BulletOrigin L"
 @onready var main: MainGame = $".."
+@onready var masks: Marker2D = $Masks
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
@@ -199,3 +200,10 @@ func _on_timer_timeout_BO3() -> void:
 	if target:
 		spawn_projectile(target, bullet_origin_3)
 		pendingAutoTargets.append(target)
+
+func setMask(data: PickupData):
+	for child in masks.get_children():
+		child.visible = false
+	var mask = masks.get_node(str(data.id))
+	if mask:
+		mask.visible = true
