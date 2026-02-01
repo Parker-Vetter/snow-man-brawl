@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dw7c7u2qr47yh" path="res://zacks sprites/upgrades/backpack.png" id="14_3d5s5"]
 [ext_resource type="AudioStream" uid="uid://ni0golxj2ef3" path="res://PeggleDrop/Pegs/Plinko theme.wav" id="14_4y353"]
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
+[ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://bmrb18l2wtmny" path="res://zacks sprites/upgrades/throw_rate.png" id="15_ltn3o"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
@@ -79,7 +80,7 @@ axis_stretch_vertical = 1
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgt64"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5urtc"]
-texture = ExtResource("14_3d5s5")
+texture = ExtResource("14_ltn3o")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyusr"]
 texture = ExtResource("15_ltn3o")
@@ -95,6 +96,12 @@ texture = ExtResource("18_ybabm")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4ga3"]
 texture = ExtResource("19_gbixe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ubeq8"]
+texture = ExtResource("14_3d5s5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4v74s"]
+texture = ExtResource("14_3d5s5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6jgu"]
 texture = ExtResource("20_r64bu")
@@ -1177,6 +1184,20 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpack" unique_id=674455971]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ubeq8")
+
 [node name="AutoBackpackFireRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754707]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
@@ -1211,6 +1232,20 @@ grow_vertical = 2
 text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpackFireRate" unique_id=1862018368]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4v74s")
 
 [node name="ColdResistance" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=498474023]
 custom_minimum_size = Vector2(25, 50)
