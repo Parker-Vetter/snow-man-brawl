@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_430ii"]
-[ext_resource type="Shader" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
+[ext_resource type="Shader" uid="uid://u4wuh4c7otrq" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
 [ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_b76km"]
 [ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
+[ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="5_3p42x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b76km"]
 shader = ExtResource("2_cruaa")
@@ -84,23 +85,58 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.59
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=791451334]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=60590688]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1699673809]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer" unique_id=791451334]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1699673809]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=375096444]
+[node name="Button" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=375096444]
 layout_mode = 2
+theme = ExtResource("5_3p42x")
 theme_override_font_sizes/font_size = 100
 text = "Start game"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/HBoxContainer" unique_id=1142960741]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1142960741]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=297454080]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer" unique_id=1912379532]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1011312414]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="Button" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=333717232]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme = ExtResource("5_3p42x")
+theme_override_font_sizes/font_size = 50
+text = "Credits
+"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1162641222]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2" unique_id=1113873521]
 layout_mode = 2
@@ -110,4 +146,4 @@ size_flags_vertical = 3
 stream = ExtResource("4_lbqne")
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_play_pressed"]
