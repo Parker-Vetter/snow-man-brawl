@@ -64,6 +64,7 @@ anim_offset_max = 1.0
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=75313489]
 material = SubResource("CanvasItemMaterial_5qogq")
+rotation = -0.6981317
 amount = 21
 texture = ExtResource("1_3mo0e")
 lifetime = 2.0
