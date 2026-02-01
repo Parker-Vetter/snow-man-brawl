@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da8jl7rd0i4os"
-path="res://.godot/imported/ParticleSprite.png-3e9d968a398aa2fd11c59934580e87bb.ctex"
+uid="uid://dklbx46cekd8s"
+path="res://.godot/imported/ParticleSprite3.png-8c87de4c5d8982db71f79677012db619.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PeggleDrop/Confetti/ParticleSprite.png"
-dest_files=["res://.godot/imported/ParticleSprite.png-3e9d968a398aa2fd11c59934580e87bb.ctex"]
+source_file="res://PeggleDrop/Confetti/ParticleSprite3.png"
+dest_files=["res://.godot/imported/ParticleSprite3.png-8c87de4c5d8982db71f79677012db619.ctex"]
 
 [params]
 
