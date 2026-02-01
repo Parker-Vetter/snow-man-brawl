@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2v2j6rippk32"]
 
-[ext_resource type="Texture2D" uid="uid://da8jl7rd0i4os" path="res://PeggleDrop/Confetti/ParticleSprite.png" id="1_3mo0e"]
+[ext_resource type="Texture2D" uid="uid://muc8yoqvaj0a" path="res://PeggleDrop/Confetti/ParticleSprite2.png" id="1_3mo0e"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qogq"]
 particles_animation = true
