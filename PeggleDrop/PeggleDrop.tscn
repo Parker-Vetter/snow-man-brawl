@@ -11,9 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
 [ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
 [ext_resource type="Texture2D" uid="uid://cbwaqhvttn342" path="res://PeggleDrop/UI/Plaid.png" id="9_jkpds"]
+[ext_resource type="Texture2D" uid="uid://dy671a552pkyn" path="res://PeggleDrop/UI/FBox4Text_Good.png" id="10_5urtc"]
+[ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="10_nyusr"]
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
+[ext_resource type="Texture2D" uid="uid://bvpeuflu7f4i6" path="res://PeggleDrop/UI/FBox4TextPressed_Good.png" id="11_nyusr"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
+[ext_resource type="Texture2D" uid="uid://dphohpupj2t0k" path="res://PeggleDrop/UI/FBox4TextHover_Good.png" id="12_g5ori"]
 [ext_resource type="Texture2D" uid="uid://dqds66w8cics8" path="res://MainGame/Assets/Box4Text.png" id="12_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://b77qnybc6pqve" path="res://PeggleDrop/UI/Box4TextPressed_Good.png" id="13_4v74s"]
 [ext_resource type="Texture2D" uid="uid://dw7c7u2qr47yh" path="res://zacks sprites/upgrades/backpack.png" id="14_3d5s5"]
@@ -78,6 +82,15 @@ size = Vector2(63.99999, 23)
 texture = ExtResource("9_jkpds")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1kvh"]
+texture = ExtResource("10_5urtc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7ifg"]
+texture = ExtResource("11_nyusr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw20y"]
+texture = ExtResource("12_g5ori")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sqa4"]
 
@@ -813,7 +826,11 @@ offset_left = -0.032001495
 offset_top = -0.036010742
 offset_right = 0.09197998
 offset_bottom = -0.10803223
+theme_override_fonts/font = ExtResource("10_nyusr")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_o1kvh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y7ifg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bw20y")
 text = "Fight"
 script = ExtResource("4_gh36d")
 metadata/_edit_use_anchors_ = true
