@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtn2y2pep0n5q" path="res://MainMenu/main_menu.gd" id="1_otibh"]
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_430ii"]
-[ext_resource type="Shader" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
+[ext_resource type="Shader" uid="uid://u4wuh4c7otrq" path="res://MainMenu/snowshader.gdshader" id="2_cruaa"]
 [ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_b76km"]
 [ext_resource type="AudioStream" uid="uid://bqfop05ebo5rl" path="res://MainMenu/Plinko (early draft).wav" id="4_lbqne"]
 
@@ -20,6 +20,8 @@ emission_box_extents = Vector3(960, 1, 1)
 angular_velocity_min = -346.67
 angular_velocity_max = 324.87997
 gravity = Vector3(0, 98, 0)
+scale_min = 0.35
+scale_max = 0.65
 
 [node name="MainMenu" type="Control" unique_id=1444026233]
 layout_mode = 3
@@ -43,7 +45,7 @@ color = Color(0.11372549, 0.16078432, 0.25882354, 1)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1304011067]
 position = Vector2(995, -43)
-amount = 35
+amount = 70
 texture = ExtResource("3_b76km")
 lifetime = 7.85
 explosiveness = 0.11
