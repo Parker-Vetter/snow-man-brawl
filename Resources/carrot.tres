@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" format=3 uid="uid://dmgmjn3ut414j"]
+
+[ext_resource type="Script" uid="uid://bbpd1xeh0hn4d" path="res://MainGame/Scripts/pickupData.gd" id="1_6wj42"]
+[ext_resource type="Texture2D" uid="uid://bhtnlv6jiyhvy" path="res://zacks sprites/carrot.png" id="2_g45h6"]
+
+[resource]
+script = ExtResource("1_6wj42")
+sprite = ExtResource("2_g45h6")
+id = &"carrot"
+metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"
