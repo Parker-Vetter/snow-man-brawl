@@ -5,19 +5,28 @@ extends Marker2D
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
 @onready var main_game: MainGame = $".."
 
-## The list of enemies to spawn
-@export var enemies: Array[Resource]
+## The spawn table with enemies and their spawn rates
+@export var spawn_table: Array[SpawnTableEntry] = []
 ## How many enemies to spawn
 @export var initialSpawnCount = 4
 ## Time in seconds between spawns
 @export var spawnDelay = 5
 
+var _internal_spawn_table: Array[int] = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawnDelay = 1.0/ main_game.gameData.snowman_spawn_rate
+	spawnDelay = 1.0 / main_game.gameData.snowman_spawn_rate
 	timer.wait_time = spawnDelay
 	timer.start()
+	
+	# Build internal spawn table based on weights
+	_internal_spawn_table = []
+	for i in range(spawn_table.size()):
+		for j in range(spawn_table[i].chance * 100):
+			_internal_spawn_table.append(i)
+	
 	for _i in initialSpawnCount:
 		spawn()
 
@@ -62,8 +71,11 @@ func getRandomPositionOffScreen(margin: float = 100) -> Vector2:
 
 
 func spawn():
-	var e = enemies.pick_random()
-	var instance = e.instantiate()
+	if spawn_table.is_empty() or _internal_spawn_table.is_empty():
+		return
+	
+	var spawn_entry = spawn_table[_internal_spawn_table.pick_random()]
+	var instance = spawn_entry.enemy_scene.instantiate()
 	instance.dir = rotation - PI / 2
 	instance.spawnPos = getRandomPositionOffScreen()
 	instance.spinSpeed = randf_range(-300, 300)

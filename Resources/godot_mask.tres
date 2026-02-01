@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" format=3 uid="uid://ddarl48f8f4ob"]
+
+[ext_resource type="Script" uid="uid://bbpd1xeh0hn4d" path="res://MainGame/Scripts/pickupData.gd" id="1_3d18m"]
+[ext_resource type="Texture2D" uid="uid://d4dg0lito6cx6" path="res://icon.svg" id="2_7yeg1"]
+
+[resource]
+script = ExtResource("1_3d18m")
+sprite = ExtResource("2_7yeg1")
+id = &"godot_mask"
+metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"

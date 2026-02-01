@@ -5,12 +5,32 @@
 [ext_resource type="Resource" uid="uid://doschogkwtrua" path="res://SceneManager/GameData/game_data.tres" id="2_dql36"]
 [ext_resource type="Script" uid="uid://dhq2qu3bnbfvx" path="res://MainGame/Scripts/enemy_spawner.gd" id="3_nwsis"]
 [ext_resource type="PackedScene" uid="uid://byo57dlvacb22" path="res://MainGame/Scenes/snowman.tscn" id="4_xuvwu"]
+[ext_resource type="Script" uid="uid://baakmb74lwbsf" path="res://MainGame/Scripts/spawn_table_entry.gd" id="5_p0f38"]
 [ext_resource type="PackedScene" uid="uid://bkrpxviudheek" path="res://MainGame/Scenes/player.tscn" id="6_ov1mn"]
+[ext_resource type="PackedScene" uid="uid://miglpa3kug1k" path="res://MainGame/Scenes/snowman_godot_mask.tscn" id="7_7jl2u"]
 [ext_resource type="Script" path="res://MainGame/UI/progress.gd" id="7_ov1mn"]
+[ext_resource type="PackedScene" uid="uid://cgvwjss0tpwve" path="res://MainGame/Scenes/snowman_ski_mask.tscn" id="8_di1eq"]
 [ext_resource type="FontFile" uid="uid://rg6wa3iilwt4" path="res://zacks sprites/studio-sim.ttf" id="8_sut4l"]
 [ext_resource type="Texture2D" uid="uid://rct4gllcrk77" path="res://MainGame/Assets/panel-transparent-center-009.png" id="9_bfb77"]
 [ext_resource type="Script" uid="uid://tqm8icltlbtv" path="res://MainGame/Scenes/level_progress.gd" id="10_e00sl"]
 [ext_resource type="Texture2D" uid="uid://ddeh3jcmmcurh" path="res://MainGame/Assets/panel-001.png" id="11_e00sl"]
+
+[sub_resource type="Resource" id="Resource_0sind"]
+script = ExtResource("5_p0f38")
+enemy_scene = ExtResource("4_xuvwu")
+metadata/_custom_type_script = "uid://baakmb74lwbsf"
+
+[sub_resource type="Resource" id="Resource_cu3gy"]
+script = ExtResource("5_p0f38")
+enemy_scene = ExtResource("7_7jl2u")
+chance = 0.1
+metadata/_custom_type_script = "uid://baakmb74lwbsf"
+
+[sub_resource type="Resource" id="Resource_eny6a"]
+script = ExtResource("5_p0f38")
+enemy_scene = ExtResource("8_di1eq")
+chance = 0.1
+metadata/_custom_type_script = "uid://baakmb74lwbsf"
 
 [sub_resource type="Gradient" id="Gradient_dql36"]
 colors = PackedColorArray(0.35998482, 0.8036953, 0.94689673, 1, 0.36078432, 0.8039216, 0.94509804, 1)
@@ -93,7 +113,7 @@ texture = ExtResource("1_bde7d")
 [node name="EnemySpawner" type="Marker2D" parent="." unique_id=452461616]
 position = Vector2(960, 539)
 script = ExtResource("3_nwsis")
-enemies = Array[Resource]([ExtResource("4_xuvwu")])
+spawn_table = Array[ExtResource("5_p0f38")]([SubResource("Resource_0sind"), SubResource("Resource_cu3gy"), SubResource("Resource_eny6a")])
 
 [node name="EnemySpawnTimer" type="Timer" parent="EnemySpawner" unique_id=1088430609]
 
