@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://r7ibv76myrvg"]
 
 [ext_resource type="Script" uid="uid://b1w7vhnob4bhr" path="res://PeggleDrop/Ball/ball.gd" id="1_t77ln"]
+[ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="2_b646q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t77ln"]
 bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u3yax"]
-radius = 8.0
+radius = 20.0
 
 [node name="Ball" type="RigidBody2D" unique_id=993768175]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_t77ln")
+center_of_mass_mode = 1
 script = ExtResource("1_t77ln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=928654705]
 shape = SubResource("CircleShape2D_u3yax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1890533174]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b646q")
