@@ -15,4 +15,4 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_time_left_timeout() -> void:
-	main_game.switchToPeggleDrop()
+	main_game.pause_and_death_menu()

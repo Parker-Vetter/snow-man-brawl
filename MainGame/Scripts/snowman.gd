@@ -57,4 +57,5 @@ func take_damage(damage: int) -> void:
 			pickup.spinSpeed = randf_range(-300, 300)
 			pickup.speed = randf_range(-50, 50)
 			main.add_child.call_deferred(pickup)
+		gameData.kills += 1
 		queue_free()

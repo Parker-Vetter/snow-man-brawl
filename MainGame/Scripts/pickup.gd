@@ -55,4 +55,5 @@ func pickup(player: Player):
 	
 	await tween.finished
 	player.main.gameData.add_pickup(data.id)
+	player.main.gameData.lifetime_pickup += 1
 	queue_free()
