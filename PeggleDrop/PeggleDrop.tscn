@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dp6ytw3x7kwni" path="res://PeggleDrop/UI/ui_fight.gd" id="4_gh36d"]
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
-[ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Script" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
 [ext_resource type="Script" uid="uid://djru0hlxtdbcm" path="res://PeggleDrop/UI/button_upgrade.gd" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
 [ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
@@ -780,10 +780,9 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
 script = ExtResource("11_i8mh4")
-cost = 1
 function_call = "increase_multiplyer"
 name_string = "Increase Multiplier"
-level = 1
+upgrade_name = "pachinko_multiplier"
 
 [node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseMultiplier" unique_id=912903066]
 layout_mode = 1
@@ -812,7 +811,288 @@ text = "LV: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="IncreaseThrowSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1410322552]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Throw Rate"
+upgrade_name = "throw_rate"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseThrowSpeed" unique_id=1768666177]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Throw Rate
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseThrowSpeed" unique_id=990692430]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IncreaseDamage" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754702]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Snowball Damage"
+upgrade_name = "snowball_damage"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseDamage" unique_id=1774792464]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseDamage" unique_id=872362603]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IncreaseSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754703]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Snowball Speed"
+upgrade_name = "snowball_speed"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseSpeed" unique_id=1553928094]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseSpeed" unique_id=832674239]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerSpeed" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754704]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Player Move Speed"
+upgrade_name = "player_move_speed"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/PlayerSpeed" unique_id=1934763797]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/PlayerSpeed" unique_id=1062420976]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SnowmanSpawnRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754705]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Snowman Spawn Rate"
+upgrade_name = "snowman_spawn_rate"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/SnowmanSpawnRate" unique_id=2068377566]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/SnowmanSpawnRate" unique_id=1131110576]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoBackpack" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754706]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Auto Backpack"
+upgrade_name = "auto_backpack"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpack" unique_id=1138443165]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpack" unique_id=728825784]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoBackpackFireRate" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=1909754707]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Auto Backpack Fire Rate"
+upgrade_name = "auto_backpack_fire_rate"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpackFireRate" unique_id=1764003464]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpackFireRate" unique_id=2013133948]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColdResistance" type="Button" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer" unique_id=498474023]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+script = ExtResource("11_i8mh4")
+function_call = "increase_basic_level"
+name_string = "Cold Resistance"
+upgrade_name = "game_length"
+
+[node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/ColdResistance" unique_id=1496751092]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_right = 0.771
+anchor_bottom = 1.0
+offset_left = -0.12000275
+offset_right = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damage
+Cost: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/ColdResistance" unique_id=1003144126]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 0.2
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "LV: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="UpgradesButton" type="Button" parent="CanvasLayer" unique_id=305705465]
+visible = false
 anchors_preset = -1
 anchor_left = 0.082
 anchor_top = 0.016

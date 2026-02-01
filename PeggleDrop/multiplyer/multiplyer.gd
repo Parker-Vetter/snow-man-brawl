@@ -16,7 +16,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not gameData:
 		return
-	multiplyer = gameData.pachinko_multipliers[index]
+	multiplyer = gameData.pachinko_multiplier[index]
 	label.text = str(multiplyer) + "X"
 	if currentMult != multiplyer:
 		currentMult = multiplyer

@@ -26,7 +26,6 @@ func _process(delta):
 
 func _on_timer_timeout() -> void:
 	var spawner_location = random_spawn_point()
-	game_data.collected_objects.get("snow")
 	
 	if snow > 0:
 		ball_holder.add_child(spawn_new_ball(snow_sprite, spawner_location))

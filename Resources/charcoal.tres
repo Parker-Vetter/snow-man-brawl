@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_riolo")
 sprite = ExtResource("2_51ew6")
-id = &"charcoal"
+id = &"coal"
 metadata/_custom_type_script = "uid://bbpd1xeh0hn4d"

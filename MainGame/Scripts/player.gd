@@ -40,19 +40,19 @@ func _ready() -> void:
 	add_child(shootTimer)
 	shootTimer.start()
 
-	if gameData.unlock_auto_backpack > 0:
+	if gameData.auto_backpack > 0:
 		var timer = bullet_origin_1.get_node("Timer")
 		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
 		timer.start()
-	if gameData.unlock_auto_backpack > 1:
+	if gameData.auto_backpack > 1:
 		var timer = bullet_origin_2.get_node("Timer")
 		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
 		timer.start()
-	if gameData.unlock_auto_backpack > 2:
+	if gameData.auto_backpack > 2:
 		var timer = bullet_origin_3.get_node("Timer")
 		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
 		timer.start()
-	if gameData.unlock_auto_backpack > 3:
+	if gameData.auto_backpack > 3:
 		var timer = bullet_origin_4.get_node("Timer")
 		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
 		timer.start()
