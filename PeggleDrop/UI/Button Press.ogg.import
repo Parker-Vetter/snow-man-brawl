@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bogbaacsc71vf"
+path="res://.godot/imported/Button Press.ogg-50fddc9ce70f31951e27499280fcfc16.oggvorbisstr"
+
+[deps]
+
+source_file="res://PeggleDrop/UI/Button Press.ogg"
+dest_files=["res://.godot/imported/Button Press.ogg-50fddc9ce70f31951e27499280fcfc16.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

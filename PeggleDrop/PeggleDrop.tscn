@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
 [ext_resource type="Texture2D" uid="uid://h8p8hbwb8w1o" path="res://zacks sprites/upgrades/snowman_spawn_rate.png" id="19_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bye7la8iirxni" path="res://zacks sprites/masks/snowman_skimask_single.png" id="20_r64bu"]
+[ext_resource type="AudioStream" uid="uid://bogbaacsc71vf" path="res://PeggleDrop/UI/Button Press.ogg" id="35_g5ori"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(138, 1120)
@@ -1433,6 +1434,10 @@ stream = ExtResource("14_6snom")
 [node name="Rewardsound" type="AudioStreamPlayer" parent="." unique_id=1643874680]
 unique_name_in_owner = true
 stream = ExtResource("16_soheg")
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=134424738]
+unique_name_in_owner = true
+stream = ExtResource("35_g5ori")
 
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
