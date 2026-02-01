@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://h5hxdbwhxbd2" path="res://zacks sprites/log_divider2.png" id="4_ycsyd"]
 [ext_resource type="PackedScene" uid="uid://b2bocywdcjqub" path="res://PeggleDrop/multiplyer/multilpyer.tscn" id="6_mapa8"]
 [ext_resource type="Script" uid="uid://bf0qvhxguh5hb" path="res://PeggleDrop/UI/gold_label.gd" id="8_6ap7j"]
+[ext_resource type="Theme" uid="uid://cgldd5i3pdinj" path="res://MainGame/Resources/snowtheme.tres" id="11_i8mh4"]
 [ext_resource type="Texture2D" uid="uid://cfp0w6sx6mf6" path="res://zacks sprites/background2.png" id="11_tr0iw"]
+[ext_resource type="Texture2D" uid="uid://of2d7p3fusij" path="res://PeggleDrop/ShopAssets/Shopidea.png" id="12_6snom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3yax"]
 size = Vector2(138, 1120)
@@ -54,6 +56,13 @@ size = Vector2(63.99999, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y353"]
 size = Vector2(63.99999, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4y353"]
+texture = ExtResource("12_6snom")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [node name="PeggleDrop" type="Node2D" unique_id=411252354 groups=["PeggleDrop"]]
 script = ExtResource("1_i6osx")
@@ -714,6 +723,14 @@ offset_bottom = 5.0
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainUI/Control" unique_id=1477153553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Fight" type="Button" parent="CanvasLayer/MainUI/Control" unique_id=332640463]
 layout_mode = 1
 anchors_preset = -1
@@ -731,6 +748,7 @@ script = ExtResource("4_gh36d")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control" unique_id=1110981982]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.035
@@ -755,6 +773,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_6ap7j")
 metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainUI/Control" unique_id=1906642801]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -50.5
+offset_bottom = 50.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=42800487]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/MainUI/Control/VBoxContainer/Button" unique_id=2099391816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -24.5
+offset_right = 72.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Increase Multiplier
+Cost: "
+
+[node name="Button2" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=1797566377]
+layout_mode = 2
+text = "Increase throw speed"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=1814319293]
+layout_mode = 2
+text = "Increase X"
+
+[node name="CloseUpgradesButton" type="Button" parent="CanvasLayer/MainUI/Control/VBoxContainer" unique_id=794947982]
+visible = false
+layout_mode = 2
+theme = ExtResource("11_i8mh4")
+text = "Close"
 
 [node name="UpgradesButton" type="Button" parent="CanvasLayer" unique_id=305705465]
 anchors_preset = -1
@@ -793,35 +859,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4y353")
 
 [node name="Control" type="Control" parent="CanvasLayer/UpgradesPanel" unique_id=598789544]
-anchors_preset = 0
-offset_right = 206.0
-offset_bottom = 169.0
-
-[node name="CloseUpgradesButton" type="Button" parent="CanvasLayer/UpgradesPanel/Control" unique_id=794947982]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.757
-anchor_top = 0.083000004
-anchor_right = 1.4610001
-anchor_bottom = 0.33100003
-offset_left = 0.057998657
-offset_top = -0.027000427
-offset_right = 0.033996582
-offset_bottom = 0.060993195
-text = "Close"
-
-[node name="Button" type="Button" parent="CanvasLayer/UpgradesPanel" unique_id=42800487]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.374
-anchor_bottom = 0.40600002
-offset_left = 189.0
-offset_top = 728.0
-offset_right = -376.08002
-offset_bottom = 407.52
-text = "Increase Multiplier"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=499570857]
 position = Vector2(960, 544)
@@ -836,5 +882,5 @@ texture = ExtResource("11_tr0iw")
 [connection signal="body_entered" from="World Boundry" to="World Boundry" method="_on_body_entered"]
 [connection signal="timeout" from="BallSpawner/Timer" to="BallSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MainUI/Control/Fight" to="CanvasLayer/MainUI/Control/Fight" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainUI/Control/VBoxContainer/CloseUpgradesButton" to="." method="_on_close_upgrades_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UpgradesButton" to="." method="_on_upgrades_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/UpgradesPanel/Control/CloseUpgradesButton" to="." method="_on_close_upgrades_button_pressed"]
