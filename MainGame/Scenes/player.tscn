@@ -278,7 +278,7 @@ shape = SubResource("CircleShape2D_1taep")
 position = Vector2(50.63, -53.4)
 
 [node name="BulletOrigin L" type="Marker2D" parent="." unique_id=897675069]
-position = Vector2(-43.63, -79.45)
+position = Vector2(-43.63, -64.11)
 
 [node name="BulletOrigin1" type="Marker2D" parent="." unique_id=1761240846]
 position = Vector2(-81, -155)
@@ -331,7 +331,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_d3ag3")
 animation = &"throw"
 frame = 6
-frame_progress = 1.0
 speed_scale = 3.0
 
 [node name="HitBox" type="Area2D" parent="." unique_id=117249582]

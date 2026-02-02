@@ -133,10 +133,14 @@ func _physics_process(_delta: float):
 		sprite.flip_h = false
 		armSprite.flip_h = false
 		armSpriteL.flip_h = false
+		for mask in masks.get_children():
+			mask.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		armSprite.flip_h = true
 		armSpriteL.flip_h = true
+		for mask in masks.get_children():
+			mask.flip_h = true
 
 	#play run or idle animation
 	const BASE_MOVE_SPEED: float = 100.0
