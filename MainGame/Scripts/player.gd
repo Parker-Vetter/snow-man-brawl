@@ -139,9 +139,11 @@ func _physics_process(_delta: float):
 		armSpriteL.flip_h = true
 
 	#play run or idle animation
+	const BASE_MOVE_SPEED: float = 100.0
 	if velocity.length() > 0:
 		sprite.play("run")
-		sprite.speed_scale = velocity.length() / maxSpeed * 2.0
+		var animScale = sqrt(velocity.length() / BASE_MOVE_SPEED) * 2.0
+		sprite.speed_scale = clamp(animScale, 0.5, 4.0)
 	else:
 		sprite.play("idle")
 		sprite.speed_scale = 1.0
