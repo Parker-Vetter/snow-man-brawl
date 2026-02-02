@@ -3,8 +3,12 @@ extends AudioStreamPlayer
 
 @export var music_tracks: Array[AudioStream] = []
 
+@onready var numTracks = music_tracks.size()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var round = main_game.gameData.rounds_played
-	stream = music_tracks[music_tracks.size()%round]
+	var index = round%numTracks
+	
+	stream = music_tracks[index]
 	self.play()
