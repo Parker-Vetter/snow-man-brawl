@@ -809,6 +809,7 @@ Frozen Hell"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1629080629]
 process_mode = 3
+volume_db = 2.0
 script = ExtResource("15_di1eq")
 music_tracks = Array[AudioStream]([ExtResource("16_t7rrf"), ExtResource("17_7l720"), ExtResource("18_8c3xl"), ExtResource("19_h3nli"), ExtResource("20_css33"), ExtResource("21_ggwwf"), ExtResource("22_6rtdu"), ExtResource("23_1unwk"), ExtResource("24_qvk4k"), ExtResource("25_y2c26"), ExtResource("26_3kjj0"), ExtResource("27_wnbli"), ExtResource("28_oxqfs"), ExtResource("29_w2dh8"), ExtResource("30_q4f4e")])
 
