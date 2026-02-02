@@ -461,11 +461,27 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label3" type="Label" parent="Spthanks/PanelContainer/VBoxContainer/MarginContainer" unique_id=60193886]
+[node name="Label3" type="Label" parent="Spthanks/PanelContainer/VBoxContainer" unique_id=60193886]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "Special thanks:"
+text = "Special thanks:
+- Global Game Jan 2026
+- Nice Games Alliance
+-2DCon
+- Lovely Composer (C) 2021-2023 1oogames, doc1oo.
+- Aseprite
+- Rio Graves
+- Ben McCown’s excellent Godot confetti tutorial 
+"
+
+[node name="LinkButton5" type="LinkButton" parent="Spthanks/PanelContainer/VBoxContainer" unique_id=1694099796]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0.6926584, 0.66697776, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Link to tutorial,"
+uri = " https://gist.github.com/benmccown/52eb2d9b0a2899fe4d6d6aea6514eafb"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Spthanks/PanelContainer/VBoxContainer" unique_id=511999040]
 layout_mode = 2
