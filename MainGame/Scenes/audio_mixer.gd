@@ -5,6 +5,6 @@ extends AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var round = main_game.gameData.rounds_played-1	
+	var round = main_game.gameData.rounds_played
 	stream = music_tracks[music_tracks.size()%round]
 	self.play()
