@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 @onready var pickupScene = load("res://MainGame/Scenes/pickup.tscn")
-@onready var standard_sprite: AnimatedSprite2D = $StandardSprite
-@onready var ski_mask_sprite: AnimatedSprite2D = $SkiMaskSprite
 @onready var splat: AudioStreamPlayer = $Splat
 
 @export var maxHealth: int = 2
