@@ -17,29 +17,33 @@ var level: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.pressed.connect(_on_button_pressed)
+	game_data.gold_changed.connect(_on_gold_changed)
 	upgrade_costs = game_data.get(upgrade_name + "_upgrade_costs")
 	level = game_data.get(upgrade_name + "_upgrade_level")
 	update_ui()
 
-
-func _process(_delta: float) -> void:
-	self.disabled = level >= upgrade_costs.size() - 1 or cost > game_data.gold
-
+func _on_gold_changed(_new_amount: int) -> void:
+	disable_if_needed()
 
 func _on_button_pressed() -> void:
 	if cost > game_data.gold:
 		return
 	
+	disable_if_needed()
 	game_data.gold -= cost
 	self.call(function_call)
-	update_ui()
-	button_sound.play()
 	
+	button_sound.play()
+
 func disable_if_needed():
 	if level >= upgrade_costs.size() - 1 or cost > game_data.gold:
 		self.disabled = true
+		name_label.add_theme_color_override("font_color", Color.WHITE)
+		level_label.add_theme_color_override("font_color", Color.WHITE)
 	else:
 		self.disabled = false
+		name_label.self_modulate = Color.BLACK
+		level_label.self_modulate = Color.BLACK
 
 func update_ui() -> void:
 	cost = upgrade_costs[level]

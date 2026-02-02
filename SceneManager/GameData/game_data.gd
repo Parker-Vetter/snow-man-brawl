@@ -1,9 +1,13 @@
 class_name GameData
 extends Resource
 
-## [point] referece to the total points of the player
-@export var gold: int
+signal gold_changed(new_amount)
 
+## [point] referece to the total points of the player
+@export var gold: int:
+	set(value):
+		gold = value
+		gold_changed.emit(gold)
 
 @export var level = 1;
 @export var kills = 0;
