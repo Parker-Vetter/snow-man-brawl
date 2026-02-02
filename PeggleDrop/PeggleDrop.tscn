@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://bw0skcv4lhw2x" path="res://PeggleDrop/Pegs/Pegsound1.ogg" id="14_6snom"]
 [ext_resource type="Texture2D" uid="uid://colxurrk6a04n" path="res://zacks sprites/ice chunk.png" id="14_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://djrlek0v8pini" path="res://PeggleDrop/UI/Box4TextDisabled_Good.png" id="14_ybabm"]
+[ext_resource type="Texture2D" uid="uid://ddeh3jcmmcurh" path="res://MainGame/Assets/panel-001.png" id="15_4vbll"]
 [ext_resource type="Texture2D" uid="uid://bmrb18l2wtmny" path="res://zacks sprites/upgrades/throw_rate.png" id="15_ltn3o"]
 [ext_resource type="Texture2D" uid="uid://dthlu0ht7gccm" path="res://PeggleDrop/UI/Box4TextFocus_Good.png" id="15_ybabm"]
 [ext_resource type="AudioStream" uid="uid://bkypcaso3e18g" path="res://PeggleDrop/Confetti/rewardsound.ogg" id="16_soheg"]
@@ -140,6 +141,18 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1oa5"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltn3o"]
 texture = ExtResource("12_ltn3o")
@@ -894,12 +907,26 @@ anchors_preset = -1
 anchor_left = 0.051000003
 anchor_top = 0.016
 anchor_right = 0.952
-anchor_bottom = 0.156
+anchor_bottom = 0.22100002
 offset_left = 0.13899899
 offset_top = -0.37600136
 offset_right = -0.072021484
-offset_bottom = -0.41600037
+offset_bottom = -0.006011963
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1sqa4")
+
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/MainUI/Control/Panel" unique_id=1218724663]
+modulate = Color(0.16078432, 0.6784314, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_4vbll")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainUI/Control/Panel" unique_id=420191764]
 layout_mode = 1
@@ -909,40 +936,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=448867676]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel2" unique_id=1557123810]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 48.0
-offset_right = 2.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
-text = "Gold: "
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_6ap7j")
-metadata/_edit_use_anchors_ = true
-
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=903418200]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pgt64")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel" unique_id=823078143]
-position = Vector2(71, 80)
+position = Vector2(71, 110.405)
 scale = Vector2(1.3541666, 1.3541666)
 sprite_frames = SubResource("SpriteFrames_y7ifg")
 autoplay = "default"
-frame_progress = 0.86537
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer" unique_id=448867676]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_w1oa5")
+
+[node name="Gold_Label" type="Label" parent="CanvasLayer/MainUI/Control/Panel/HBoxContainer/Panel2" unique_id=1557123810]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029000001
+anchor_top = 0.044000003
+anchor_right = 1.0
+anchor_bottom = 0.95100003
+offset_left = -0.0020003319
+offset_top = 0.043261528
+offset_right = 2.0
+offset_bottom = 0.07170105
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 52
+text = "0"
+vertical_alignment = 1
+script = ExtResource("8_6ap7j")
+metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainUI/Control" unique_id=1749986874]
 layout_mode = 0
