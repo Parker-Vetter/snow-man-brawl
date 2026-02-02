@@ -8,8 +8,8 @@ extends Control
 @onready var credits: Node = $Credits
 @onready var spthank : Node = $Spthanks
 func startGame():
-	scene_manager.switch_scene(self, "res://MainGame/Scenes/mainGame.tscn", game_data)
-	#scene_manager.switch_scene(self, "res://PeggleDrop/PeggleDrop.tscn", game_data)
+	#scene_manager.switch_scene(self, "res://MainGame/Scenes/mainGame.tscn", game_data)
+	scene_manager.switch_scene(self, "res://PeggleDrop/PeggleDrop.tscn", game_data)
 	pass
 
 

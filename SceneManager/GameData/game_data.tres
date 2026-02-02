@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_lsqfl")
-collected_objects = Dictionary[String, Variant]({
-"carrot": 0,
-"coal": 0,
-"snow": 0,
-"stick": 0
+lifetime_collected_objects = Dictionary[String, Variant]({
+"carrot": 1,
+"coal": 1,
+"snow": 1,
+"stick": 1
 })
