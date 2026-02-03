@@ -23,6 +23,7 @@ class_name Player
 @onready var launcher4: Sprite2D = $launcher4
 @onready var launcher4_anim: AnimationPlayer = $launcher4/AnimationPlayer
 @onready var backpack: AnimatedSprite2D = $backpack
+@onready var breath: AnimatedSprite2D = $breath
 
 # Reload snowball sprites and their marker positions
 @onready var reload_snowball_1: Sprite2D = $ReloadedSnowball1
@@ -57,11 +58,17 @@ var auto_timer4: Timer
 # Tween references for reload snowballs (to kill them when firing)
 var reload_tweens: Dictionary = {}
 
+# Breath animation timing
+var breath_timer: float = 0.0
+const BREATH_BASE_INTERVAL: float = 2.0  # Base 2 second buffer
+const BREATH_MIN_INTERVAL: float = 0.3   # Minimum interval when moving fast
+
 func _ready() -> void:
 	var gameData: GameData = main.gameData
 	maxSpeed = gameData.player_move_speed
 	armSprite.frame_changed.connect(_on_arm_frame_changed)
 	armSpriteL.frame_changed.connect(_on_arm_L_frame_changed)
+	breath.stop()  # Stop autoplay, we control timing via breath_timer
 	shootTimer = Timer.new()
 	shootDelay = 1 / gameData.throw_rate
 	shootTimer.wait_time = shootDelay
@@ -220,12 +227,16 @@ func _physics_process(_delta: float):
 		sprite.flip_h = false
 		armSprite.flip_h = false
 		armSpriteL.flip_h = false
+		breath.flip_h = false
+		breath.position.x = abs(breath.position.x)
 		for mask in masks.get_children():
 			mask.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		armSprite.flip_h = true
 		armSpriteL.flip_h = true
+		breath.flip_h = true
+		breath.position.x = -abs(breath.position.x)
 		for mask in masks.get_children():
 			mask.flip_h = true
 
@@ -244,6 +255,14 @@ func _physics_process(_delta: float):
 	reload_snowball_2.global_position = snowball_pos_2.global_position
 	reload_snowball_3.global_position = snowball_pos_3.global_position
 	reload_snowball_4.global_position = snowball_pos_4.global_position
+
+	# Breath animation with speed-based interval
+	var speed_ratio = velocity.length() / maxSpeed
+	var breath_interval = lerp(BREATH_BASE_INTERVAL, BREATH_MIN_INTERVAL, speed_ratio)
+	breath_timer -= _delta
+	if breath_timer <= 0:
+		breath.play("default")
+		breath_timer = breath_interval
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
