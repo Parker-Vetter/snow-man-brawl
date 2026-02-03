@@ -18,8 +18,12 @@ func _on_play_pressed() -> void:
 
 #When credit button is pressed, swap visibility of credits and special thanks. Default visibility is not visible.
 func _on_button_pressed() -> void:
-	credittext.visible = !credittext.visible
-	backtext.visible = !backtext.visible
-	credits.visible = !credits.visible
-	spthank.visible = !spthank.visible
+	if is_instance_valid(credittext):
+		credittext.visible = !credittext.visible
+	if is_instance_valid(backtext):
+		backtext.visible = !backtext.visible
+	if is_instance_valid(credits):
+		credits.visible = !credits.visible
+	if is_instance_valid(spthank):
+		spthank.visible = !spthank.visible
 	

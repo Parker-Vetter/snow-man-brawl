@@ -1,11 +1,12 @@
-[gd_scene format=3 uid="uid://miglpa3kug1k"]
+[gd_scene format=3 uid="uid://d1n4n0ajeg10k"]
 
 [ext_resource type="Script" uid="uid://c6nlovgcwvimh" path="res://MainGame/Scripts/snowman.gd" id="1_yyo4s"]
 [ext_resource type="Script" uid="uid://bmmmaippun6sc" path="res://MainGame/Scripts/drop_table_entry.gd" id="2_lck5g"]
-[ext_resource type="Resource" uid="uid://ddarl48f8f4ob" path="res://Resources/godot_mask.tres" id="3_lck5g"]
+[ext_resource type="Resource" path="res://Resources/godot_mask.tres" id="3_lck5g"]
 [ext_resource type="SpriteFrames" uid="uid://mmsh7fp13qnt" path="res://MainGame/Assets/snowman_frames.tres" id="4_gax2n"]
 [ext_resource type="Texture2D" uid="uid://c1crf7hrfrjk7" path="res://zacks sprites/masks/godotmask_snowman.png" id="5_lck5g"]
-[ext_resource type="AudioStream" uid="uid://ctue4op1kwntv" path="res://MainGame/Effects/splat.mp3" id="7_ft7nw"]
+[ext_resource type="AudioStream" uid="uid://ctue4op1kwntv" path="res://MainGame/Effects/impact.mp3" id="7_ft7nw"]
+[ext_resource type="Texture2D" uid="uid://bolyqxy3af315" path="res://zacks sprites/snowman_explode.png" id="7_gax2n"]
 
 [sub_resource type="Resource" id="Resource_eqmxu"]
 script = ExtResource("2_lck5g")
@@ -76,6 +77,70 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdqmn"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(0, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2jii"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(225, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oova"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(450, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v04q"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(675, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5gm4"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(900, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d841q"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(1125, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqnsh"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(1350, 0, 225, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e5ck"]
+atlas = ExtResource("7_gax2n")
+region = Rect2(1575, 0, 225, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2mei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdqmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2jii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oova")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v04q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5gm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d841q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqnsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e5ck")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Snowman" type="CharacterBody2D" unique_id=15038228 groups=["enemies"]]
 collision_layer = 2
 collision_mask = 7
@@ -111,3 +176,9 @@ polygon = PackedVector2Array(15, 8, 46, 20, 58, 51, 51, 85, 33, 108, 3, 115, -32
 
 [node name="Splat" type="AudioStreamPlayer" parent="." unique_id=736861326]
 stream = ExtResource("7_ft7nw")
+
+[node name="die" type="AnimatedSprite2D" parent="." unique_id=2093948047]
+visible = false
+position = Vector2(0, -107)
+sprite_frames = SubResource("SpriteFrames_u2mei")
+speed_scale = 3.0

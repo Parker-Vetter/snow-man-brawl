@@ -24,6 +24,8 @@ class_name Player
 @onready var launcher4_anim: AnimationPlayer = $launcher4/AnimationPlayer
 @onready var backpack: AnimatedSprite2D = $backpack
 @onready var breath: AnimatedSprite2D = $breath
+@onready var footprint_spawner: Marker2D = $FootprintSpawner
+var footprint_texture = preload("res://zacks sprites/footprint.png")
 
 # Reload snowball sprites and their marker positions
 @onready var reload_snowball_1: Sprite2D = $ReloadedSnowball1
@@ -38,6 +40,10 @@ class_name Player
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
 @export var targetDistance = 150
+
+# Footprint settings
+var footprint_fade_time: float = 2.0  # Time before footprint starts fading
+var footprint_fade_duration: float = 1.0  # Duration of fade out
 
 
 var maxSpeed: float = 100
@@ -68,6 +74,7 @@ func _ready() -> void:
 	maxSpeed = gameData.player_move_speed
 	armSprite.frame_changed.connect(_on_arm_frame_changed)
 	armSpriteL.frame_changed.connect(_on_arm_L_frame_changed)
+	sprite.frame_changed.connect(_on_sprite_frame_changed)
 	breath.stop()  # Stop autoplay, we control timing via breath_timer
 	shootTimer = Timer.new()
 	shootDelay = 1 / gameData.throw_rate
@@ -80,7 +87,8 @@ func _ready() -> void:
 	var anim_speed = max(1.0, gameData.auto_backpack_fire_rate * 0.5)
 
 	# Hide backpack if no launchers active
-	backpack.visible = gameData.auto_backpack > 0
+	if is_instance_valid(backpack):
+		backpack.visible = gameData.auto_backpack > 0
 
 	var base_interval = 1 / gameData.auto_backpack_fire_rate
 
@@ -88,59 +96,78 @@ func _ready() -> void:
 		auto_timer1 = bullet_origin_1.get_node("Timer")
 		auto_timer1.wait_time = base_interval
 		auto_timer1.start()
-		launcher1.visible = true
-		launcher1_anim.speed_scale = anim_speed
-		reload_snowball_1.visible = true
-		start_reload_effect(reload_snowball_1, base_interval)
+		if is_instance_valid(launcher1):
+			launcher1.visible = true
+			launcher1_anim.speed_scale = anim_speed
+		if is_instance_valid(reload_snowball_1):
+			reload_snowball_1.visible = true
+			start_reload_effect(reload_snowball_1, base_interval)
 		print("[Launcher] Timer 1 started, wait_time: ", auto_timer1.wait_time)
 	else:
-		launcher1.visible = false
-		reload_snowball_1.visible = false
+		if is_instance_valid(launcher1):
+			launcher1.visible = false
+		if is_instance_valid(reload_snowball_1):
+			reload_snowball_1.visible = false
 	if gameData.auto_backpack > 1:
 		auto_timer2 = bullet_origin_2.get_node("Timer")
 		auto_timer2.wait_time = base_interval
-		launcher2.visible = true
-		launcher2_anim.speed_scale = anim_speed
-		reload_snowball_2.visible = true
+		if is_instance_valid(launcher2):
+			launcher2.visible = true
+			launcher2_anim.speed_scale = anim_speed
+		if is_instance_valid(reload_snowball_2):
+			reload_snowball_2.visible = true
 		# Stagger: delay start by 25% of interval
 		get_tree().create_timer(base_interval * 0.25).timeout.connect(func():
 			auto_timer2.start()
-			start_reload_effect(reload_snowball_2, base_interval)
+			if is_instance_valid(reload_snowball_2):
+				start_reload_effect(reload_snowball_2, base_interval)
 		)
 		print("[Launcher] Timer 2 will start in: ", base_interval * 0.25)
 	else:
-		launcher2.visible = false
-		reload_snowball_2.visible = false
+		if is_instance_valid(launcher2):
+			launcher2.visible = false
+		if is_instance_valid(reload_snowball_2):
+			reload_snowball_2.visible = false
 	if gameData.auto_backpack > 2:
 		auto_timer3 = bullet_origin_3.get_node("Timer")
 		auto_timer3.wait_time = base_interval
-		launcher3.visible = true
-		launcher3_anim.speed_scale = anim_speed
-		reload_snowball_3.visible = true
+		if is_instance_valid(launcher3):
+			launcher3.visible = true
+			launcher3_anim.speed_scale = anim_speed
+		if is_instance_valid(reload_snowball_3):
+			reload_snowball_3.visible = true
 		# Stagger: delay start by 50% of interval
 		get_tree().create_timer(base_interval * 0.5).timeout.connect(func():
 			auto_timer3.start()
-			start_reload_effect(reload_snowball_3, base_interval)
+			if is_instance_valid(reload_snowball_3):
+				start_reload_effect(reload_snowball_3, base_interval)
 		)
 		print("[Launcher] Timer 3 will start in: ", base_interval * 0.5)
 	else:
-		launcher3.visible = false
-		reload_snowball_3.visible = false
+		if is_instance_valid(launcher3):
+			launcher3.visible = false
+		if is_instance_valid(reload_snowball_3):
+			reload_snowball_3.visible = false
 	if gameData.auto_backpack > 3:
 		auto_timer4 = bullet_origin_4.get_node("Timer")
 		auto_timer4.wait_time = base_interval
-		launcher4.visible = true
-		launcher4_anim.speed_scale = anim_speed
-		reload_snowball_4.visible = true
+		if is_instance_valid(launcher4):
+			launcher4.visible = true
+			launcher4_anim.speed_scale = anim_speed
+		if is_instance_valid(reload_snowball_4):
+			reload_snowball_4.visible = true
 		# Stagger: delay start by 75% of interval
 		get_tree().create_timer(base_interval * 0.75).timeout.connect(func():
 			auto_timer4.start()
-			start_reload_effect(reload_snowball_4, base_interval)
+			if is_instance_valid(reload_snowball_4):
+				start_reload_effect(reload_snowball_4, base_interval)
 		)
 		print("[Launcher] Timer 4 will start in: ", base_interval * 0.75)
 	else:
-		launcher4.visible = false
-		reload_snowball_4.visible = false
+		if is_instance_valid(launcher4):
+			launcher4.visible = false
+		if is_instance_valid(reload_snowball_4):
+			reload_snowball_4.visible = false
 
 func start_reload_effect(snowball: Sprite2D, duration: float) -> void:
 	# Kill any existing tween for this snowball
@@ -226,17 +253,23 @@ func _physics_process(_delta: float):
 	if velocity.x > 0:
 		sprite.flip_h = false
 		armSprite.flip_h = false
+		armSprite.position.x = abs(armSprite.position.x)
 		armSpriteL.flip_h = false
 		breath.flip_h = false
 		breath.position.x = abs(breath.position.x)
+		# Ensure footprint spawner sits on the right side when facing right
+		footprint_spawner.position.x = abs(footprint_spawner.position.x)
 		for mask in masks.get_children():
 			mask.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
 		armSprite.flip_h = true
+		armSprite.position.x = -abs(armSprite.position.x)
 		armSpriteL.flip_h = true
 		breath.flip_h = true
 		breath.position.x = -abs(breath.position.x)
+		# Ensure footprint spawner sits on the left side when facing left
+		footprint_spawner.position.x = -abs(footprint_spawner.position.x)
 		for mask in masks.get_children():
 			mask.flip_h = true
 
@@ -263,6 +296,33 @@ func _physics_process(_delta: float):
 	if breath_timer <= 0:
 		breath.play("default")
 		breath_timer = breath_interval
+
+func _on_sprite_frame_changed() -> void:
+	if sprite.animation == "run" and (sprite.frame == 1 or sprite.frame == 8):
+		spawn_footprint()
+
+func spawn_footprint() -> void:
+	var footprint = Sprite2D.new()
+	footprint.texture = footprint_texture
+	# Center the footprint texture so the position refers to its center
+	if footprint.texture:
+		footprint.centered = true
+		# Place exactly at the FootprintSpawner marker position (no offset)
+		footprint.global_position = footprint_spawner.global_position
+	else:
+		footprint.global_position = footprint_spawner.global_position
+	footprint.flip_h = sprite.flip_h
+	# Add to Footprints node (if present) so it stays in world space and is organized
+	var container: Node = main
+	if main.has_node("Footprints"):
+		container = main.get_node("Footprints")
+	container.add_child(footprint)
+
+	# Fade out and remove footprint
+	var tween = create_tween()
+	tween.tween_interval(footprint_fade_time)
+	tween.tween_property(footprint, "modulate:a", 0.0, footprint_fade_duration)
+	tween.tween_callback(footprint.queue_free)
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
@@ -334,7 +394,8 @@ func _on_timer_timeout_BO4() -> void:
 
 func setMask(data: PickupData):
 	for child in masks.get_children():
-		child.visible = false
+		if is_instance_valid(child):
+			child.visible = false
 	var mask = masks.get_node(str(data.id))
-	if mask:
+	if mask and is_instance_valid(mask):
 		mask.visible = true

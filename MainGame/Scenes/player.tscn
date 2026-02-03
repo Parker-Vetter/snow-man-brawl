@@ -533,9 +533,10 @@ script = ExtResource("1_mta5u")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1482828288]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5xoc3")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.71110785
+frame = 1
+frame_progress = 0.888881
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313249225]
@@ -660,6 +661,7 @@ autoplay = "default"
 
 [node name="arm R" type="AnimatedSprite2D" parent="." unique_id=1829775417]
 texture_filter = 1
+position = Vector2(5.57, 0)
 sprite_frames = SubResource("SpriteFrames_f3uyv")
 animation = &"throw"
 frame = 5
@@ -708,6 +710,9 @@ texture = ExtResource("9_ub5t4")
 position = Vector2(35.15, -44.57)
 sprite_frames = SubResource("SpriteFrames_pxf7m")
 speed_scale = 3.0
+
+[node name="FootprintSpawner" type="Marker2D" parent="." unique_id=1753821284]
+position = Vector2(26.36, 116.52)
 
 [connection signal="timeout" from="BulletOrigin1/Timer" to="." method="_on_timer_timeout_BO1"]
 [connection signal="timeout" from="BulletOrigin2/Timer" to="." method="_on_timer_timeout_BO2"]

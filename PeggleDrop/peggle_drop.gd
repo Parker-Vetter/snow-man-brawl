@@ -9,7 +9,8 @@ extends Node
 @export var game_data: GameData
 
 func _ready() -> void:
-	upgrades_panel.visible = false
+	if is_instance_valid(upgrades_panel):
+		upgrades_panel.visible = false
 
 func load_game_state(new_game_data: GameData):
 	game_data = new_game_data
@@ -23,8 +24,10 @@ func _process(delta: float) -> void:
 
 
 func _on_upgrades_button_pressed() -> void:
-	upgrades_panel.visible = true
+	if is_instance_valid(upgrades_panel):
+		upgrades_panel.visible = true
 
 
 func _on_close_upgrades_button_pressed() -> void:
-	upgrades_panel.visible = false
+	if is_instance_valid(upgrades_panel):
+		upgrades_panel.visible = false

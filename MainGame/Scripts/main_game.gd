@@ -13,7 +13,8 @@ func load_game_state(new_game_data: GameData):
 	gameData.start_level()
 
 func pause_and_death_menu():
-	death.visible = true
+	if is_instance_valid(death):
+		death.visible = true
 	get_tree().paused = not get_tree().paused
 
 func switchToPeggleDrop():
