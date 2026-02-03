@@ -8,15 +8,18 @@ var damage: float
 var gameData: GameData
 var main: MainGame
 @onready var impact = load("res://MainGame/Scenes/Impact.tscn")
+@onready var snow_dust: CPUParticles2D = $SnowDust
 
 func _ready() -> void:
 	global_position = spawnPos
 	global_rotation = spawnRot
+	snow_dust.direction = Vector2(0, -1).rotated(dir)
 	
 func _physics_process(delta: float) -> void:
 	var velocity = Vector2(0, gameData.snowball_speed).rotated(dir)
 	rotation_degrees += spinSpeed * delta
 	position += velocity * delta
+	snow_dust.global_position = global_position
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

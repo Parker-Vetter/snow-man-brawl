@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dquaqb17dbw8x" path="res://MainGame/Scripts/projectile.gd" id="1_rm2tq"]
 [ext_resource type="Texture2D" uid="uid://cwxsqqvccmpjb" path="res://MainGame/Assets/snowball.png" id="2_cmv3f"]
+[ext_resource type="Texture2D" uid="uid://dgksxh1ugpsgr" path="res://MainGame/Assets/snowflake.png" id="3_cmv3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vito"]
 radius = 14.035668
+
+[sub_resource type="Gradient" id="Gradient_dust"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Projectile" type="Area2D" unique_id=1310216402]
 collision_layer = 4
@@ -12,11 +16,27 @@ collision_mask = 2
 script = ExtResource("1_rm2tq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1783827972]
+z_index = 1
 texture_filter = 1
 scale = Vector2(0.40625, 0.40625)
 texture = ExtResource("2_cmv3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30349597]
 shape = SubResource("CircleShape2D_3vito")
+
+[node name="SnowDust" type="CPUParticles2D" parent="." unique_id=1271499282]
+top_level = true
+texture_filter = 1
+scale = Vector2(9.23, 9.23)
+amount = 43
+texture = ExtResource("3_cmv3f")
+lifetime = 0.3
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 80.0
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_dust")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
