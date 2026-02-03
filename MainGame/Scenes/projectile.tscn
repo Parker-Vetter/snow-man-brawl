@@ -7,6 +7,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vito"]
 radius = 14.035668
 
+[sub_resource type="Curve" id="Curve_trail_width"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7165179, 0.6679909), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_trail"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.9)
+
 [sub_resource type="Gradient" id="Gradient_dust"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
@@ -14,6 +21,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_rm2tq")
+trail_length = 13
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1783827972]
 z_index = 1
@@ -24,11 +32,19 @@ texture = ExtResource("2_cmv3f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30349597]
 shape = SubResource("CircleShape2D_3vito")
 
+[node name="Trail" type="Line2D" parent="." unique_id=162623694]
+top_level = true
+width = 25.69
+width_curve = SubResource("Curve_trail_width")
+default_color = Color(0.82525307, 0.9589998, 0.99999994, 1)
+gradient = SubResource("Gradient_trail")
+begin_cap_mode = 2
+end_cap_mode = 2
+
 [node name="SnowDust" type="CPUParticles2D" parent="." unique_id=1271499282]
 top_level = true
 texture_filter = 1
-scale = Vector2(9.23, 9.23)
-amount = 43
+amount = 21
 texture = ExtResource("3_cmv3f")
 lifetime = 0.3
 spread = 20.0

@@ -641,6 +641,22 @@ sprite_frames = SubResource("SpriteFrames_hhf8v")
 autoplay = "default"
 frame_progress = 0.8933858
 
+[node name="ReloadedSnowball1" type="Sprite2D" parent="." unique_id=1478298725]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball2" type="Sprite2D" parent="." unique_id=101435599]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball3" type="Sprite2D" parent="." unique_id=667344090]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball4" type="Sprite2D" parent="." unique_id=119539578]
+visible = false
+texture = ExtResource("9_ub5t4")
+
 [node name="Masks" type="Marker2D" parent="." unique_id=1870681424]
 
 [node name="godot_mask" type="Sprite2D" parent="Masks" unique_id=705814937]
@@ -689,22 +705,6 @@ shape = SubResource("CircleShape2D_t35mx")
 
 [node name="Impact" type="AudioStreamPlayer" parent="." unique_id=1749451526]
 stream = ExtResource("7_jj37f")
-
-[node name="ReloadedSnowball1" type="Sprite2D" parent="." unique_id=1478298725]
-visible = false
-texture = ExtResource("9_ub5t4")
-
-[node name="ReloadedSnowball2" type="Sprite2D" parent="." unique_id=101435599]
-visible = false
-texture = ExtResource("9_ub5t4")
-
-[node name="ReloadedSnowball3" type="Sprite2D" parent="." unique_id=667344090]
-visible = false
-texture = ExtResource("9_ub5t4")
-
-[node name="ReloadedSnowball4" type="Sprite2D" parent="." unique_id=119539578]
-visible = false
-texture = ExtResource("9_ub5t4")
 
 [node name="breath" type="AnimatedSprite2D" parent="." unique_id=1901231589]
 position = Vector2(35.15, -44.57)
