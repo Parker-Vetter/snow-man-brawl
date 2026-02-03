@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var pickupScene = load("res://MainGame/Scenes/pickup.tscn")
-@onready var splat: AudioStreamPlayer = $Splat
 
 @export var maxHealth: int = 2
 @export var scaleHealthByLevel = true;
@@ -43,7 +42,6 @@ func _physics_process(_delta: float) -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
-	splat.play()
 	if health <= 0:
 		var drops = number_of_drops * (main.gameData.level if scaleDropsByLevel else 1)
 		for i in range(drops):

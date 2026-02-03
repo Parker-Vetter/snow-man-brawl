@@ -36,7 +36,13 @@ func _on_button_pressed() -> void:
 	button_sound.play()
 
 func disable_if_needed():
-	if level >= upgrade_costs.size() - 1 or cost > game_data.gold:
+	var should_disable = level >= upgrade_costs.size() or cost > game_data.gold
+
+	# Disable fire rate upgrade if no auto backpack owned
+	if upgrade_name == "auto_backpack_fire_rate" and game_data.auto_backpack == 0:
+		should_disable = true
+
+	if should_disable:
 		self.disabled = true
 		name_label.add_theme_color_override("font_color", Color.WHITE)
 		level_label.add_theme_color_override("font_color", Color.WHITE)
@@ -46,10 +52,10 @@ func disable_if_needed():
 		level_label.self_modulate = Color.BLACK
 
 func update_ui() -> void:
-	cost = upgrade_costs[level]
+	cost = upgrade_costs[level] if level < upgrade_costs.size() else 0
 	name_label.text = name_string + "\n" + "Cost: " + str(cost)
 	level_label.text = str("LV: ", level + 1)
-	if level >= upgrade_costs.size() - 1:
+	if level >= upgrade_costs.size():
 		name_label.text = name_string + "\n" + "Max Level"
 	else:
 		name_label.text = name_string + "\n" + "Cost: " + str(cost)

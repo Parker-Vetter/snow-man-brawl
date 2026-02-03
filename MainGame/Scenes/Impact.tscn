@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dump8ebmgn8s" path="res://MainGame/Assets/snowball_impact_96px.png" id="1_t78ty"]
 [ext_resource type="Script" uid="uid://dxupb3skyil8r" path="res://MainGame/Scenes/despawnAnimationOnFinished.gd" id="2_y4gwv"]
+[ext_resource type="AudioStream" uid="uid://cvvd6uafvrfld" path="res://MainGame/Effects/impact.mp3" id="3_impact"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4gwv"]
 atlas = ExtResource("1_t78ty")
@@ -74,5 +75,10 @@ frame = 7
 frame_progress = 1.0
 speed_scale = 3.21
 script = ExtResource("2_y4gwv")
+
+[node name="ImpactSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_impact")
+volume_db = 5.0
+autoplay = true
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dx6v36ecoksvj" path="res://MainGame/Scripts/player.gd" id="1_mta5u"]
 [ext_resource type="Texture2D" uid="uid://drhmw0seqyp60" path="res://MainGame/Assets/player-Sheet.png" id="2_mta5u"]
+[ext_resource type="Texture2D" uid="uid://edvxpjcp55h" path="res://zacks sprites/launcher_left.png" id="3_5o4xu"]
 [ext_resource type="Texture2D" uid="uid://4ktaaroi6pxx" path="res://zacks sprites/masks/godotmask_player.png" id="3_gbkh0"]
 [ext_resource type="Texture2D" uid="uid://cbcpo3g5yxcs6" path="res://zacks sprites/masks/skimask_player.png" id="4_6dxmd"]
-[ext_resource type="AudioStream" uid="uid://bj85dpgjq06bh" path="res://MainGame/Effects/impact.mp3" id="7_jj37f"]
+[ext_resource type="Texture2D" uid="uid://b6y2swwqjpnuv" path="res://zacks sprites/launcher_right.png" id="6_jj37f"]
+[ext_resource type="Texture2D" uid="uid://ddr4nbvw4tt6p" path="res://zacks sprites/backpack-sheet.png" id="7_5o4xu"]
+[ext_resource type="AudioStream" uid="uid://bj85dpgjq06bh" path="res://MainGame/Effects/throw.mp3" id="7_jj37f"]
+[ext_resource type="Texture2D" uid="uid://o8sm01dsvxi8" path="res://zacks sprites/snowball_32.png" id="9_ub5t4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbkh0"]
 atlas = ExtResource("2_mta5u")
@@ -133,6 +137,190 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1taep"]
 radius = 52.009613
+
+[sub_resource type="Animation" id="Animation_4kw36"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.49218285]
+}
+
+[sub_resource type="Animation" id="Animation_d3ag3"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25539654, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.49218285, 0.42062435, -0.49218285]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygq0c"]
+_data = {
+&"RESET": SubResource("Animation_4kw36"),
+&"shoot": SubResource("Animation_d3ag3")
+}
+
+[sub_resource type="Animation" id="Animation_ub5t4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8412487]
+}
+
+[sub_resource type="Animation" id="Animation_erkdm"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.9983283, -0.5375614, 0.9983283]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4kw36"]
+_data = {
+&"RESET": SubResource("Animation_ub5t4"),
+&"shoot": SubResource("Animation_erkdm")
+}
+
+[sub_resource type="Animation" id="Animation_2chul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.8412487]
+}
+
+[sub_resource type="Animation" id="Animation_mie8w"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2474154, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.8412487, 0.49218285, -0.8412487]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cx3y3"]
+_data = {
+&"RESET": SubResource("Animation_2chul"),
+&"shoot": SubResource("Animation_mie8w")
+}
+
+[sub_resource type="Animation" id="Animation_c3k4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.52534413]
+}
+
+[sub_resource type="Animation" id="Animation_llmu4"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25007576, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.52534413, -0.3874631, 0.52534413]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0nufu"]
+_data = {
+&"RESET": SubResource("Animation_c3k4b"),
+&"shoot": SubResource("Animation_llmu4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbs8c"]
+atlas = ExtResource("7_5o4xu")
+region = Rect2(0, 0, 240, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhbq7"]
+atlas = ExtResource("7_5o4xu")
+region = Rect2(240, 0, 240, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kv6c"]
+atlas = ExtResource("7_5o4xu")
+region = Rect2(480, 0, 240, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct2aa"]
+atlas = ExtResource("7_5o4xu")
+region = Rect2(720, 0, 240, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hhf8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbs8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhbq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kv6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct2aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kw36"]
 atlas = ExtResource("4_6dxmd")
@@ -281,7 +469,7 @@ position = Vector2(50.63, -53.4)
 position = Vector2(-43.63, -64.11)
 
 [node name="BulletOrigin1" type="Marker2D" parent="." unique_id=1761240846]
-position = Vector2(-81, -155)
+position = Vector2(-59.61, -128.57)
 
 [node name="Timer" type="Timer" parent="BulletOrigin1" unique_id=1136146329]
 
@@ -291,14 +479,86 @@ position = Vector2(85, -93)
 [node name="Timer" type="Timer" parent="BulletOrigin2" unique_id=1136146330]
 
 [node name="BulletOrigin3" type="Marker2D" parent="." unique_id=793500776]
-position = Vector2(-85, -100)
+position = Vector2(-71.83, -87.43)
 
 [node name="Timer" type="Timer" parent="BulletOrigin3" unique_id=1136146331]
 
 [node name="BulletOrigin4" type="Marker2D" parent="." unique_id=777652650]
-position = Vector2(89, -150)
+position = Vector2(63.72, -122.96)
 
 [node name="Timer" type="Timer" parent="BulletOrigin4" unique_id=1136146332]
+
+[node name="launcher1" type="Sprite2D" parent="." unique_id=849045943]
+texture_filter = 1
+position = Vector2(-35, -50)
+rotation = -0.49218285
+scale = Vector2(1.152766, 1.5745)
+texture = ExtResource("3_5o4xu")
+offset = Vector2(-21, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="launcher1" unique_id=943932955]
+libraries/ = SubResource("AnimationLibrary_ygq0c")
+
+[node name="SnowballRespawn1" type="Marker2D" parent="launcher1" unique_id=962523443]
+position = Vector2(-21.716236, -48.637302)
+rotation = 0.37408832
+scale = Vector2(0.8213131, 0.6937901)
+skew = 0.2580272
+
+[node name="launcher2" type="Sprite2D" parent="." unique_id=1265425762]
+texture_filter = 1
+position = Vector2(34.511, -40.29)
+rotation = 0.8412487
+scale = Vector2(1.0957447, 1.125)
+texture = ExtResource("6_jj37f")
+offset = Vector2(19, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="launcher2" unique_id=1451373123]
+libraries/ = SubResource("AnimationLibrary_4kw36")
+
+[node name="SnowballRespawn2" type="Marker2D" parent="launcher2" unique_id=847437791]
+position = Vector2(22.816, -47.517)
+rotation = -0.9862662
+scale = Vector2(0.89591825, 0.9057216)
+skew = -0.023993611
+
+[node name="launcher3" type="Sprite2D" parent="." unique_id=919592126]
+texture_filter = 1
+position = Vector2(-31.9, -38.35)
+rotation = -0.8412487
+texture = ExtResource("3_5o4xu")
+offset = Vector2(-20, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="launcher3" unique_id=1838913854]
+libraries/ = SubResource("AnimationLibrary_cx3y3")
+
+[node name="SnowballRespawn3" type="Marker2D" parent="launcher3" unique_id=1289204510]
+position = Vector2(-24.488, -48.467)
+rotation = 0.8412487
+
+[node name="launcher4" type="Sprite2D" parent="." unique_id=1362843932]
+texture_filter = 1
+position = Vector2(33.22872, -48.9375)
+rotation = 0.52534413
+scale = Vector2(1.2234043, 1.4375)
+texture = ExtResource("6_jj37f")
+offset = Vector2(18, -31)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="launcher4" unique_id=729111502]
+libraries/ = SubResource("AnimationLibrary_0nufu")
+
+[node name="SnowballRespawn4" type="Marker2D" parent="launcher4" unique_id=192548499]
+position = Vector2(19.283, -50.581)
+rotation = -0.45830896
+scale = Vector2(0.7885434, 0.72818935)
+skew = -0.13963556
+
+[node name="backpack" type="AnimatedSprite2D" parent="." unique_id=1248518651]
+texture_filter = 1
+position = Vector2(-1, 3)
+sprite_frames = SubResource("SpriteFrames_hhf8v")
+autoplay = "default"
+frame_progress = 0.8933858
 
 [node name="Masks" type="Marker2D" parent="." unique_id=1870681424]
 
@@ -347,6 +607,22 @@ shape = SubResource("CircleShape2D_t35mx")
 
 [node name="Impact" type="AudioStreamPlayer" parent="." unique_id=1749451526]
 stream = ExtResource("7_jj37f")
+
+[node name="ReloadedSnowball1" type="Sprite2D" parent="." unique_id=1478298725]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball2" type="Sprite2D" parent="." unique_id=101435599]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball3" type="Sprite2D" parent="." unique_id=667344090]
+visible = false
+texture = ExtResource("9_ub5t4")
+
+[node name="ReloadedSnowball4" type="Sprite2D" parent="." unique_id=119539578]
+visible = false
+texture = ExtResource("9_ub5t4")
 
 [connection signal="timeout" from="BulletOrigin1/Timer" to="." method="_on_timer_timeout_BO1"]
 [connection signal="timeout" from="BulletOrigin2/Timer" to="." method="_on_timer_timeout_BO2"]

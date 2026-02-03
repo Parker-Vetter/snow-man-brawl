@@ -14,6 +14,25 @@ class_name Player
 @onready var main: MainGame = $".."
 @onready var masks: Marker2D = $Masks
 @onready var throw_sound: AudioStreamPlayer = $Impact
+@onready var launcher1: Sprite2D = $launcher1
+@onready var launcher1_anim: AnimationPlayer = $launcher1/AnimationPlayer
+@onready var launcher2: Sprite2D = $launcher2
+@onready var launcher2_anim: AnimationPlayer = $launcher2/AnimationPlayer
+@onready var launcher3: Sprite2D = $launcher3
+@onready var launcher3_anim: AnimationPlayer = $launcher3/AnimationPlayer
+@onready var launcher4: Sprite2D = $launcher4
+@onready var launcher4_anim: AnimationPlayer = $launcher4/AnimationPlayer
+@onready var backpack: AnimatedSprite2D = $backpack
+
+# Reload snowball sprites and their marker positions
+@onready var reload_snowball_1: Sprite2D = $ReloadedSnowball1
+@onready var reload_snowball_2: Sprite2D = $ReloadedSnowball2
+@onready var reload_snowball_3: Sprite2D = $ReloadedSnowball3
+@onready var reload_snowball_4: Sprite2D = $ReloadedSnowball4
+@onready var snowball_pos_1: Marker2D = $launcher1/SnowballRespawn1
+@onready var snowball_pos_2: Marker2D = $launcher2/SnowballRespawn2
+@onready var snowball_pos_3: Marker2D = $launcher3/SnowballRespawn3
+@onready var snowball_pos_4: Marker2D = $launcher4/SnowballRespawn4
 
 @onready var projectile = load("res://MainGame/Scenes/projectile.tscn")
 
@@ -26,7 +45,17 @@ var shootDelay: float = 2
 var shootTimer: Timer
 var pendingTarget: Node2D = null
 var pendingArmIsLeft: bool = false
-var pendingAutoTargets: Array[Node2D] = []
+var pendingAutoTargets: Dictionary = {}  # Maps enemy -> timestamp when targeted
+const PENDING_TARGET_TIMEOUT: float = 0.5  # Seconds before target becomes available again
+
+# Timer references for auto-launchers (stored as class vars to ensure they're not lost)
+var auto_timer1: Timer
+var auto_timer2: Timer
+var auto_timer3: Timer
+var auto_timer4: Timer
+
+# Tween references for reload snowballs (to kill them when firing)
+var reload_tweens: Dictionary = {}
 
 func _ready() -> void:
 	var gameData: GameData = main.gameData
@@ -40,22 +69,80 @@ func _ready() -> void:
 	add_child(shootTimer)
 	shootTimer.start()
 
+	# Base animation is 0.5 sec, only speed up if fire rate requires it
+	var anim_speed = max(1.0, gameData.auto_backpack_fire_rate * 0.5)
+
+	# Hide backpack if no launchers active
+	backpack.visible = gameData.auto_backpack > 0
+
+	var base_interval = 1 / gameData.auto_backpack_fire_rate
+
 	if gameData.auto_backpack > 0:
-		var timer = bullet_origin_1.get_node("Timer")
-		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
-		timer.start()
+		auto_timer1 = bullet_origin_1.get_node("Timer")
+		auto_timer1.wait_time = base_interval
+		auto_timer1.start()
+		launcher1.visible = true
+		launcher1_anim.speed_scale = anim_speed
+		reload_snowball_1.visible = true
+		start_reload_effect(reload_snowball_1, base_interval)
+		print("[Launcher] Timer 1 started, wait_time: ", auto_timer1.wait_time)
+	else:
+		launcher1.visible = false
+		reload_snowball_1.visible = false
 	if gameData.auto_backpack > 1:
-		var timer = bullet_origin_2.get_node("Timer")
-		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
-		timer.start()
+		auto_timer2 = bullet_origin_2.get_node("Timer")
+		auto_timer2.wait_time = base_interval
+		launcher2.visible = true
+		launcher2_anim.speed_scale = anim_speed
+		reload_snowball_2.visible = true
+		# Stagger: delay start by 25% of interval
+		get_tree().create_timer(base_interval * 0.25).timeout.connect(func():
+			auto_timer2.start()
+			start_reload_effect(reload_snowball_2, base_interval)
+		)
+		print("[Launcher] Timer 2 will start in: ", base_interval * 0.25)
+	else:
+		launcher2.visible = false
+		reload_snowball_2.visible = false
 	if gameData.auto_backpack > 2:
-		var timer = bullet_origin_3.get_node("Timer")
-		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
-		timer.start()
+		auto_timer3 = bullet_origin_3.get_node("Timer")
+		auto_timer3.wait_time = base_interval
+		launcher3.visible = true
+		launcher3_anim.speed_scale = anim_speed
+		reload_snowball_3.visible = true
+		# Stagger: delay start by 50% of interval
+		get_tree().create_timer(base_interval * 0.5).timeout.connect(func():
+			auto_timer3.start()
+			start_reload_effect(reload_snowball_3, base_interval)
+		)
+		print("[Launcher] Timer 3 will start in: ", base_interval * 0.5)
+	else:
+		launcher3.visible = false
+		reload_snowball_3.visible = false
 	if gameData.auto_backpack > 3:
-		var timer = bullet_origin_4.get_node("Timer")
-		timer.wait_time = 1 / gameData.auto_backpack_fire_rate
-		timer.start()
+		auto_timer4 = bullet_origin_4.get_node("Timer")
+		auto_timer4.wait_time = base_interval
+		launcher4.visible = true
+		launcher4_anim.speed_scale = anim_speed
+		reload_snowball_4.visible = true
+		# Stagger: delay start by 75% of interval
+		get_tree().create_timer(base_interval * 0.75).timeout.connect(func():
+			auto_timer4.start()
+			start_reload_effect(reload_snowball_4, base_interval)
+		)
+		print("[Launcher] Timer 4 will start in: ", base_interval * 0.75)
+	else:
+		launcher4.visible = false
+		reload_snowball_4.visible = false
+
+func start_reload_effect(snowball: Sprite2D, duration: float) -> void:
+	# Kill any existing tween for this snowball
+	if reload_tweens.has(snowball) and reload_tweens[snowball] != null:
+		reload_tweens[snowball].kill()
+	snowball.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(snowball, "modulate:a", 1.0, duration)
+	reload_tweens[snowball] = tween
 
 func _on_shoot_timer_timeout():
 	var target = get_nearest_enemy()
@@ -101,7 +188,7 @@ func _on_arm_L_frame_changed():
 		spawn_projectile(pendingTarget, bulletOriginL)
 		pendingTarget = null
 
-func spawn_projectile(target: Node2D, origin: Marker2D = null):
+func spawn_projectile(target: Node2D, origin: Marker2D = null, flip_origin: bool = true):
 	if origin == null:
 		origin = bulletOrigin
 	var instance = projectile.instantiate()
@@ -109,7 +196,7 @@ func spawn_projectile(target: Node2D, origin: Marker2D = null):
 	var shootAngle = position.direction_to(target.global_position).angle()
 	instance.dir = shootAngle - PI / 2
 	var originPos = origin.position
-	if sprite.flip_h:
+	if flip_origin and sprite.flip_h:
 		originPos.x = - originPos.x
 	instance.spawnPos = position + originPos
 	instance.spawnRot = shootAngle
@@ -152,6 +239,12 @@ func _physics_process(_delta: float):
 		sprite.play("idle")
 		sprite.speed_scale = 1.0
 
+	# Update reload snowball positions to follow their markers
+	reload_snowball_1.global_position = snowball_pos_1.global_position
+	reload_snowball_2.global_position = snowball_pos_2.global_position
+	reload_snowball_3.global_position = snowball_pos_3.global_position
+	reload_snowball_4.global_position = snowball_pos_4.global_position
+
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("hit group", area.name)
 	if area.name == "HitBox":
@@ -164,11 +257,19 @@ func _on_pickup_radius_area_entered(area: Area2D) -> void:
 			area.pickup(self)
 
 func find_nearest_untargeted_enemy() -> Node2D:
-	# Clean up invalid targets
-	for i in range(pendingAutoTargets.size() - 1, -1, -1):
-		if not is_instance_valid(pendingAutoTargets[i]):
-			pendingAutoTargets.remove_at(i)
-	# Find the nearest enemy that is not in the pendingAutoTargets array
+	var current_time = Time.get_ticks_msec() / 1000.0
+
+	# Clean up invalid or expired targets
+	var to_remove = []
+	for enemy in pendingAutoTargets:
+		if not is_instance_valid(enemy):
+			to_remove.append(enemy)
+		elif current_time - pendingAutoTargets[enemy] > PENDING_TARGET_TIMEOUT:
+			to_remove.append(enemy)
+	for enemy in to_remove:
+		pendingAutoTargets.erase(enemy)
+
+	# Find the nearest enemy that is not in the pendingAutoTargets dictionary
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	var nearest: Node2D = null
 	var nearest_dist = INF
@@ -183,20 +284,34 @@ func find_nearest_untargeted_enemy() -> Node2D:
 func _on_timer_timeout_BO1() -> void:
 	var target = find_nearest_untargeted_enemy()
 	if target:
-		spawn_projectile(target, bullet_origin_1)
-		pendingAutoTargets.append(target)
+		spawn_projectile(target, bullet_origin_1, false)
+		pendingAutoTargets[target] = Time.get_ticks_msec() / 1000.0
+		launcher1_anim.play("shoot")
+	start_reload_effect(reload_snowball_1, auto_timer1.wait_time)
 
 func _on_timer_timeout_BO2() -> void:
 	var target = find_nearest_untargeted_enemy()
 	if target:
-		spawn_projectile(target, bullet_origin_2)
-		pendingAutoTargets.append(target)
+		spawn_projectile(target, bullet_origin_2, false)
+		pendingAutoTargets[target] = Time.get_ticks_msec() / 1000.0
+		launcher2_anim.play("shoot")
+	start_reload_effect(reload_snowball_2, auto_timer2.wait_time)
 
 func _on_timer_timeout_BO3() -> void:
 	var target = find_nearest_untargeted_enemy()
 	if target:
-		spawn_projectile(target, bullet_origin_3)
-		pendingAutoTargets.append(target)
+		spawn_projectile(target, bullet_origin_3, false)
+		pendingAutoTargets[target] = Time.get_ticks_msec() / 1000.0
+		launcher3_anim.play("shoot")
+	start_reload_effect(reload_snowball_3, auto_timer3.wait_time)
+
+func _on_timer_timeout_BO4() -> void:
+	var target = find_nearest_untargeted_enemy()
+	if target:
+		spawn_projectile(target, bullet_origin_4, false)
+		pendingAutoTargets[target] = Time.get_ticks_msec() / 1000.0
+		launcher4_anim.play("shoot")
+	start_reload_effect(reload_snowball_4, auto_timer4.wait_time)
 
 func setMask(data: PickupData):
 	for child in masks.get_children():

@@ -31,10 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://dytc12jcn7ol7" path="res://zacks sprites/upgrades/snowball_dmg.png" id="16_ubeq8"]
 [ext_resource type="Texture2D" uid="uid://bef5febt0bmm2" path="res://PeggleDrop/UI/coin.png" id="16_w1oa5"]
 [ext_resource type="Texture2D" uid="uid://d0g8u5colu1gc" path="res://zacks sprites/upgrades/snowball_spd.png" id="17_4v74s"]
-[ext_resource type="Theme" uid="uid://ciah220jcbjjf" path="res://MainGame/Resources/ShopButtons.tres" id="17_gbixe"]
+[ext_resource type="Theme" uid="uid://b1uvurficeboe" path="res://MainGame/Resources/ShopButtons.tres" id="17_gbixe"]
 [ext_resource type="Texture2D" uid="uid://bf0x8wk4pxhdl" path="res://zacks sprites/upgrades/player_move_spd.png" id="18_ybabm"]
 [ext_resource type="Texture2D" uid="uid://h8p8hbwb8w1o" path="res://zacks sprites/upgrades/snowman_spawn_rate.png" id="19_gbixe"]
-[ext_resource type="Texture2D" uid="uid://bye7la8iirxni" path="res://zacks sprites/masks/snowman_skimask_single.png" id="20_r64bu"]
+[ext_resource type="Texture2D" uid="uid://df7vvq1rb6p6t" path="res://zacks sprites/upgrades/cold_resist.png" id="31_4vbll"]
 [ext_resource type="AudioStream" uid="uid://cet4qrlauc3ao" path="res://MainGame/Music/Pachinko theme.ogg" id="33_w1oa5"]
 [ext_resource type="AudioStream" uid="uid://bogbaacsc71vf" path="res://PeggleDrop/UI/Button Press.ogg" id="35_g5ori"]
 
@@ -204,7 +204,7 @@ texture = ExtResource("14_3d5s5")
 texture = ExtResource("14_3d5s5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6jgu"]
-texture = ExtResource("20_r64bu")
+texture = ExtResource("31_4vbll")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4y353"]
 texture = ExtResource("12_6snom")
@@ -882,6 +882,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5ypyn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fight" type="Button" parent="CanvasLayer/MainUI/Control" unique_id=332640463]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.051549893
@@ -1006,6 +1007,11 @@ function_call = "increase_multiplyer"
 name_string = "Increase Multiplier"
 upgrade_name = "pachinko_multiplier"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseMultiplier" unique_id=1037304283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Name" type="Label" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseMultiplier" unique_id=912903066]
 layout_mode = 1
 anchors_preset = -1
@@ -1036,6 +1042,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseMultiplier" unique_id=1881204957]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1088,6 +1095,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseThrowSpeed" unique_id=113991450]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1140,6 +1148,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseDamage" unique_id=749668918]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1190,6 +1199,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/IncreaseSpeed" unique_id=1033713579]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1240,6 +1250,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/PlayerSpeed" unique_id=1671516854]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1290,6 +1301,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/SnowmanSpawnRate" unique_id=356301385]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1340,6 +1352,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpack" unique_id=674455971]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1390,6 +1403,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/AutoBackpackFireRate" unique_id=1862018368]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1440,6 +1454,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/MainUI/Control/ScrollContainer/VBoxContainer/ColdResistance" unique_id=1494046483]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

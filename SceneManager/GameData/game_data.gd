@@ -117,7 +117,7 @@ var snowman_spawn_rate: float:
 
 @export var auto_backpack_upgrades: Array[int] = [0, 1, 2, 3, 4]
 @export var auto_backpack_upgrade_level: int = 0;
-@export var auto_backpack_upgrade_costs: Array[int] = [10, 100, 1500]
+@export var auto_backpack_upgrade_costs: Array[int] = [10, 100, 1500, 5000]
 var auto_backpack: int:
 	get:
 		return auto_backpack_upgrades[auto_backpack_upgrade_level]
